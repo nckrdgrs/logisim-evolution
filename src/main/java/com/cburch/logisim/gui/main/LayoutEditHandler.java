@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.gui.main;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.file.LibraryEvent;
 import com.cburch.logisim.file.LibraryListener;
@@ -20,8 +23,6 @@ import com.cburch.logisim.proj.ProjectEvent;
 import com.cburch.logisim.proj.ProjectListener;
 import com.cburch.logisim.std.base.BaseLibrary;
 import com.cburch.logisim.tools.EditTool;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 
 public class LayoutEditHandler extends EditHandler
     implements ProjectListener, LibraryListener, PropertyChangeListener {

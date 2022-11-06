@@ -9,7 +9,6 @@
 
 package com.cburch.logisim.gui.generic;
 
-import com.cburch.contracts.BaseComponentListenerContract;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -18,9 +17,12 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
+
+import com.cburch.contracts.BaseComponentListenerContract;
 
 public class CanvasPane extends JScrollPane {
   private static final long serialVersionUID = 1L;

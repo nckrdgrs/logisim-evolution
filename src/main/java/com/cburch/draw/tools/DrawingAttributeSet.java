@@ -9,6 +9,13 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
 import com.cburch.draw.model.AbstractCanvasObject;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.shapes.DrawAttr;
@@ -19,13 +26,6 @@ import com.cburch.logisim.data.AttributeListener;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.util.EventSourceWeakSupport;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 public class DrawingAttributeSet implements AttributeSet, Cloneable {
   static final List<Attribute<?>> ATTRS_ALL =
@@ -70,8 +70,7 @@ public class DrawingAttributeSet implements AttributeSet, Cloneable {
   public <E extends CanvasObject> E applyTo(E drawable) {
     AbstractCanvasObject d = (AbstractCanvasObject) drawable;
     // use a for(i...) loop since the attribute list may change as we go on
-    for (var i = 0; i < d.getAttributes().size(); i++) {
-      Attribute<?> attr = d.getAttributes().get(i);
+    for (Attribute<?> attr : d.getAttributes()) {
       @SuppressWarnings("unchecked")
       Attribute<Object> a = (Attribute<Object>) attr;
       if (attr == DrawAttr.FILL_COLOR && this.containsAttribute(DrawAttr.TEXT_DEFAULT_FILL)) {
@@ -120,10 +119,8 @@ public class DrawingAttributeSet implements AttributeSet, Cloneable {
   @Override
   @SuppressWarnings("unchecked")
   public <V> V getValue(Attribute<V> attr) {
-    Iterator<Attribute<?>> ait = attrs.iterator();
     Iterator<Object> vit = values.iterator();
-    while (ait.hasNext()) {
-      Object a = ait.next();
+    for (Object a : attrs) {
       Object v = vit.next();
       if (a.equals(attr)) {
         return (V) v;
@@ -154,10 +151,8 @@ public class DrawingAttributeSet implements AttributeSet, Cloneable {
 
   @Override
   public <V> void setValue(Attribute<V> attr, V value) {
-    final var ait = attrs.iterator();
     final var vit = values.listIterator();
-    while (ait.hasNext()) {
-      final var a = ait.next();
+    for (Attribute<?> a : attrs) {
       vit.next();
       if (a.equals(attr)) {
         vit.set(value);

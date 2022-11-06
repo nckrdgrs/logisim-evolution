@@ -11,10 +11,6 @@ package com.cburch.logisim.gui.chrono;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.gui.log.Model;
-import com.cburch.logisim.gui.log.Signal;
-import com.cburch.logisim.gui.log.SignalInfo;
-import com.cburch.logisim.gui.menu.LogisimMenuBar;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -26,6 +22,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.DropMode;
@@ -33,11 +30,17 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.TransferHandler;
 import javax.swing.border.Border;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
+
+import com.cburch.logisim.gui.log.Model;
+import com.cburch.logisim.gui.log.Signal;
+import com.cburch.logisim.gui.log.SignalInfo;
+import com.cburch.logisim.gui.menu.LogisimMenuBar;
 
 // Left panel containing signal names
 public class LeftPanel extends JTable {
@@ -108,7 +111,7 @@ public class LeftPanel extends JTable {
         label.setBorder(rowInsets);
         label.setIcon(null);
         label.setBackground(chronoPanel.rowColors(s.info, isSelected)[0]);
-        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
       }
       return ret;
     }
@@ -153,8 +156,7 @@ public class LeftPanel extends JTable {
         new MouseAdapter() {
           @Override
           public void mouseClicked(MouseEvent e) {
-            if (!SwingUtilities.isRightMouseButton(e)) return;
-            if (!(e.getComponent() instanceof JTable)) return;
+            if (!SwingUtilities.isRightMouseButton(e) || !(e.getComponent() instanceof JTable)) return;
             Signal.List signals = getSelectedValuesList();
             if (signals.size() == 0) {
               int row = rowAtPoint(e.getPoint());

@@ -9,11 +9,13 @@
 
 package com.cburch.draw.shapes;
 
-import com.cburch.draw.model.AbstractCanvasObject;
 import java.awt.Color;
 import java.awt.Font;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import com.cburch.draw.model.AbstractCanvasObject;
 
 public final class SvgCreator {
   private SvgCreator() {

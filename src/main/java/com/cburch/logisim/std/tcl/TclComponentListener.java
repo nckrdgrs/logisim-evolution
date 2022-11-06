@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.std.tcl;
 
-import com.cburch.logisim.instance.Instance;
 import java.io.File;
+
+import com.cburch.logisim.instance.Instance;
 
 public class TclComponentListener {
   final Instance instance;

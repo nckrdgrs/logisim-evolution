@@ -11,11 +11,12 @@ package com.cburch.logisim.soc.util;
 
 import static com.cburch.logisim.soc.Strings.S;
 
-import com.cburch.logisim.util.StringGetter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+
+import com.cburch.logisim.util.StringGetter;
 
 public class AssemblerAsmInstruction {
   private final AssemblerToken instruction;

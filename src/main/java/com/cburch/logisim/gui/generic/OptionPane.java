@@ -9,13 +9,16 @@
 
 package com.cburch.logisim.gui.generic;
 
-import com.cburch.logisim.Main;
 import java.awt.Component;
 import java.awt.Frame;
+
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.cburch.logisim.Main;
 
 /*
  * This class calls the JOptionPane when in gui mode and does a log

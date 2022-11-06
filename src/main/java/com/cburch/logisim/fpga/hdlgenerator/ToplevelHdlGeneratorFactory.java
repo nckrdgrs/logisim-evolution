@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.fpga.hdlgenerator;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitHdlGeneratorFactory;
 import com.cburch.logisim.data.AttributeSet;
@@ -27,9 +31,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.io.LedArrayGenericHdlGeneratorFactory;
 import com.cburch.logisim.std.wiring.ClockHdlGeneratorFactory;
 import com.cburch.logisim.util.LineBuffer;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ToplevelHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
   private final long fpgaClockFrequency;
@@ -290,11 +291,10 @@ public class ToplevelHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
       final var preamble = component.isExternalInverted(i) ? "n_" : "";
       final var operator = component.isExternalInverted(i) ? Hdl.notOperator() : "";
       /* the internal mapped signals are handled in the top-level HDL generator */
-      if (component.isInternalMapped(i)) continue;
       /* IO-pins need to be mapped directly to the top-level component and cannot be
        * passed by signals, so we skip them.
        */
-      if (component.isIo(i)) continue;
+      if (component.isInternalMapped(i) || component.isIo(i)) continue;
       if (!component.isMapped(i)) {
         /* unmapped output pins we leave unconnected */
         if (component.isOutput(i)) continue;

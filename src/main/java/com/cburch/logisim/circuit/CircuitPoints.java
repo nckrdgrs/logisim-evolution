@@ -9,16 +9,17 @@
 
 package com.cburch.logisim.circuit;
 
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.comp.EndData;
-import com.cburch.logisim.data.BitWidth;
-import com.cburch.logisim.data.Location;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
+
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.comp.EndData;
+import com.cburch.logisim.data.BitWidth;
+import com.cburch.logisim.data.Location;
 
 class CircuitPoints {
   private static class LocationData {

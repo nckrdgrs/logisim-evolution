@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.std.io.Tty;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
+
+import com.cburch.logisim.std.io.Tty;
 
 public class TtyIcon extends BaseIcon {
 

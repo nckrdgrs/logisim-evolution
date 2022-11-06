@@ -11,13 +11,16 @@ package com.cburch.logisim.gui.menu;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.proj.ProjectEvent;
-import com.cburch.logisim.proj.ProjectListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
+
+import com.cburch.logisim.proj.ProjectEvent;
+import com.cburch.logisim.proj.ProjectListener;
 
 class MenuEdit extends Menu {
   private static final long serialVersionUID = 1L;
@@ -43,7 +46,7 @@ class MenuEdit extends Menu {
 
     int menuMask = getToolkit().getMenuShortcutKeyMaskEx();
     undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, menuMask));
-    redo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, menuMask | KeyEvent.SHIFT_DOWN_MASK));
+    redo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, menuMask | InputEvent.SHIFT_DOWN_MASK));
     cut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, menuMask));
     copy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, menuMask));
     paste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, menuMask));
@@ -53,9 +56,9 @@ class MenuEdit extends Menu {
     raise.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_UP, menuMask));
     lower.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, menuMask));
     raiseTop.setAccelerator(
-        KeyStroke.getKeyStroke(KeyEvent.VK_UP, menuMask | KeyEvent.SHIFT_DOWN_MASK));
+        KeyStroke.getKeyStroke(KeyEvent.VK_UP, menuMask | InputEvent.SHIFT_DOWN_MASK));
     lowerBottom.setAccelerator(
-        KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, menuMask | KeyEvent.SHIFT_DOWN_MASK));
+        KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, menuMask | InputEvent.SHIFT_DOWN_MASK));
 
     add(undo);
     add(redo);

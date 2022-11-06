@@ -9,6 +9,17 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.List;
+
+import javax.swing.Icon;
+
 import com.cburch.draw.actions.ModelAddAction;
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.icons.DrawCurveIcon;
@@ -19,15 +30,6 @@ import com.cburch.draw.shapes.DrawAttr;
 import com.cburch.draw.shapes.LineUtil;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Location;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.List;
-import javax.swing.Icon;
 
 public class CurveTool extends AbstractTool {
   private static final int BEFORE_CREATION = 0;
@@ -164,9 +166,9 @@ public class CurveTool extends AbstractTool {
     lastMouseX = mx;
     lastMouseY = my;
 
-    boolean shiftDown = (mods & MouseEvent.SHIFT_DOWN_MASK) != 0;
-    boolean ctrlDown = (mods & MouseEvent.CTRL_DOWN_MASK) != 0;
-    boolean altDown = (mods & MouseEvent.ALT_DOWN_MASK) != 0;
+    boolean shiftDown = (mods & InputEvent.SHIFT_DOWN_MASK) != 0;
+    boolean ctrlDown = (mods & InputEvent.CTRL_DOWN_MASK) != 0;
+    boolean altDown = (mods & InputEvent.ALT_DOWN_MASK) != 0;
     Curve ret = null;
     switch (state) {
       case ENDPOINT_DRAG:

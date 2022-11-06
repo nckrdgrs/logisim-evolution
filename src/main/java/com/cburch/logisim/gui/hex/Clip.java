@@ -11,17 +11,16 @@ package com.cburch.logisim.gui.hex;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.hex.Caret;
-import com.cburch.hex.HexEditor;
-import com.cburch.hex.HexModel;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.std.memory.MemContents;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+
+import com.cburch.hex.HexEditor;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.std.memory.MemContents;
 
 class Clip implements ClipboardOwner {
   private static final DataFlavor binaryFlavor = new DataFlavor(long[].class, "Binary data");

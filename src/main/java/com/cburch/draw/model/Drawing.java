@@ -9,11 +9,6 @@
 
 package com.cburch.draw.model;
 
-import com.cburch.draw.canvas.Selection;
-import com.cburch.draw.shapes.Text;
-import com.cburch.logisim.data.Attribute;
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.util.EventSourceWeakSupport;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -22,6 +17,12 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.cburch.draw.canvas.Selection;
+import com.cburch.draw.shapes.Text;
+import com.cburch.logisim.data.Attribute;
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.util.EventSourceWeakSupport;
 
 public class Drawing implements CanvasModel {
   private final EventSourceWeakSupport<CanvasModelListener> listeners;

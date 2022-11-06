@@ -11,13 +11,14 @@ package com.cburch.logisim.std.hdl;
 
 import static com.cburch.logisim.vhdl.Strings.S;
 
-import com.cburch.logisim.data.BitWidth;
-import com.cburch.logisim.instance.Port;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
+
+import com.cburch.logisim.data.BitWidth;
+import com.cburch.logisim.instance.Port;
 
 public class VhdlParser {
 

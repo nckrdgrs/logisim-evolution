@@ -11,6 +11,8 @@ package com.cburch.logisim.std.plexers;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
@@ -30,7 +32,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.tools.key.BitWidthConfigurator;
 import com.cburch.logisim.tools.key.JoinedConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
 
 public class Demultiplexer extends InstanceFactory {
   /**

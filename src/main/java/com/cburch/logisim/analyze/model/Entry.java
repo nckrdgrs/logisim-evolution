@@ -11,11 +11,12 @@ package com.cburch.logisim.analyze.model;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.StringGetter;
 import java.util.ArrayList;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
+
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.StringGetter;
 
 public class Entry implements Comparable<Entry>, PreferenceChangeListener {
   public static Entry parse(String description) {

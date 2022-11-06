@@ -11,6 +11,12 @@ package com.cburch.logisim.instance;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.comp.ComponentDrawContext;
@@ -35,11 +41,6 @@ import com.cburch.logisim.util.EventSourceWeakSupport;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.SyntaxChecker;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 
 public final class InstanceComponent implements Component, AttributeListener, ToolTipMaker {
   private EventSourceWeakSupport<ComponentListener> listeners;

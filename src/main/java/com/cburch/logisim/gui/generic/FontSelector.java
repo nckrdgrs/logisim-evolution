@@ -11,16 +11,13 @@ package com.cburch.logisim.gui.generic;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.JInputComponent;
-import com.cburch.logisim.util.LocaleListener;
-
-import java.awt.GraphicsEnvironment;
-import java.awt.Font;
 import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListCellRenderer;
@@ -33,8 +30,10 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import java.util.Set;
-import java.util.TreeSet;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.JInputComponent;
+import com.cburch.logisim.util.LocaleListener;
 
 public class FontSelector extends JPanel implements JInputComponent, ActionListener, ListSelectionListener, LocaleListener {
 
@@ -47,7 +46,7 @@ public class FontSelector extends JPanel implements JInputComponent, ActionListe
   private JCheckBox italicAttribute;
   private int fontSize;
   private int fontStyle;
-  
+
   public static final FontSelector FONT_SELECTOR = new FontSelector();
 
   @SuppressWarnings("unchecked")
@@ -78,7 +77,7 @@ public class FontSelector extends JPanel implements JInputComponent, ActionListe
   public Object getValue() {
     return currentFont;
   }
-  
+
   private JPanel getStyle() {
     final var panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
@@ -90,7 +89,7 @@ public class FontSelector extends JPanel implements JInputComponent, ActionListe
     panel.add(italicAttribute);
     return panel;
   }
-  
+
   private void fontChanged() {
     preview.setCaretPosition(0);
     preview.setFont(new Font(currentFont.getFamily(), fontStyle, AppPreferences.getScaled(fontSize)));
@@ -110,7 +109,7 @@ public class FontSelector extends JPanel implements JInputComponent, ActionListe
         italicAttribute.setSelected((fontStyle & Font.ITALIC) != 0);
         fontChanged();
         return;
-      } 
+      }
     }
     throw new IllegalArgumentException("Object is neither a font nor a supported font type!");
   }

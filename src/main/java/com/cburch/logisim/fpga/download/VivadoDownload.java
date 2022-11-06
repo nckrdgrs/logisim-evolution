@@ -11,19 +11,20 @@ package com.cburch.logisim.fpga.download;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 import com.cburch.logisim.fpga.data.BoardInformation;
 import com.cburch.logisim.fpga.data.IoStandards;
 import com.cburch.logisim.fpga.data.MappableResourcesContainer;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
 import com.cburch.logisim.fpga.file.FileWriter;
+import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
 import com.cburch.logisim.fpga.hdlgenerator.TickComponentHdlGeneratorFactory;
-import com.cburch.logisim.fpga.hdlgenerator.ToplevelHdlGeneratorFactory;
 import com.cburch.logisim.fpga.settings.VendorSoftware;
 import com.cburch.logisim.util.LineBuffer;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 public class VivadoDownload implements VendorDownload {
 
@@ -67,7 +68,7 @@ public class VivadoDownload implements VendorDownload {
             + File.separator
             + "impl_1"
             + File.separator
-            + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME
+            + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME
             + ".bit";
     bitStreamPath = bitStreamPath.replace("\\", "/");
   }
@@ -176,7 +177,7 @@ public class VivadoDownload implements VendorDownload {
       }
 
       final var clockFrequency = boardInfo.fpga.getClockFrequency();
-      var clockPeriod = 1000000000.0 / (double) clockFrequency;
+      var clockPeriod = 1000000000.0 / clockFrequency;
       contents.add(
           "    create_clock -add -name sys_clk_pin -period "
               + String.format(Locale.US, "%.2f", clockPeriod)

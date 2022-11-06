@@ -11,11 +11,12 @@ package com.cburch.logisim.util;
 
 import static com.cburch.logisim.util.Strings.S;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.cburch.logisim.fpga.designrulecheck.CorrectLabel;
 import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
 import com.cburch.logisim.gui.generic.OptionPane;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public final class SyntaxChecker {
 

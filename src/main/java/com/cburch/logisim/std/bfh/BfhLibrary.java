@@ -11,10 +11,11 @@ package com.cburch.logisim.std.bfh;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.util.List;
+
 import com.cburch.logisim.tools.FactoryDescription;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.Tool;
-import java.util.List;
 
 public class BfhLibrary extends Library {
   /**

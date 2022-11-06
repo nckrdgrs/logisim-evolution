@@ -20,10 +20,9 @@ public class IoStandards {
   public static char getId(String identifier) {
     char result = 0;
     final var thelist = IoStandards.getStrings();
-    final var iter = thelist.iterator();
     result = 0;
-    while (iter.hasNext()) {
-      if (iter.next().equals(identifier)) return result;
+    for (String element : thelist) {
+      if (element.equals(identifier)) return result;
       result++;
     }
     return UNKNOWN;

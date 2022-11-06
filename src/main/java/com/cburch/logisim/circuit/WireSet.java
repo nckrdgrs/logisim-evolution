@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.circuit;
 
-import com.cburch.logisim.data.Location;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.cburch.logisim.data.Location;
 
 public class WireSet {
   private static final Set<Wire> NULL_WIRES = Collections.emptySet();

@@ -11,6 +11,9 @@ package com.cburch.logisim.std.gates;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Graphics2D;
+import java.awt.geom.GeneralPath;
+
 import com.cburch.logisim.analyze.model.Expression;
 import com.cburch.logisim.analyze.model.Expressions;
 import com.cburch.logisim.data.Value;
@@ -20,9 +23,6 @@ import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.tools.WireRepairData;
 import com.cburch.logisim.util.LineBuffer;
-
-import java.awt.Graphics2D;
-import java.awt.geom.GeneralPath;
 
 class OrGate extends AbstractGate {
   private static class OrGateHdlGeneratorFactory extends AbstractGateHdlGenerator {

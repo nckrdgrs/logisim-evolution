@@ -11,6 +11,11 @@ package com.cburch.logisim.soc.bus;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.Font;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Attributes;
@@ -18,10 +23,6 @@ import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.soc.data.SocBusInfo;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Font;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
 
 public class SocBusAttributes extends AbstractAttributeSet {
 

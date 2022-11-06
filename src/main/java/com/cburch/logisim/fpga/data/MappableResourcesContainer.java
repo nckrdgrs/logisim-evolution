@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.fpga.data;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.circuit.CircuitMapInfo;
-import com.cburch.logisim.proj.ProjectActions;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.circuit.CircuitMapInfo;
+import com.cburch.logisim.proj.ProjectActions;
 
 public class MappableResourcesContainer {
 

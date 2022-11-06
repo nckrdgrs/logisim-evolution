@@ -9,14 +9,16 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Graphics;
+import java.util.List;
+
+import javax.swing.Icon;
+
 import com.cburch.draw.icons.DrawShapeIcon;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.shapes.DrawAttr;
 import com.cburch.draw.shapes.Rectangle;
 import com.cburch.logisim.data.Attribute;
-import java.awt.Graphics;
-import java.util.List;
-import javax.swing.Icon;
 
 public class RectangleTool extends RectangularTool {
   private final DrawingAttributeSet attrs;

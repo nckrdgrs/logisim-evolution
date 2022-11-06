@@ -11,6 +11,7 @@ package com.cburch.logisim.util;
 
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JRadioButtonMenuItem;
 

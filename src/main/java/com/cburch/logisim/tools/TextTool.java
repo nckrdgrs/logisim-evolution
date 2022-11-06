@@ -11,6 +11,11 @@ package com.cburch.logisim.tools;
 
 import static com.cburch.logisim.tools.Strings.S;
 
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitEvent;
@@ -27,10 +32,6 @@ import com.cburch.logisim.gui.main.SelectionActions;
 import com.cburch.logisim.proj.Action;
 import com.cburch.logisim.std.base.Text;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 
 public class TextTool extends Tool {
   /**

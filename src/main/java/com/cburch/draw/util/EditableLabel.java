@@ -9,14 +9,15 @@
 
 package com.cburch.draw.util;
 
-import com.cburch.logisim.data.Bounds;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
+
 import javax.swing.JTextField;
+
+import com.cburch.logisim.data.Bounds;
 
 public class EditableLabel implements Cloneable {
   public static final int LEFT = JTextField.LEFT;

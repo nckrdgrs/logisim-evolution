@@ -66,14 +66,12 @@ public class ComponentMapInformationContainer {
   }
 
   public String getInOutportLabel(int inOutNr) {
-    if (inOutBubbleLabels == null) return Integer.toString(inOutNr);
-    if (inOutBubbleLabels.size() <= inOutNr) return Integer.toString(inOutNr);
+    if ((inOutBubbleLabels == null) || (inOutBubbleLabels.size() <= inOutNr)) return Integer.toString(inOutNr);
     return inOutBubbleLabels.get(inOutNr);
   }
 
   public String getInPortLabel(int inputNr) {
-    if (inputBubbleLabels == null) return Integer.toString(inputNr);
-    if (inputBubbleLabels.size() <= inputNr) return Integer.toString(inputNr);
+    if ((inputBubbleLabels == null) || (inputBubbleLabels.size() <= inputNr)) return Integer.toString(inputNr);
     return inputBubbleLabels.get(inputNr);
   }
 
@@ -90,8 +88,7 @@ public class ComponentMapInformationContainer {
   }
 
   public String getOutPortLabel(int outputNr) {
-    if (outputBubbleLabels == null) return Integer.toString(outputNr);
-    if (outputBubbleLabels.size() <= outputNr) return Integer.toString(outputNr);
+    if ((outputBubbleLabels == null) || (outputBubbleLabels.size() <= outputNr)) return Integer.toString(outputNr);
     return outputBubbleLabels.get(outputNr);
   }
 

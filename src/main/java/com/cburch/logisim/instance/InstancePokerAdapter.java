@@ -9,6 +9,13 @@
 
 package com.cburch.logisim.instance;
 
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.comp.ComponentDrawContext;
 import com.cburch.logisim.comp.ComponentUserEvent;
 import com.cburch.logisim.data.Bounds;
@@ -16,11 +23,6 @@ import com.cburch.logisim.gui.main.Canvas;
 import com.cburch.logisim.tools.AbstractCaret;
 import com.cburch.logisim.tools.Caret;
 import com.cburch.logisim.tools.Pokable;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 class InstancePokerAdapter extends AbstractCaret implements Pokable {
 

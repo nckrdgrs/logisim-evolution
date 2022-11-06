@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.soc.jtaguart;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.instance.InstanceComponent;
@@ -21,8 +24,6 @@ import com.cburch.logisim.soc.data.SocBusTransaction;
 import com.cburch.logisim.soc.data.SocSupport;
 import com.cburch.logisim.soc.pio.PioState.PioRegState;
 import com.cburch.logisim.util.StringUtil;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class JtagUartState implements SocBusSlaveInterface {
 

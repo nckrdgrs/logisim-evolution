@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.data.Value;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
+
+import com.cburch.logisim.data.Value;
 
 public class PlexerIcon extends BaseIcon {
 

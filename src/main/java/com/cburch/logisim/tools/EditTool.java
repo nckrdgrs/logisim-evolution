@@ -11,6 +11,18 @@ package com.cburch.logisim.tools;
 
 import static com.cburch.logisim.tools.Strings.S;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Set;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.circuit.CircuitEvent;
 import com.cburch.logisim.circuit.CircuitListener;
@@ -30,16 +42,6 @@ import com.cburch.logisim.gui.main.SelectionActions;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.CollectionUtil;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Set;
 
 public class EditTool extends Tool {
   /**
@@ -242,7 +244,7 @@ public class EditTool extends Tool {
   }
 
   private boolean isWiringPoint(Canvas canvas, Location loc, int modsEx) {
-    final var wiring = (modsEx & MouseEvent.ALT_DOWN_MASK) == 0;
+    final var wiring = (modsEx & InputEvent.ALT_DOWN_MASK) == 0;
     final var select = !wiring;
 
     if (canvas != null && canvas.getSelection() != null) {
@@ -309,7 +311,7 @@ public class EditTool extends Tool {
         break;
       case KeyEvent.VK_SPACE:
         /* Check if ctrl was pressed or not */
-        if ((e.getModifiersEx() & KeyEvent.CTRL_DOWN_MASK) == KeyEvent.CTRL_DOWN_MASK) {
+        if ((e.getModifiersEx() & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
           attemptRotate(canvas, e);
         } else {
           select.keyPressed(canvas, e);
@@ -431,7 +433,7 @@ public class EditTool extends Tool {
     final var dx = mx - snapx;
     final var dy = my - snapy;
     var isEligible = dx * dx + dy * dy < 36;
-    if ((mods & MouseEvent.ALT_DOWN_MASK) != 0) isEligible = true;
+    if ((mods & InputEvent.ALT_DOWN_MASK) != 0) isEligible = true;
     if (!isEligible) {
       snapx = -1;
       snapy = -1;

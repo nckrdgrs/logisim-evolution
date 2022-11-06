@@ -9,15 +9,16 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstancePoker;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.StdAttr;
-import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 
 public class ShiftRegisterPoker extends InstancePoker {
   private int loc;
@@ -36,8 +37,7 @@ public class ShiftRegisterPoker extends InstancePoker {
       y = e.getY() - y;
       if (y <= -6 || y >= 8) return -1;
       final var x = e.getX() - (bds.getX() + 15);
-      if (!loadObj || widObj.getWidth() > 4) return -1;
-      if (x < 0 || x >= lenObj * 10) return -1;
+      if (!loadObj || widObj.getWidth() > 4 || x < 0 || x >= lenObj * 10) return -1;
       return x / 10;
     } else {
       final var len = (widObj.getWidth() + 3) / 4;

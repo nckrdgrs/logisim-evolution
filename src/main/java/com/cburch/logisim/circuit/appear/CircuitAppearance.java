@@ -9,6 +9,17 @@
 
 package com.cburch.logisim.circuit.appear;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import com.cburch.draw.actions.ModelTranslateAction;
 import com.cburch.draw.model.CanvasModelEvent;
 import com.cburch.draw.model.CanvasModelListener;
@@ -29,20 +40,10 @@ import com.cburch.logisim.instance.InstanceComponent;
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.util.EventSourceWeakSupport;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 public class CircuitAppearance extends Drawing implements AttributeListener {
   public static final int PIN_LENGTH = 10;
-  
+
   private class MyListener implements CanvasModelListener {
     @Override
     public void modelChanged(CanvasModelEvent event) {
@@ -72,7 +73,7 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
     if (circuit != null) circuit.getStaticAttributes().addAttributeListener(this);
     defaultCanvasObjects = new ArrayList<>();
     recomputeDefaultAppearance();
-    defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins()); 
+    defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins());
     setObjectsForce(defaultCustomAppearance, false);
   }
 
@@ -81,13 +82,13 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
     final var defaultCustom = new ArrayList<>(defaultCustomAppearance);
     var shapeIterator = currentCustom.iterator();
     while (shapeIterator.hasNext()) {
-      final var shape = shapeIterator.next(); 
+      final var shape = shapeIterator.next();
       if (shape instanceof AppearancePort || shape instanceof AppearanceAnchor)
         shapeIterator.remove();
     }
     shapeIterator = defaultCustom.iterator();
     while (shapeIterator.hasNext()) {
-      final var shape = shapeIterator.next(); 
+      final var shape = shapeIterator.next();
       if (shape instanceof AppearancePort || shape instanceof AppearanceAnchor)
         shapeIterator.remove();
     }
@@ -110,10 +111,10 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
 
   public void resetDefaultCustomAppearance() {
     super.removeObjects(this.getCustomObjectsFromBottom());
-    defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins()); 
+    defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins());
     setObjectsForce(defaultCustomAppearance, false);
   }
-  
+
   public void loadDefaultLogisimAppearance() {
     super.removeObjects(this.getCustomObjectsFromBottom());
     defaultCustomAppearance.clear();
@@ -129,7 +130,7 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
   public void addCircuitAppearanceListener(CircuitAppearanceListener l) {
     listeners.add(l);
   }
-  
+
   public Drawing getCustomAppearanceDrawing() {
     return new CircuitCustomAppearance(this);
   }
@@ -277,11 +278,11 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
   public boolean isDefaultAppearance() {
     return (circuit == null) || !circuit.getStaticAttributes().getValue(CircuitAttributes.APPEARANCE_ATTR).equals(CircuitAttributes.APPEAR_CUSTOM);
   }
-  
+
   public List<CanvasObject> getCustomObjectsFromBottom() {
     return super.getObjectsFromBottom();
   }
-  
+
   @Override
   public List<CanvasObject> getObjectsFromBottom() {
     return isDefaultAppearance() ? Collections.unmodifiableList(defaultCanvasObjects) : super.getObjectsFromBottom();
@@ -330,14 +331,14 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
 
   public boolean isNamedBoxShapedFixedSize() {
     if (circuit == null || circuit.getStaticAttributes() == null) return true;
-    final var staticAttrs = circuit.getStaticAttributes(); 
-    return staticAttrs.containsAttribute(CircuitAttributes.NAMED_CIRCUIT_BOX_FIXED_SIZE) 
-        ? staticAttrs.getValue(CircuitAttributes.NAMED_CIRCUIT_BOX_FIXED_SIZE) 
+    final var staticAttrs = circuit.getStaticAttributes();
+    return staticAttrs.containsAttribute(CircuitAttributes.NAMED_CIRCUIT_BOX_FIXED_SIZE)
+        ? staticAttrs.getValue(CircuitAttributes.NAMED_CIRCUIT_BOX_FIXED_SIZE)
         : true;
   }
 
   public void recomputeDefaultAppearance() {
-    final var shapes = DefaultAppearance.build(circuitPins.getPins(), getCircuitAppearance(), 
+    final var shapes = DefaultAppearance.build(circuitPins.getPins(), getCircuitAppearance(),
         isNamedBoxShapedFixedSize(), getName());
     setObjectsForce(shapes, true);
   }
@@ -363,8 +364,8 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
   public void repairCustomAppearance(List<CanvasObject> oldCustomAppearanceElements, Project proj, Circuit circ) {
     final var toBeRemoved = new ArrayList<CanvasObject>();
     final var toBeAdded = new ArrayList<CanvasObject>();
-    final var apearanceToBeRemoved = new ArrayList<AppearanceElement>(); 
-    final var apearanceToBeAdded = new ArrayList<AppearanceElement>(); 
+    final var apearanceToBeRemoved = new ArrayList<AppearanceElement>();
+    final var apearanceToBeAdded = new ArrayList<AppearanceElement>();
     for (final var obj : getCustomObjectsFromBottom()) {
       if (obj instanceof AppearanceElement element) {
         apearanceToBeRemoved.add(element);
@@ -445,14 +446,14 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
     var oldSuppress = suppressRecompute;
     try {
       suppressRecompute = true;
-      final var hasCustom = hasCustomAppearance(); 
+      final var hasCustom = hasCustomAppearance();
       if (hasCustom) {
-        defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins()); 
+        defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins());
         removeObjects(removes);
         addObjects(getCustomObjectsFromBottom().size() - 1, adds);
       } else {
         super.removeObjects(getCustomObjectsFromBottom());
-        defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins()); 
+        defaultCustomAppearance = DefaultCustomAppearance.build(circuitPins.getPins());
         setObjectsForce(defaultCustomAppearance, false);
       }
     } finally {
@@ -468,7 +469,7 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
   public void setObjectsForce(List<? extends CanvasObject> shapesBase, boolean isDefault) {
     // This shouldn't ever be an issue, but just to make doubly sure, we'll
     // check that the anchor and all ports are in their proper places.
-    
+
     // Must manually deep-copy arrays in Java...
     // final var shapes = new ArrayList<CanvasObject>(shapesBase);
     final var n = shapesBase.size();
@@ -526,6 +527,6 @@ public class CircuitAppearance extends Drawing implements AttributeListener {
           || e.getValue() == CircuitAttributes.APPEAR_EVOLUTION) {
         recomputeDefaultAppearance();
       }
-    }  
+    }
   }
 }

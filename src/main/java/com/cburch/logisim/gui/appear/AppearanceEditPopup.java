@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.cburch.logisim.gui.menu.EditHandler;
 import com.cburch.logisim.gui.menu.EditPopup;
 import com.cburch.logisim.gui.menu.LogisimMenuBar;
 import com.cburch.logisim.gui.menu.LogisimMenuItem;
-import java.util.HashMap;
-import java.util.Map;
 
 public class AppearanceEditPopup extends EditPopup implements EditHandler.Listener {
   private static final long serialVersionUID = 1L;

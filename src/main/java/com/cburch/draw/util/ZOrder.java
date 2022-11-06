@@ -9,8 +9,6 @@
 
 package com.cburch.draw.util;
 
-import com.cburch.draw.model.CanvasModel;
-import com.cburch.draw.model.CanvasObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -19,6 +17,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.cburch.draw.model.CanvasModel;
+import com.cburch.draw.model.CanvasObject;
 
 public final class ZOrder {
   private ZOrder() {

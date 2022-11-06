@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.tools;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.cburch.logisim.comp.ComponentFactory;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeEvent;
 import com.cburch.logisim.data.AttributeListener;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.AttributeSets;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FactoryAttributes implements AttributeSet, AttributeListener, Cloneable {
   private final Class<? extends Library> descBase;

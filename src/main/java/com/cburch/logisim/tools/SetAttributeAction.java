@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.tools;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitMutation;
 import com.cburch.logisim.circuit.CircuitTransaction;
@@ -17,8 +20,6 @@ import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.proj.Action;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.util.StringGetter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SetAttributeAction extends Action {
   private final StringGetter nameGetter;

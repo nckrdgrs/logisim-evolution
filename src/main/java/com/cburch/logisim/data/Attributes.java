@@ -11,6 +11,14 @@ package com.cburch.logisim.data;
 
 import static com.cburch.logisim.data.Strings.S;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.plaf.basic.BasicComboBoxRenderer;
+
 import com.bric.colorpicker.ColorPicker;
 import com.cburch.logisim.fpga.data.ComponentMapInformationContainer;
 import com.cburch.logisim.gui.generic.ComboBox;
@@ -18,12 +26,6 @@ import com.cburch.logisim.gui.generic.FontSelector;
 import com.cburch.logisim.util.FontUtil;
 import com.cburch.logisim.util.JInputComponent;
 import com.cburch.logisim.util.StringGetter;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.plaf.basic.BasicComboBoxRenderer;
 
 public class Attributes {
   private static class BooleanAttribute extends OptionAttribute<Boolean> {
@@ -112,11 +114,13 @@ public class Attributes {
       setOpacityVisible(true);
     }
 
-    public Object getValue() {
+    @Override
+	public Object getValue() {
       return getColor();
     }
 
-    public void setValue(Object value) {
+    @Override
+	public void setValue(Object value) {
       setColor((Color) value);
     }
   }
@@ -133,7 +137,8 @@ public class Attributes {
      *
      * @Override public String toString() { return get(); }
      */
-    public String toString() {
+    @Override
+	public String toString() {
       return str;
     }
   }

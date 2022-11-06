@@ -9,6 +9,12 @@
 
 package com.cburch.logisim.fpga.hdlgenerator;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.AttributeSet;
@@ -16,11 +22,6 @@ import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.gates.GateAttributes;
 import com.cburch.logisim.std.gates.NegateAttribute;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class HdlParameters {
 
@@ -206,7 +207,7 @@ public class HdlParameters {
           var mask = 1L;
           for (var i = 0; i < nrOfInputs; i++) {
             // VHDL is particular with the general type std_logic_vector, as it does an upto, so we have to exchange the bits
-            final var realIndex = Hdl.isVhdl() ? nrOfInputs - i - 1 : i;   
+            final var realIndex = Hdl.isVhdl() ? nrOfInputs - i - 1 : i;
             final var inputIsInverted = attrs.getValue(new NegateAttribute(realIndex, null));
             if (Boolean.TRUE.equals(inputIsInverted)) bubbleMask |= mask;
             mask <<= 1L;

@@ -11,9 +11,6 @@ package com.cburch.logisim.prefs;
 
 import static com.cburch.logisim.proj.Strings.S;
 
-import com.cburch.logisim.fpga.file.BoardReaderClass;
-import com.cburch.logisim.fpga.settings.BoardList;
-import com.cburch.logisim.gui.generic.OptionPane;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -24,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.prefs.Preferences;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -38,6 +36,10 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import com.cburch.logisim.fpga.file.BoardReaderClass;
+import com.cburch.logisim.fpga.settings.BoardList;
+import com.cburch.logisim.gui.generic.OptionPane;
 
 public class FpgaBoards implements ActionListener {
 

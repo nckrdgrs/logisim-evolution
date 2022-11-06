@@ -9,6 +9,17 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.Icon;
+
 import com.cburch.draw.actions.ModelAddAction;
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.icons.DrawPolylineIcon;
@@ -18,15 +29,6 @@ import com.cburch.draw.shapes.LineUtil;
 import com.cburch.draw.shapes.Poly;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Location;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.Icon;
 
 public class PolyTool extends AbstractTool {
   // how close we need to be to the start point to count as "closing the loop"
@@ -199,13 +201,13 @@ public class PolyTool extends AbstractTool {
       int index = locations.size() - 1;
       final var last = locations.get(index);
       Location newLast;
-      if ((mods & MouseEvent.SHIFT_DOWN_MASK) != 0 && index > 0) {
+      if ((mods & InputEvent.SHIFT_DOWN_MASK) != 0 && index > 0) {
         final var nextLast = locations.get(index - 1);
         newLast = LineUtil.snapTo8Cardinals(nextLast, mx, my);
       } else {
         newLast = Location.create(mx, my, false);
       }
-      if ((mods & MouseEvent.CTRL_DOWN_MASK) != 0) {
+      if ((mods & InputEvent.CTRL_DOWN_MASK) != 0) {
         var lastX = newLast.getX();
         var lastY = newLast.getY();
         lastX = canvas.snapX(lastX);

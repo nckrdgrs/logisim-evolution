@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.circuit;
 
+import java.awt.Color;
+import java.awt.event.MouseEvent;
+
 import com.cburch.logisim.circuit.appear.DynamicElementWithPoker;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.gui.main.Canvas;
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstancePoker;
 import com.cburch.logisim.instance.InstanceState;
-import java.awt.Color;
-import java.awt.event.MouseEvent;
 
 public class SubcircuitPoker extends InstancePoker {
 

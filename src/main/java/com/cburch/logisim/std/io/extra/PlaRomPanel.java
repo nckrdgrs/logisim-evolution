@@ -11,12 +11,6 @@ package com.cburch.logisim.std.io.extra;
 
 import static com.cburch.logisim.std.Strings.S;
 
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.contracts.BaseMouseMotionListenerContract;
-import com.cburch.logisim.data.Value;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.std.ttl.Drawgates;
-import com.cburch.logisim.util.GraphicsUtil;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -25,7 +19,15 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JPanel;
+
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.contracts.BaseMouseMotionListenerContract;
+import com.cburch.logisim.data.Value;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.std.ttl.Drawgates;
+import com.cburch.logisim.util.GraphicsUtil;
 
 public class PlaRomPanel extends JPanel
     implements BaseMouseListenerContract, BaseMouseMotionListenerContract {

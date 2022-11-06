@@ -11,15 +11,6 @@ package com.cburch.logisim.gui.opts;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.logisim.file.MouseMappings;
-import com.cburch.logisim.gui.generic.AttrTable;
-import com.cburch.logisim.gui.generic.ProjectExplorer;
-import com.cburch.logisim.gui.generic.ProjectExplorerToolNode;
-import com.cburch.logisim.gui.main.AttrTableToolModel;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.tools.Tool;
-import com.cburch.logisim.util.InputEventUtil;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -33,6 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -44,6 +36,16 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
+
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.logisim.file.MouseMappings;
+import com.cburch.logisim.gui.generic.AttrTable;
+import com.cburch.logisim.gui.generic.ProjectExplorer;
+import com.cburch.logisim.gui.generic.ProjectExplorerToolNode;
+import com.cburch.logisim.gui.main.AttrTableToolModel;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.tools.Tool;
+import com.cburch.logisim.util.InputEventUtil;
 
 class MouseOptions extends OptionsPanel {
   private static final long serialVersionUID = 1L;

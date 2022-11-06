@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.std.ttl;
 
+import java.awt.Graphics;
+
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Graphics;
 
 public class Drawgates {
   // x and y correspond to output port coordinates

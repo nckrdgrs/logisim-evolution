@@ -11,13 +11,6 @@ package com.cburch.logisim.file;
 
 import static com.cburch.logisim.file.Strings.S;
 
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.std.Builtin;
-import com.cburch.logisim.tools.Library;
-import com.cburch.logisim.util.JFileChoosers;
-import com.cburch.logisim.util.LineBuffer;
-import com.cburch.logisim.util.ZipClassLoader;
-import com.cburch.logisim.vhdl.file.HdlFile;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.io.File;
@@ -28,10 +21,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
+
 import javax.swing.JFileChooser;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileFilter;
+
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.std.Builtin;
+import com.cburch.logisim.tools.Library;
+import com.cburch.logisim.util.JFileChoosers;
+import com.cburch.logisim.util.LineBuffer;
+import com.cburch.logisim.util.ZipClassLoader;
+import com.cburch.logisim.vhdl.file.HdlFile;
 
 public class Loader implements LibraryLoader {
   private static class JarFileFilter extends FileFilter {

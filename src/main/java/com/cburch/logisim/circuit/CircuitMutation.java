@@ -11,18 +11,19 @@ package com.cburch.logisim.circuit;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.comp.ComponentFactory;
-import com.cburch.logisim.data.Attribute;
-import com.cburch.logisim.proj.Action;
-import com.cburch.logisim.util.StringGetter;
-import com.cburch.logisim.vhdl.base.VhdlEntity;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.comp.ComponentFactory;
+import com.cburch.logisim.data.Attribute;
+import com.cburch.logisim.proj.Action;
+import com.cburch.logisim.util.StringGetter;
+import com.cburch.logisim.vhdl.base.VhdlEntity;
 
 public final class CircuitMutation extends CircuitTransaction {
   private final Circuit primary;

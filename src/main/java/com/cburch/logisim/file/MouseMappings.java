@@ -9,16 +9,17 @@
 
 package com.cburch.logisim.file;
 
-import com.cburch.logisim.data.AttributeSets;
-import com.cburch.logisim.tools.AddTool;
-import com.cburch.logisim.tools.SelectTool;
-import com.cburch.logisim.tools.Tool;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.cburch.logisim.data.AttributeSets;
+import com.cburch.logisim.tools.AddTool;
+import com.cburch.logisim.tools.SelectTool;
+import com.cburch.logisim.tools.Tool;
 
 public class MouseMappings {
   public interface MouseMappingsListener {

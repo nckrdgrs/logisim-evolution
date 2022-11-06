@@ -11,24 +11,6 @@ package com.cburch.logisim.file;
 
 import static com.cburch.logisim.file.Strings.S;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.circuit.CircuitAttributes;
-import com.cburch.logisim.circuit.CircuitEvent;
-import com.cburch.logisim.circuit.CircuitListener;
-import com.cburch.logisim.circuit.SubcircuitFactory;
-import com.cburch.logisim.comp.ComponentFactory;
-import com.cburch.logisim.data.Attribute;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.proj.Projects;
-import com.cburch.logisim.std.base.BaseLibrary;
-import com.cburch.logisim.tools.AddTool;
-import com.cburch.logisim.tools.Library;
-import com.cburch.logisim.tools.Tool;
-import com.cburch.logisim.util.EventSourceWeakSupport;
-import com.cburch.logisim.util.UniquelyNamedThread;
-import com.cburch.logisim.vhdl.base.VhdlContent;
-import com.cburch.logisim.vhdl.base.VhdlEntity;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,10 +25,30 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
+
 import org.xml.sax.SAXException;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.circuit.CircuitAttributes;
+import com.cburch.logisim.circuit.CircuitEvent;
+import com.cburch.logisim.circuit.CircuitListener;
+import com.cburch.logisim.circuit.SubcircuitFactory;
+import com.cburch.logisim.comp.ComponentFactory;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.proj.Projects;
+import com.cburch.logisim.std.base.BaseLibrary;
+import com.cburch.logisim.tools.AddTool;
+import com.cburch.logisim.tools.Library;
+import com.cburch.logisim.tools.Tool;
+import com.cburch.logisim.util.EventSourceWeakSupport;
+import com.cburch.logisim.util.UniquelyNamedThread;
+import com.cburch.logisim.vhdl.base.VhdlContent;
+import com.cburch.logisim.vhdl.base.VhdlEntity;
 
 public class LogisimFile extends Library implements LibraryEventSource, CircuitListener {
 
@@ -613,5 +615,5 @@ public class LogisimFile extends Library implements LibraryEventSource, CircuitL
       loader.showError(err);
     }
   }
-  
+
 }

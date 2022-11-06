@@ -9,6 +9,15 @@
 
 package com.cburch.logisim;
 
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.FontUIResource;
+
 import com.cburch.logisim.generated.BuildInfo;
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.gui.start.Startup;
@@ -17,13 +26,6 @@ import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.FontUIResource;
 
 public class Main {
   /**

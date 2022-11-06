@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.std.ttl;
 
+import java.awt.Graphics;
+
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Graphics;
 
 /**
  * TTL 74x245 octal bus transceivers with three-state outputs
@@ -158,7 +159,7 @@ public class Ttl74245 extends AbstractTtlGate {
           new int[] { i + 6, i + 10, i + 14, i + 6 },
           new int[] { y + height - 17, y + height - 23, y + height - 17, y + height - 17 },
           4);
-      
+
       // enable
       if (i < x + 170) {
         g.fillOval(i + 4, y + height - 29, 2, 2);
@@ -197,7 +198,7 @@ public class Ttl74245 extends AbstractTtlGate {
           new int[] { i + 4, i, i - 4, i + 4 },
           new int[] { y + 17, y + 23, y + 17, y + 17 },
           4);
-      
+
       // enable
       if (i < x + 190) {
         g.fillOval(i - 6, y + 27, 2, 2);

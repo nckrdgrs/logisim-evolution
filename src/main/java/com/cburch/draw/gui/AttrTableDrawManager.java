@@ -9,13 +9,14 @@
 
 package com.cburch.draw.gui;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.tools.AbstractTool;
 import com.cburch.draw.tools.DrawingAttributeSet;
 import com.cburch.draw.tools.SelectTool;
 import com.cburch.logisim.gui.generic.AttrTable;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 
 public class AttrTableDrawManager implements PropertyChangeListener {
   private final Canvas canvas;

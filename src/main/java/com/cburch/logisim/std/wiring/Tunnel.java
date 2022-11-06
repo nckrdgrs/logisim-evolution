@@ -11,6 +11,10 @@ package com.cburch.logisim.std.wiring;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
 import com.cburch.logisim.comp.TextField;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
@@ -25,9 +29,6 @@ import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.tools.key.BitWidthConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
 
 public class Tunnel extends InstanceFactory {
   /**

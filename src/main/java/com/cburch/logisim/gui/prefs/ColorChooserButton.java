@@ -9,9 +9,6 @@
 
 package com.cburch.logisim.gui.prefs;
 
-import com.bric.colorpicker.ColorPickerDialog;
-import com.cburch.logisim.gui.icons.BaseIcon;
-import com.cburch.logisim.prefs.PrefMonitor;
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics2D;
@@ -19,7 +16,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
 import javax.swing.JButton;
+
+import com.bric.colorpicker.ColorPickerDialog;
+import com.cburch.logisim.gui.icons.BaseIcon;
+import com.cburch.logisim.prefs.PrefMonitor;
 
 public class ColorChooserButton extends JButton implements PropertyChangeListener, ActionListener {
 

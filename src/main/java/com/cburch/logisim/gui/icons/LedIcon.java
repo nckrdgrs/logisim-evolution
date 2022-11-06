@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class LedIcon extends BaseIcon {
 

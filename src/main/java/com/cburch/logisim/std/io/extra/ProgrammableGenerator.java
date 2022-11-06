@@ -11,6 +11,18 @@ package com.cburch.logisim.std.io.extra;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+
 import com.cburch.contracts.BaseMouseListenerContract;
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.circuit.RadixOption;
@@ -36,16 +48,6 @@ import com.cburch.logisim.std.wiring.Probe;
 import com.cburch.logisim.tools.MenuExtender;
 import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import javax.swing.JLabel;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 
 public class ProgrammableGenerator extends InstanceFactory {
   /**
@@ -321,7 +323,7 @@ public class ProgrammableGenerator extends InstanceFactory {
     setInstanceLogger(ClockLogger.class);
     setInstancePoker(Poker.class);
     setIconName("programmablegenerator.gif");
-    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK));
+    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK));
   }
 
   //

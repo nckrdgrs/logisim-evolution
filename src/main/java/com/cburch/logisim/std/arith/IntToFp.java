@@ -11,6 +11,9 @@ package com.cburch.logisim.std.arith;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.math.BigInteger;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Bounds;
@@ -23,8 +26,6 @@ import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.tools.key.BitWidthConfigurator;
-import java.awt.Color;
-import java.math.BigInteger;
 
 public class IntToFp extends InstanceFactory {
   /**

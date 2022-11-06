@@ -9,7 +9,15 @@
 
 package com.cburch.logisim.std.gates;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.cburch.logisim.analyze.model.AnalyzerModel;
+import com.cburch.logisim.analyze.model.Var;
 import com.cburch.logisim.analyze.model.VariableList;
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitMutation;
@@ -25,13 +33,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.wiring.Constant;
 import com.cburch.logisim.std.wiring.Pin;
 import com.cburch.logisim.std.wiring.ProbeAttributes;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class CircuitBuilder {
 
@@ -252,20 +253,19 @@ public class CircuitBuilder {
     var nameLength = 1;
     var busLength = 1;
     var nrOfBusses = 0;
-    for (int i = 0; i < inputs.vars.size(); i++) {
-      if (inputs.vars.get(i).name.length() > nameLength)
-        nameLength = inputs.vars.get(i).name.length();
-      if (inputs.vars.get(i).width > busLength) {
-        busLength = inputs.vars.get(i).width;
+    for (Var element : inputs.vars) {
+      if (element.name.length() > nameLength)
+        nameLength = element.name.length();
+      if (element.width > busLength) {
+        busLength = element.width;
       }
-      if (inputs.vars.get(i).width > 1) nrOfBusses++;
+      if (element.width > 1) nrOfBusses++;
     }
     int spineX = 100 + nameLength * 10 + (busLength - 1) * 10;
     ret.pinX = spineX - 10;
     if (nrOfBusses > 0) spineX += nrOfBusses * SPINE_DISTANCE + BUS_SPINE_TO_WIRE_SPINE_DISTANCE;
     int cnt = 0;
-    for (int i = 0; i < inputs.vars.size(); i++) {
-      final var inp = inputs.vars.get(i);
+    for (final Var inp : inputs.vars) {
       if (inp.width == 1) {
         final var name = inputs.bits.get(cnt++);
         ret.addInput(name, new SingleInput(spineX));
@@ -283,7 +283,8 @@ public class CircuitBuilder {
     spineX += SPINE_DISTANCE;
     final var outputs = model.getOutputs();
     int nrOutBusses = 0;
-    for (int i = 0; i < outputs.vars.size(); i++) if (outputs.vars.get(i).width > 1) nrOutBusses++;
+    for (Var element : outputs.vars)
+		if (element.width > 1) nrOutBusses++;
     nrOfBusses = Math.max(nrOfBusses, nrOutBusses);
     ret.startX = spineX;
     ret.startY = TOP_BORDER + nrOfBusses * SPLITTER_HEIGHT + (nrOfBusses > 0 ? 10 : 0);
@@ -614,8 +615,7 @@ public class CircuitBuilder {
     int idx = 0;
     int busNr = 0;
     int busY = inputData.startY - 10;
-    for (int nr = 0; nr < inputs.vars.size(); nr++) {
-      final var inp = inputs.vars.get(nr);
+    for (final Var inp : inputs.vars) {
       if (inp.width == 1) {
         final var name = inputData.getInputName(idx++);
         final var singleInput = inputData.getInputLocs(name, false);
@@ -740,8 +740,8 @@ public class CircuitBuilder {
               : outputData.getInputLocs(name, false).spineX;
       if (posX > startX) startX = posX;
     }
-    for (int idx = 0; idx < outputs.vars.size(); idx++) {
-      if (outputs.vars.get(idx).width > 1) nrOfBusses++;
+    for (Var element : outputs.vars) {
+      if (element.width > 1) nrOfBusses++;
     }
     int pinX = startX + outputData.getNrOfInputs() * SPINE_DISTANCE + 10;
     if (nrOfBusses > 0) pinX += (nrOfBusses - 1) * SPINE_DISTANCE + BUS_SPINE_TO_WIRE_SPINE_DISTANCE;
@@ -752,8 +752,7 @@ public class CircuitBuilder {
      * outputs.
      */
     int cnt = 0;
-    for (int idx = 0; idx < outputs.vars.size(); idx++) {
-      final var outp = outputs.vars.get(idx);
+    for (final Var outp : outputs.vars) {
       final var name = outputData.getInputName(cnt);
       if (outp.width == 1) {
         final var pointP = Location.create(pinX, pinY, true);

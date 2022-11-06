@@ -11,11 +11,12 @@ package com.cburch.logisim.analyze.model;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.data.Range;
-import com.cburch.logisim.analyze.model.Var.Bit;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+
+import com.cburch.logisim.analyze.data.Range;
+import com.cburch.logisim.analyze.model.Var.Bit;
 
 public abstract class Expression {
   public interface Visitor<T> {
@@ -264,8 +265,7 @@ public abstract class Expression {
     return loop == visit(new Visitor<>() {
       @Override
       public Object visitBinary(Expression a, Expression b, Op op) {
-        if (!visited.add(a)) return loop;
-        if (a.visit(this) == loop) return loop;
+        if (!visited.add(a) || (a.visit(this) == loop)) return loop;
         visited.remove(a);
         if (!visited.add(b)) return loop;
         if (b.visit(this) == loop) return loop;
@@ -275,8 +275,7 @@ public abstract class Expression {
 
       @Override
       public Object visitNot(Expression a) {
-        if (!visited.add(a)) return loop;
-        if (a.visit(this) == loop) return loop;
+        if (!visited.add(a) || (a.visit(this) == loop)) return loop;
         visited.remove(a);
         return null;
       }

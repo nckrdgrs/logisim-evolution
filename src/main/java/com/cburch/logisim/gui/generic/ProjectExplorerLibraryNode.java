@@ -9,17 +9,19 @@
 
 package com.cburch.logisim.gui.generic;
 
-import com.cburch.logisim.file.LibraryEvent;
-import com.cburch.logisim.file.LibraryListener;
-import com.cburch.logisim.file.LogisimFile;
-import com.cburch.logisim.std.base.BaseLibrary;
-import com.cburch.logisim.tools.Library;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.swing.JTree;
+
+import com.cburch.logisim.file.LibraryEvent;
+import com.cburch.logisim.file.LibraryListener;
+import com.cburch.logisim.file.LogisimFile;
+import com.cburch.logisim.std.base.BaseLibrary;
+import com.cburch.logisim.tools.Library;
 
 /**
  * Code taken from Cornell's version of Logisim: http://www.cs.cornell.edu/courses/cs3410/2015sp/

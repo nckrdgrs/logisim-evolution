@@ -9,6 +9,15 @@
 
 package com.cburch.logisim.instance;
 
+import java.awt.Color;
+import java.util.Collections;
+import java.util.List;
+
+import javax.swing.Icon;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.comp.AbstractComponentFactory;
@@ -28,12 +37,6 @@ import com.cburch.logisim.util.IconsUtil;
 import com.cburch.logisim.util.StringGetter;
 import com.cburch.logisim.util.StringUtil;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.util.Collections;
-import java.util.List;
-import javax.swing.Icon;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Represents a category of components that appear in a circuit. This class and <code>Component

@@ -11,13 +11,14 @@ package com.cburch.logisim.soc.data;
 
 import static com.cburch.logisim.soc.Strings.S;
 
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.util.GraphicsUtil;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
+
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.util.GraphicsUtil;
 
 public class SocUpSimulationState {
   public static final int SIMULATION_RUNNING = 0;

@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.gui.test;
 
+import java.util.ArrayList;
+
+import javax.swing.SwingUtilities;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.data.TestException;
 import com.cburch.logisim.data.TestVector;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.util.EventSourceWeakSupport;
-import java.util.ArrayList;
-import javax.swing.Spring;
-import javax.swing.SwingUtilities;
 
 class Model {
 

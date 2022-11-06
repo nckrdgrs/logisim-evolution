@@ -11,6 +11,11 @@ package com.cburch.logisim.std.io.extra;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseEvent;
+
 import com.cburch.logisim.circuit.Wire;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
@@ -31,10 +36,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.io.IoLibrary;
 import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 
 public class Switch extends InstanceFactory {
   /**
@@ -98,7 +99,7 @@ public class Switch extends InstanceFactory {
         });
     setFacingAttribute(StdAttr.FACING);
     setIconName("switch.gif");
-    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK));
+    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK));
     setInstancePoker(Poker.class);
     setInstanceLogger(Logger.class);
   }

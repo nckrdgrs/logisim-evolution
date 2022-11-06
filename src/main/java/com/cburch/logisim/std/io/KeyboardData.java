@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.std.io;
 
+import java.awt.FontMetrics;
+
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.instance.InstanceData;
-import java.awt.FontMetrics;
 
 class KeyboardData implements InstanceData, Cloneable {
   private Value lastClock;

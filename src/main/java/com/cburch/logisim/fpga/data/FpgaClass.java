@@ -9,19 +9,18 @@
 
 package com.cburch.logisim.fpga.data;
 
+import java.util.List;
+
 import com.cburch.logisim.fpga.settings.VendorSoftware;
 import com.cburch.logisim.util.StringUtil;
-import java.util.Iterator;
-import java.util.List;
 
 public class FpgaClass {
   public static char getId(String identifier) {
     char result = 0;
     List<String> thelist = VendorSoftware.getVendorStrings();
-    Iterator<String> iter = thelist.iterator();
     result = 0;
-    while (iter.hasNext()) {
-      if (iter.next().equalsIgnoreCase(identifier)) return result;
+    for (String element : thelist) {
+      if (element.equalsIgnoreCase(identifier)) return result;
       result++;
     }
     return VendorSoftware.VENDOR_UNKNOWN;

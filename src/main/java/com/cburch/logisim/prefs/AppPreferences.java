@@ -9,17 +9,6 @@
 
 package com.cburch.logisim.prefs;
 
-import com.cburch.logisim.Main;
-import com.cburch.logisim.circuit.RadixOption;
-import com.cburch.logisim.data.AttributeOption;
-import com.cburch.logisim.data.Direction;
-import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
-import com.cburch.logisim.gui.start.Startup;
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.util.LocaleListener;
-import com.cburch.logisim.util.LocaleManager;
-import com.cburch.logisim.util.PropertyChangeWeakSupport;
-import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
@@ -37,8 +26,21 @@ import java.util.prefs.BackingStoreException;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
 import java.util.prefs.Preferences;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+
+import com.cburch.logisim.Main;
+import com.cburch.logisim.circuit.RadixOption;
+import com.cburch.logisim.data.AttributeOption;
+import com.cburch.logisim.data.Direction;
+import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
+import com.cburch.logisim.gui.start.Startup;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.util.LocaleListener;
+import com.cburch.logisim.util.LocaleManager;
+import com.cburch.logisim.util.PropertyChangeWeakSupport;
+import com.formdev.flatlaf.FlatIntelliJLaf;
 
 public class AppPreferences {
   //
@@ -326,15 +328,15 @@ public class AppPreferences {
 
   public static int getDownScaled(int value, float extScale) {
     getPrefs();
-    float scale = ((float) ((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
+    float scale = (((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
     scale *= extScale;
-    return (int) ((float) value / scale);
+    return (int) (value / scale);
   }
 
   public static int getDownScaled(int value) {
     getPrefs();
-    float scale = ((float) ((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
-    return (int) ((float) value / scale);
+    float scale = (((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
+    return (int) (value / scale);
   }
 
   public static double getDownScaled(double value) {
@@ -344,33 +346,33 @@ public class AppPreferences {
 
   public static int getScaled(int value, float extScale) {
     getPrefs();
-    float scale = ((float) ((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
+    float scale = (((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
     scale *= extScale;
-    return (int) ((float) value * scale);
+    return (int) (value * scale);
   }
 
   public static int getScaled(int value) {
     getPrefs();
-    float scale = ((float) ((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
-    return (int) ((float) value * scale);
+    float scale = (((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
+    return (int) (value * scale);
   }
 
   public static float getScaled(float value) {
     getPrefs();
-    float scale = ((float) ((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
+    float scale = (((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
     return value * scale;
   }
 
   public static float getScaled(float value, float extscale) {
     getPrefs();
-    float scale = ((float) ((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
+    float scale = (((int) (SCALE_FACTOR.get() * 10))) / (float) 10.0;
     scale *= extscale;
     return value * scale;
   }
 
   public static double getScaled(double value) {
     getPrefs();
-    double scale = ((double) ((int) (SCALE_FACTOR.get() * 10))) / 10.0;
+    double scale = (((int) (SCALE_FACTOR.get() * 10))) / 10.0;
     return value * scale;
   }
 

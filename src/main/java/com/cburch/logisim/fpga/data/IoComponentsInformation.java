@@ -9,15 +9,17 @@
 
 package com.cburch.logisim.fpga.data;
 
-import com.cburch.logisim.fpga.gui.BoardManipulator;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Frame;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.JPanel;
+
+import com.cburch.logisim.fpga.gui.BoardManipulator;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class IoComponentsInformation {
 

@@ -9,15 +9,16 @@
 
 package com.cburch.logisim.comp;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.util.EventSourceWeakSupport;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public abstract class ManagedComponent extends AbstractComponent {
   private final EventSourceWeakSupport<ComponentListener> listeners =
@@ -125,7 +126,8 @@ public abstract class ManagedComponent extends AbstractComponent {
   @Override
   public abstract ComponentFactory getFactory();
 
-  public Object getFeature(Object key) {
+  @Override
+public Object getFeature(Object key) {
     return null;
   }
 

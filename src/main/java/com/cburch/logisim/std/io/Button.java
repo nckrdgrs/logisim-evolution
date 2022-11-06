@@ -11,11 +11,15 @@ package com.cburch.logisim.std.io;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseEvent;
+
 import com.cburch.logisim.circuit.Wire;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
-import com.cburch.logisim.data.Attributes;
 import com.cburch.logisim.data.AttributeSet;
+import com.cburch.logisim.data.Attributes;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Direction;
@@ -33,9 +37,6 @@ import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 
 public class Button extends InstanceFactory {
   /**
@@ -136,7 +137,7 @@ public class Button extends InstanceFactory {
         });
     setFacingAttribute(StdAttr.FACING);
     setIcon(new ButtonIcon());
-    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK));
+    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK));
     setPorts(new Port[] {new Port(0, 0, Port.OUTPUT, 1)});
     setInstancePoker(Poker.class);
     setInstanceLogger(Logger.class);

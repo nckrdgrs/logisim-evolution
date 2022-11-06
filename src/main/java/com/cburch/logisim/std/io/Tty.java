@@ -11,6 +11,9 @@ package com.cburch.logisim.std.io;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Font;
+
 import com.cburch.logisim.circuit.appear.DynamicElement;
 import com.cburch.logisim.circuit.appear.DynamicElement.Path;
 import com.cburch.logisim.circuit.appear.DynamicElementProvider;
@@ -28,8 +31,6 @@ import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Font;
 
 public class Tty extends InstanceFactory implements DynamicElementProvider {
   /**

@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.fpga.designrulecheck;
 
-import com.cburch.logisim.circuit.Wire;
-import com.cburch.logisim.data.Location;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.cburch.logisim.circuit.Wire;
+import com.cburch.logisim.data.Location;
 
 public class Net {
   private final Set<Location> myPoints = new HashSet<>();
@@ -249,9 +250,7 @@ public class Net {
   }
 
   public boolean setParent(Net parent) {
-    if (requiresToBeRoot) return false;
-    if (parent == null) return false;
-    if (myParent != null) return false;
+    if (requiresToBeRoot || (parent == null) || (myParent != null)) return false;
     myParent = parent;
     return true;
   }

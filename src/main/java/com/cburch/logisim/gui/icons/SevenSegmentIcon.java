@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.std.io.HexDigit;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+
+import com.cburch.logisim.std.io.HexDigit;
 
 public class SevenSegmentIcon extends BaseIcon {
 

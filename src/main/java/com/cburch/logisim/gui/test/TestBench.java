@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.gui.test;
 
+import java.io.File;
+import java.util.Map;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.data.Value;
@@ -19,8 +22,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.proj.ProjectActions;
 import com.cburch.logisim.std.wiring.Pin;
-import java.io.File;
-import java.util.Map;
 
 public class TestBench {
 

@@ -11,16 +11,6 @@ package com.cburch.logisim.analyze.gui;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.model.ParserException;
-import com.cburch.logisim.analyze.model.Var;
-import com.cburch.logisim.analyze.model.VariableList;
-import com.cburch.logisim.analyze.model.VariableListEvent;
-import com.cburch.logisim.analyze.model.VariableListListener;
-import com.cburch.logisim.gui.menu.EditHandler;
-import com.cburch.logisim.gui.menu.LogisimMenuBar;
-import com.cburch.logisim.gui.menu.LogisimMenuItem;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.SyntaxChecker;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -40,6 +30,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.EventObject;
+
 import javax.swing.AbstractAction;
 import javax.swing.AbstractCellEditor;
 import javax.swing.BorderFactory;
@@ -59,7 +50,19 @@ import javax.swing.border.Border;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellEditor;
+
 import org.jdesktop.swingx.prompt.BuddySupport;
+
+import com.cburch.logisim.analyze.model.ParserException;
+import com.cburch.logisim.analyze.model.Var;
+import com.cburch.logisim.analyze.model.VariableList;
+import com.cburch.logisim.analyze.model.VariableListEvent;
+import com.cburch.logisim.analyze.model.VariableListListener;
+import com.cburch.logisim.gui.menu.EditHandler;
+import com.cburch.logisim.gui.menu.LogisimMenuBar;
+import com.cburch.logisim.gui.menu.LogisimMenuItem;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.SyntaxChecker;
 
 public class VariableTab extends AnalyzerTab {
   private static final long serialVersionUID = 1L;
@@ -323,8 +326,7 @@ public class VariableTab extends AnalyzerTab {
       if (pos != length) return INVALID_CHARS;
       else return msbIndex;
     }
-    if (pos >= length - 2) return NO_VALID_INDEX_SEP;
-    if (!index.startsWith("..", pos)) return NO_VALID_INDEX_SEP;
+    if ((pos >= length - 2) || !index.startsWith("..", pos)) return NO_VALID_INDEX_SEP;
     pos += 2;
     final var curpos = pos;
     while ((pos < length) && ("0123456789".indexOf(index.charAt(pos)) >= 0)) pos++;

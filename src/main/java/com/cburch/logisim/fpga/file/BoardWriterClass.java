@@ -9,23 +9,26 @@
 
 package com.cburch.logisim.fpga.file;
 
-import com.cburch.logisim.fpga.data.BoardInformation;
-import com.cburch.logisim.fpga.data.IoStandards;
-import com.cburch.logisim.fpga.data.PullBehaviors;
-import com.cburch.logisim.fpga.settings.VendorSoftware;
-import com.cburch.logisim.util.XmlUtil;
 import java.awt.Image;
 import java.io.File;
 import java.io.StringWriter;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
+
+import com.cburch.logisim.fpga.data.BoardInformation;
+import com.cburch.logisim.fpga.data.IoStandards;
+import com.cburch.logisim.fpga.data.PullBehaviors;
+import com.cburch.logisim.fpga.settings.VendorSoftware;
+import com.cburch.logisim.util.XmlUtil;
 
 public class BoardWriterClass {
 

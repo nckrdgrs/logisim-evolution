@@ -9,11 +9,6 @@
 
 package com.cburch.logisim.std.hdl;
 
-import com.cburch.logisim.data.AbstractAttributeSet;
-import com.cburch.logisim.data.Attribute;
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.vhdl.base.VhdlSimConstants;
 import java.awt.Dialog;
 import java.awt.Font;
 import java.awt.Frame;
@@ -21,6 +16,12 @@ import java.awt.Window;
 import java.util.Arrays;
 import java.util.List;
 import java.util.WeakHashMap;
+
+import com.cburch.logisim.data.AbstractAttributeSet;
+import com.cburch.logisim.data.Attribute;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.vhdl.base.VhdlSimConstants;
 
 public class VhdlEntityAttributes extends AbstractAttributeSet {
 

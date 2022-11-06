@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.analyze.data;
 
-import com.cburch.logisim.analyze.gui.KarnaughMapPanel;
-import com.cburch.logisim.analyze.model.AnalyzerModel;
-import com.cburch.logisim.analyze.model.Expression;
-import com.cburch.logisim.analyze.model.Implicant;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.cburch.logisim.analyze.gui.KarnaughMapPanel;
+import com.cburch.logisim.analyze.model.AnalyzerModel;
+import com.cburch.logisim.analyze.model.Expression;
+import com.cburch.logisim.analyze.model.Implicant;
 
 public class KarnaughMapGroups {
 

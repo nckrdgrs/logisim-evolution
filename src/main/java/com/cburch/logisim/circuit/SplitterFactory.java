@@ -11,6 +11,11 @@ package com.cburch.logisim.circuit;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
+import java.awt.Color;
+import java.awt.event.InputEvent;
+
+import javax.swing.Icon;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.comp.AbstractComponentFactory;
 import com.cburch.logisim.comp.Component;
@@ -27,9 +32,6 @@ import com.cburch.logisim.tools.key.KeyConfigurator;
 import com.cburch.logisim.tools.key.ParallelConfigurator;
 import com.cburch.logisim.util.IconsUtil;
 import com.cburch.logisim.util.StringGetter;
-import java.awt.Color;
-import java.awt.event.InputEvent;
-import javax.swing.Icon;
 
 public class SplitterFactory extends AbstractComponentFactory {
 

@@ -9,22 +9,24 @@
 
 package com.cburch.logisim.soc.data;
 
+import java.awt.event.ActionListener;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.swing.JMenuItem;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.circuit.SubcircuitFactory;
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.event.ActionListener;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import javax.swing.JMenuItem;
 
 public class SocSupport {
 
   private static final long LONG_MASK = (1L << 32) - 1L;
 
   public static long convUnsignedInt(int value) {
-    return ((long) value) & LONG_MASK;
+    return (value) & LONG_MASK;
   }
 
   public static int convUnsignedLong(long value) {

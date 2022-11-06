@@ -11,12 +11,13 @@ package com.cburch.draw.actions;
 
 import static com.cburch.draw.Strings.S;
 
-import com.cburch.draw.model.CanvasModel;
-import com.cburch.draw.model.CanvasObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+
+import com.cburch.draw.model.CanvasModel;
+import com.cburch.draw.model.CanvasObject;
 
 public class ModelAddAction extends ModelAction {
   private final List<CanvasObject> added;

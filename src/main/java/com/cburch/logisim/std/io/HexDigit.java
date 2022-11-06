@@ -11,6 +11,9 @@ package com.cburch.logisim.std.io;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.event.InputEvent;
+
 import com.cburch.logisim.circuit.appear.DynamicElement;
 import com.cburch.logisim.circuit.appear.DynamicElementProvider;
 import com.cburch.logisim.data.Attribute;
@@ -28,8 +31,6 @@ import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.tools.key.DirectionConfigurator;
-import java.awt.Color;
-import java.awt.event.KeyEvent;
 
 public class HexDigit extends InstanceFactory implements DynamicElementProvider {
   /**
@@ -80,7 +81,7 @@ public class HexDigit extends InstanceFactory implements DynamicElementProvider 
         });
     setOffsetBounds(Bounds.create(-15, -60, 40, 60));
     setIcon(new SevenSegmentIcon(true));
-    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK));
+    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK));
   }
 
   private void updatePorts(Instance instance) {

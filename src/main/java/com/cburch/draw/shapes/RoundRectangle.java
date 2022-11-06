@@ -11,15 +11,17 @@ package com.cburch.draw.shapes;
 
 import static com.cburch.draw.Strings.S;
 
+import java.awt.Graphics;
+import java.util.List;
+import java.util.Random;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
-import java.awt.Graphics;
-import java.util.List;
-import java.util.Random;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 public class RoundRectangle extends Rectangular {
   private int radius;

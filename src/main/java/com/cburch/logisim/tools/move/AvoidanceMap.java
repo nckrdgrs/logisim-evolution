@@ -9,15 +9,16 @@
 
 package com.cburch.logisim.tools.move;
 
-import com.cburch.logisim.circuit.Wire;
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.data.Location;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
+
+import com.cburch.logisim.circuit.Wire;
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.data.Location;
 
 public final class AvoidanceMap {
 

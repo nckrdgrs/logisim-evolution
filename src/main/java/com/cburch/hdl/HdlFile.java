@@ -11,13 +11,14 @@ package com.cburch.hdl;
 
 import static com.cburch.hdl.Strings.S;
 
-import com.cburch.logisim.std.hdl.HdlContentEditor;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import com.cburch.logisim.std.hdl.HdlContentEditor;
 
 public class HdlFile {
 

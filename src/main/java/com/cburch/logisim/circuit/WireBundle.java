@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.circuit;
 
+import java.util.concurrent.CopyOnWriteArraySet;
+
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.data.Value;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 class WireBundle {
   private BitWidth width = BitWidth.UNKNOWN;

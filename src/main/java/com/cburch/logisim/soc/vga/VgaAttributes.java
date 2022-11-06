@@ -11,6 +11,11 @@ package com.cburch.logisim.soc.vga;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
@@ -18,10 +23,6 @@ import com.cburch.logisim.data.Attributes;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.soc.data.SocBusInfo;
 import com.cburch.logisim.soc.data.SocSimulationManager;
-import java.awt.Font;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class VgaAttributes extends AbstractAttributeSet {
 

@@ -11,6 +11,14 @@ package com.cburch.logisim.soc.data;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+
+import javax.swing.JFileChooser;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.gui.main.Frame;
@@ -23,12 +31,6 @@ import com.cburch.logisim.soc.gui.ListeningFrame;
 import com.cburch.logisim.tools.CircuitStateHolder;
 import com.cburch.logisim.tools.MenuExtender;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import javax.swing.JFileChooser;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 
 public class SocUpMenuProvider implements ActionListener {
   public static final SocUpMenuProvider SOCUPMENUPROVIDER = new SocUpMenuProvider();
@@ -237,7 +239,7 @@ public class SocUpMenuProvider implements ActionListener {
           final var frame = myStates.get(data);
           frame.setVisible(true);
           var state = frame.getExtendedState();
-          state &= ~Frame.ICONIFIED;
+          state &= ~java.awt.Frame.ICONIFIED;
           frame.setExtendedState(state);
           return;
         }
@@ -259,7 +261,7 @@ public class SocUpMenuProvider implements ActionListener {
           final var frame = myPrograms.get(data);
           frame.setVisible(true);
           var frameState = frame.getExtendedState();
-          frameState &= ~Frame.ICONIFIED;
+          frameState &= ~java.awt.Frame.ICONIFIED;
           frame.setExtendedState(frameState);
           return;
         }
@@ -280,7 +282,7 @@ public class SocUpMenuProvider implements ActionListener {
           final var frame = myAsmWindows.get(data);
           frame.setVisible(true);
           var fstate = frame.getExtendedState();
-          fstate &= ~Frame.ICONIFIED;
+          fstate &= ~java.awt.Frame.ICONIFIED;
           frame.setExtendedState(fstate);
           return;
         }

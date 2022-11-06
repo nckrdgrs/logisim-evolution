@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.instance;
 
-import com.cburch.logisim.data.Bounds;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+
+import com.cburch.logisim.data.Bounds;
 
 public abstract class InstancePoker {
   public Bounds getBounds(InstancePainter painter) {

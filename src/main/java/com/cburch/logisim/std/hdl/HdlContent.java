@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.std.hdl;
 
+import java.util.Arrays;
+
 import com.cburch.hdl.HdlModel;
 import com.cburch.hdl.HdlModelListener;
 import com.cburch.logisim.util.EventSourceWeakSupport;
-import java.util.Arrays;
 
 public abstract class HdlContent implements HdlModel, Cloneable {
 

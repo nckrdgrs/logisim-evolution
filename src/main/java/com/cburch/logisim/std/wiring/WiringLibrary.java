@@ -11,14 +11,15 @@ package com.cburch.logisim.std.wiring;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.cburch.logisim.circuit.SplitterFactory;
 import com.cburch.logisim.tools.AddTool;
 import com.cburch.logisim.tools.FactoryDescription;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.Tool;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class WiringLibrary extends Library {
 

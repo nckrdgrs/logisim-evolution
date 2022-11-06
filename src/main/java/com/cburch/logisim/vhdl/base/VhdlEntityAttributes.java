@@ -9,6 +9,12 @@
 
 package com.cburch.logisim.vhdl.base;
 
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
@@ -19,11 +25,6 @@ import com.cburch.logisim.instance.Instance;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.StringGetter;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Font;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 public class VhdlEntityAttributes extends AbstractAttributeSet {
 
@@ -227,8 +228,7 @@ public class VhdlEntityAttributes extends AbstractAttributeSet {
   public <V> void setValue(Attribute<V> attr, V value) {
     if (attr == VhdlEntity.nameAttr) {
       final var newValue = (String) value;
-      if (content.getName().equals(newValue)) return;
-      if (!content.setName(newValue)) return;
+      if (content.getName().equals(newValue) || !content.setName(newValue)) return;
       fireAttributeValueChanged(attr, value, null);
       return;
     }

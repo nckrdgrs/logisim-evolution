@@ -9,11 +9,12 @@
 
 package com.cburch.draw.icons;
 
-import com.cburch.logisim.gui.icons.BaseIcon;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
+
+import com.cburch.logisim.gui.icons.BaseIcon;
 
 public class DrawCurveIcon extends BaseIcon {
 

@@ -11,6 +11,12 @@ package com.cburch.logisim.std.wiring;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.InputEvent;
+import java.util.Objects;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.circuit.RadixOption;
 import com.cburch.logisim.data.Attribute;
@@ -31,11 +37,6 @@ import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.prefs.PrefMonitorBooleanConvert;
 import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
-import java.util.Objects;
 
 public class Probe extends InstanceFactory {
   /**
@@ -273,7 +274,7 @@ public class Probe extends InstanceFactory {
   public Probe() {
     super(_ID, S.getter("probeComponent"));
     setIconName("probe.gif");
-    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK));
+    setKeyConfigurator(new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK));
     setFacingAttribute(StdAttr.FACING);
     setInstanceLogger(ProbeLogger.class);
   }

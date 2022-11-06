@@ -11,6 +11,14 @@ package com.cburch.logisim.fpga.data;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Element;
+
 import com.cburch.logisim.circuit.CircuitMapInfo;
 import com.cburch.logisim.comp.ComponentFactory;
 import com.cburch.logisim.data.AttributeSet;
@@ -19,12 +27,6 @@ import com.cburch.logisim.fpga.hdlgenerator.Hdl;
 import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
 import com.cburch.logisim.std.io.RgbLed;
 import com.cburch.logisim.std.io.SevenSegment;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Element;
 
 public class MapComponent {
 
@@ -175,16 +177,14 @@ public class MapComponent {
   }
 
   public String getPinLocation(int pin) {
-    if (pin < 0 || pin >= nrOfPins) return null;
-    if (maps.get(pin) == null) return null;
+    if (pin < 0 || pin >= nrOfPins || (maps.get(pin) == null)) return null;
     var iopin = maps.get(pin).getIoPin();
     return maps.get(pin).getIoComp().getPinLocation(iopin);
   }
 
   public boolean isMapped(int pin) {
     if (pin < 0 || pin >= nrOfPins) return false;
-    if (maps.get(pin) != null) return true;
-    if (opens.get(pin)) return true;
+    if ((maps.get(pin) != null) || opens.get(pin)) return true;
     return constants.get(pin) >= 0;
   }
 
@@ -200,20 +200,17 @@ public class MapComponent {
   }
 
   public boolean isExternalInverted(int pin) {
-    if (pin < 0 || pin >= nrOfPins) return false;
-    if (maps.get(pin) == null) return false;
+    if (pin < 0 || pin >= nrOfPins || (maps.get(pin) == null)) return false;
     return maps.get(pin).getIoComp().getActivityLevel() == PinActivity.ACTIVE_LOW;
   }
 
   public boolean requiresPullup(int pin) {
-    if (pin < 0 || pin >= nrOfPins) return false;
-    if (maps.get(pin) == null) return false;
+    if (pin < 0 || pin >= nrOfPins || (maps.get(pin) == null)) return false;
     return maps.get(pin).getIoComp().getPullBehavior() == PullBehaviors.PULL_UP;
   }
 
   public FpgaIoInformationContainer getFpgaInfo(int pin) {
-    if (pin < 0 || pin >= nrOfPins) return null;
-    if (maps.get(pin) == null) return null;
+    if (pin < 0 || pin >= nrOfPins || (maps.get(pin) == null)) return null;
     return maps.get(pin).getIoComp();
   }
 
@@ -539,18 +536,14 @@ public class MapComponent {
 
   public boolean hasMap() {
     for (var i = 0; i < nrOfPins; i++) {
-      if (opens.get(i)) return true;
-      if (constants.get(i) >= 0) return true;
-      if (maps.get(i) != null) return true;
+      if (opens.get(i) || (constants.get(i) >= 0) || (maps.get(i) != null)) return true;
     }
     return false;
   }
 
   public boolean isNotMapped() {
     for (var i = 0; i < nrOfPins; i++) {
-      if (opens.get(i)) return false;
-      if (constants.get(i) >= 0) return false;
-      if (maps.get(i) != null) return false;
+      if (opens.get(i) || (constants.get(i) >= 0) || (maps.get(i) != null)) return false;
     }
     return true;
   }
@@ -584,8 +577,7 @@ public class MapComponent {
         else if (!io.equals(maps.get(i).IOcomp)) return false;
       } else return false;
     }
-    if (nrOpens != 0 && nrOpens == nrOfPins) return true;
-    if (nrConstants != 0 && nrConstants == nrOfPins) return true;
+    if ((nrOpens != 0 && nrOpens == nrOfPins) || (nrConstants != 0 && nrConstants == nrOfPins)) return true;
     if (nrMaps != 0 && nrMaps == nrOfPins) return !bothSides || io.isCompletelyMappedBy(this);
     return false;
   }

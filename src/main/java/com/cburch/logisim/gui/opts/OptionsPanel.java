@@ -9,10 +9,12 @@
 
 package com.cburch.logisim.gui.opts;
 
+import java.awt.LayoutManager;
+
+import javax.swing.JPanel;
+
 import com.cburch.logisim.file.Options;
 import com.cburch.logisim.proj.Project;
-import java.awt.LayoutManager;
-import javax.swing.JPanel;
 
 abstract class OptionsPanel extends JPanel {
   private static final long serialVersionUID = 1L;

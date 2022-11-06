@@ -9,9 +9,9 @@
 
 package com.cburch.logisim.std.memory;
 
-import com.cburch.logisim.prefs.AppPreferences;
-
 import java.util.Random;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 class MemContentsSub {
   private static class BytePage extends MemContents.Page {
@@ -120,7 +120,7 @@ class MemContentsSub {
 
   private static class ShortPage extends MemContents.Page {
     private short[] data;
-  
+
     public ShortPage(int size, long mask, boolean randomize) {
       data = new short[size];
       if (AppPreferences.Memory_Startup_Unknown.get() && randomize) {

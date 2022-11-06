@@ -19,10 +19,11 @@
 
 package com.cburch.logisim.std.ttl;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
-import java.util.ArrayList;
 
 /**
  * TTL 74x157: Quadruple 2-line to 1-line data selector

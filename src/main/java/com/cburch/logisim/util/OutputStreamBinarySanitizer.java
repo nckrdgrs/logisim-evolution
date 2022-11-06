@@ -20,11 +20,13 @@ public class OutputStreamBinarySanitizer extends OutputStream {
     this.out = out;
   }
 
-  public void close() throws IOException {
+  @Override
+public void close() throws IOException {
     out.close();
   }
 
-  public void flush() throws IOException {
+  @Override
+public void flush() throws IOException {
     out.flush();
   }
 

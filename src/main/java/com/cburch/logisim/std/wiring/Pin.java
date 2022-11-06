@@ -11,6 +11,28 @@ package com.cburch.logisim.std.wiring;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.font.TextLayout;
+import java.math.BigInteger;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
 import com.cburch.contracts.BaseDocumentListenerContract;
 import com.cburch.contracts.BaseKeyListenerContract;
 import com.cburch.contracts.BaseWindowFocusListenerContract;
@@ -46,25 +68,6 @@ import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.tools.key.JoinedConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.LocaleListener;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.WindowEvent;
-import java.awt.font.TextLayout;
-import java.math.BigInteger;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFormattedTextField;
-import javax.swing.SwingUtilities;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 
 public class Pin extends InstanceFactory {
   /**
@@ -738,7 +741,7 @@ public class Pin extends InstanceFactory {
     setKeyConfigurator(
         JoinedConfigurator.create(
             new BitWidthConfigurator(StdAttr.WIDTH),
-            new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK)));
+            new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK)));
     setInstanceLogger(PinLogger.class);
     setInstancePoker(PinPoker.class);
   }
@@ -765,7 +768,7 @@ public class Pin extends InstanceFactory {
 
   @Override
   public Object getDefaultAttributeValue(Attribute<?> attr, LogisimVersion ver) {
-    return attr.equals(ProbeAttributes.PROBEAPPEARANCE) 
+    return attr.equals(ProbeAttributes.PROBEAPPEARANCE)
         ? ProbeAttributes.getDefaultProbeAppearance()
         : super.getDefaultAttributeValue(attr, ver);
   }
@@ -881,8 +884,8 @@ public class Pin extends InstanceFactory {
       g2.scale(0.7, 0.7);
       g2.drawString(
           radix.getIndexChar(),
-          (int) ((double) LabelValueXOffset / 0.7),
-          (int) ((double) labelYPos / 0.7));
+          (int) (LabelValueXOffset / 0.7),
+          (int) (labelYPos / 0.7));
       g2.scale(1.0 / 0.7, 1.0 / 0.7);
       g.setColor(Color.BLACK);
       if (radix == null || radix == RadixOption.RADIX_2) {

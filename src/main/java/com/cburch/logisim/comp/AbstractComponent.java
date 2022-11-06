@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.comp;
 
+import java.awt.Graphics;
+
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
-import java.awt.Graphics;
 
 public abstract class AbstractComponent implements Component {
   protected AbstractComponent() {}

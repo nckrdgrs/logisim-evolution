@@ -9,8 +9,6 @@
 
 package com.cburch.logisim.circuit;
 
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.data.Location;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -20,6 +18,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.data.Location;
 
 class WireRepair extends CircuitTransaction {
 

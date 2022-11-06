@@ -9,11 +9,14 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.contracts.BaseWindowListenerContract;
 import java.awt.event.WindowEvent;
 import java.util.HashMap;
+
 import javax.swing.JFrame;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.WindowConstants;
+
+import com.cburch.contracts.BaseWindowListenerContract;
 
 public abstract class WindowMenuItemManager {
   private class MyListener implements BaseWindowListenerContract {
@@ -31,7 +34,7 @@ public abstract class WindowMenuItemManager {
     @Override
     public void windowClosing(WindowEvent event) {
       final var frame = getJFrame(false, null);
-      if (frame.getDefaultCloseOperation() == JFrame.HIDE_ON_CLOSE) {
+      if (frame.getDefaultCloseOperation() == WindowConstants.HIDE_ON_CLOSE) {
         removeFromManager();
       }
     }

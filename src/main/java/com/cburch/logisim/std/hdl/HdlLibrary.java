@@ -11,11 +11,12 @@ package com.cburch.logisim.std.hdl;
 
 import static com.cburch.logisim.vhdl.Strings.S;
 
+import java.util.List;
+
 import com.cburch.logisim.gui.icons.ArithmeticIcon;
 import com.cburch.logisim.tools.FactoryDescription;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.Tool;
-import java.util.List;
 
 public class HdlLibrary extends Library {
 

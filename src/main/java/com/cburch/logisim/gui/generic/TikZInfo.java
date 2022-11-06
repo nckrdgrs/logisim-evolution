@@ -9,8 +9,6 @@
 
 package com.cburch.logisim.gui.generic;
 
-import com.cburch.draw.shapes.DrawAttr;
-import com.cburch.logisim.util.XmlUtil;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -29,15 +27,19 @@ import java.io.IOException;
 import java.text.AttributedCharacterIterator;
 import java.util.ArrayList;
 import java.util.HashMap;
-import javax.xml.parsers.DocumentBuilderFactory;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import com.cburch.draw.shapes.DrawAttr;
+import com.cburch.logisim.util.XmlUtil;
 
 public class TikZInfo implements Cloneable {
 
@@ -67,7 +69,7 @@ public class TikZInfo implements Cloneable {
   }
 
   public static double rounded(double v) {
-    return ((double) Math.round(v * 1000.0)) / 1000.0;
+    return (Math.round(v * 1000.0)) / 1000.0;
   }
 
   public static String getPoint(Point2D p) {
@@ -414,7 +416,7 @@ public class TikZInfo implements Cloneable {
       transform(end, end);
       strokeWidth = getStrokeWidth();
       color = getDrawColorString();
-      alpha = (double) drawColor.getAlpha() / 255.0;
+      alpha = drawColor.getAlpha() / 255.0;
       points.clear();
       filled = false;
       close = false;
@@ -504,9 +506,7 @@ public class TikZInfo implements Cloneable {
     }
 
     public boolean canMerge(TikZLine l) {
-      if (close || l.close) return false;
-      if (!color.equals(l.color)) return false;
-      if (strokeWidth != l.strokeWidth) return false;
+      if (close || l.close || !color.equals(l.color) || (strokeWidth != l.strokeWidth)) return false;
       if (filled || l.filled) return false;
       if (getStartPoint().equals(l.getEndPoint())) return true;
       if (getEndPoint().equals(l.getStartPoint())) return true;
@@ -636,7 +636,7 @@ public class TikZInfo implements Cloneable {
     private void create(Point2D origin, Shape s, boolean filled) {
       this.filled = filled;
       this.color = getDrawColorString();
-      this.alpha = (double) drawColor.getAlpha() / 255.0;
+      this.alpha = drawColor.getAlpha() / 255.0;
       this.strokeWidth = getStrokeWidth();
       final var at = AffineTransform.getTranslateInstance(origin.getX(), origin.getY());
       final var p = s.getPathIterator(at);
@@ -840,12 +840,12 @@ public class TikZInfo implements Cloneable {
         final var y2 = y + height;
         if (startPoint != null)
           inside &=
-              (startPoint.getX() >= (double) x && startPoint.getX() <= x2)
-                  && (startPoint.getY() >= (double) y && startPoint.getY() <= y2);
+              (startPoint.getX() >= x && startPoint.getX() <= x2)
+                  && (startPoint.getY() >= y && startPoint.getY() <= y2);
         if (endPoint != null)
           inside &=
-              (endPoint.getX() >= (double) x && endPoint.getX() <= x2)
-                  && (endPoint.getY() >= (double) y && endPoint.getY() <= y2);
+              (endPoint.getX() >= x && endPoint.getX() <= x2)
+                  && (endPoint.getY() >= y && endPoint.getY() <= y2);
         return inside;
       }
     }
@@ -860,7 +860,7 @@ public class TikZInfo implements Cloneable {
         int x1, int y1, int x2, int y2, int arcwidth, int archeight, boolean filled) {
       super(x1, y1, x2, y2);
       rad = new Point2D.Double();
-      rad.setLocation(((double) arcwidth) / 2.0, ((double) archeight) / 2.0);
+      rad.setLocation((arcwidth) / 2.0, (archeight) / 2.0);
       this.filled = filled;
     }
 
@@ -959,8 +959,8 @@ public class TikZInfo implements Cloneable {
 
     private void init(int width, int height, boolean filled) {
       this.filled = filled;
-      radX = ((double) width) / 2.0;
-      radY = ((double) height) / 2.0;
+      radX = (width) / 2.0;
+      radY = (height) / 2.0;
       rotation = (int) getRotationDegrees();
     }
 
@@ -1032,12 +1032,12 @@ public class TikZInfo implements Cloneable {
       close = false;
       final var radius = new Point2D.Double();
       final var center = new Point2D.Double();
-      radius.setLocation(((double) width) / 2.0, ((double) height) / 2.0);
-      center.setLocation(((double) x) + radius.getX(), ((double) y) + radius.getY());
-      final double startAnglePi = ((double) startAngle * Math.PI) / 180.0;
+      radius.setLocation((width) / 2.0, (height) / 2.0);
+      center.setLocation((x) + radius.getX(), (y) + radius.getY());
+      final double startAnglePi = (startAngle * Math.PI) / 180.0;
       final double startX = center.getX() + radius.getX() * Math.cos(startAnglePi);
       final double startY = center.getY() - radius.getY() * Math.sin(startAnglePi);
-      final double stopAnglePi = ((double) (startAngle + arcAngle) * Math.PI) / 180.0;
+      final double stopAnglePi = ((startAngle + arcAngle) * Math.PI) / 180.0;
       final double stopX = center.getX() + radius.getX() * Math.cos(stopAnglePi);
       final double stopY = center.getY() - radius.getY() * Math.sin(stopAnglePi);
       radX = radius.getX();

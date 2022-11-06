@@ -11,6 +11,9 @@ package com.cburch.logisim.std.base;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.cburch.logisim.comp.ComponentFactory;
 import com.cburch.logisim.tools.AddTool;
 import com.cburch.logisim.tools.EditTool;
@@ -21,8 +24,6 @@ import com.cburch.logisim.tools.SelectTool;
 import com.cburch.logisim.tools.TextTool;
 import com.cburch.logisim.tools.Tool;
 import com.cburch.logisim.tools.WiringTool;
-import java.util.Arrays;
-import java.util.List;
 
 public class BaseLibrary extends Library {
   /**

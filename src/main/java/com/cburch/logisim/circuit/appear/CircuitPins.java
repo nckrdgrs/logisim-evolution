@@ -9,6 +9,12 @@
 
 package com.cburch.logisim.circuit.appear;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.cburch.logisim.circuit.ReplacementMap;
 import com.cburch.logisim.comp.ComponentEvent;
 import com.cburch.logisim.comp.ComponentListener;
@@ -17,11 +23,6 @@ import com.cburch.logisim.data.AttributeListener;
 import com.cburch.logisim.instance.Instance;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.wiring.Pin;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 public class CircuitPins {
   private class MyComponentListener implements ComponentListener, AttributeListener {

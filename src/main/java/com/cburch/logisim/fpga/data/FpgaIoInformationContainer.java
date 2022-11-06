@@ -9,16 +9,6 @@
 
 package com.cburch.logisim.fpga.data;
 
-import com.cburch.logisim.fpga.file.BoardWriterClass;
-import com.cburch.logisim.fpga.gui.BoardManipulator;
-import com.cburch.logisim.fpga.gui.FpgaIoInformationSettingsDialog;
-import com.cburch.logisim.fpga.gui.PartialMapDialog;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.std.io.DipSwitch;
-import com.cburch.logisim.std.io.DotMatrix;
-import com.cburch.logisim.std.io.LedBar;
-import com.cburch.logisim.std.io.RgbLed;
-import com.cburch.logisim.util.CollectionUtil;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
@@ -29,12 +19,25 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import javax.swing.JPanel;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+
+import com.cburch.logisim.fpga.file.BoardWriterClass;
+import com.cburch.logisim.fpga.gui.BoardManipulator;
+import com.cburch.logisim.fpga.gui.FpgaIoInformationSettingsDialog;
+import com.cburch.logisim.fpga.gui.PartialMapDialog;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.std.io.DipSwitch;
+import com.cburch.logisim.std.io.DotMatrix;
+import com.cburch.logisim.std.io.LedBar;
+import com.cburch.logisim.std.io.RgbLed;
+import com.cburch.logisim.util.CollectionUtil;
 
 public class FpgaIoInformationContainer implements Cloneable {
 
@@ -1006,8 +1009,7 @@ public class FpgaIoInformationContainer implements Cloneable {
   }
 
   public boolean tryMap(JPanel parent) {
-    if (!selectable) return false;
-    if (selComp == null) return false;
+    if (!selectable || (selComp == null)) return false;
     if (myType.equals(IoComponentTypes.LedArray))
       return tryLedArrayMap(parent);
     var map = selComp.getMap();

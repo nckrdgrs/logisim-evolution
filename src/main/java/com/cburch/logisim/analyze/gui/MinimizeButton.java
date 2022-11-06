@@ -12,14 +12,16 @@ package com.cburch.logisim.analyze.gui;
 import static com.cburch.logisim.analyze.Strings.S;
 
 import java.awt.BorderLayout;
-import java.awt.Font;
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.WindowConstants;
 import javax.swing.text.DefaultCaret;
 
 import com.cburch.logisim.analyze.model.AnalyzerModel;
@@ -30,7 +32,7 @@ public class MinimizeButton  extends JButton {
   private final JFrame parent;
   private final AnalyzerModel model;
   private final int format;
-    
+
   public MinimizeButton(JFrame parent, AnalyzerModel model, int format) {
     this.parent = parent;
     this.model = model;
@@ -40,9 +42,9 @@ public class MinimizeButton  extends JButton {
 
   void doOptimize() {
     final var choice = OptionPane.showConfirmDialog(
-          parent, 
-          S.get("OptimizeLongTimeWarning"), 
-          S.get("minimizeFunctionTitle"), 
+          parent,
+          S.get("OptimizeLongTimeWarning"),
+          S.get("minimizeFunctionTitle"),
           OptionPane.YES_NO_OPTION);
     if (choice != OptionPane.YES_OPTION) return;
     final var info = new JTextArea(20, 80);
@@ -53,14 +55,14 @@ public class MinimizeButton  extends JButton {
     final var caret = (DefaultCaret) info.getCaret();
     caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
     final var pane = new JScrollPane(info);
-    pane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    pane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    pane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    pane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     final var doneButton = new JButton(S.get("minimizeDone"));
     final var infoPanel = new JDialog(
-          parent, 
-          S.get("minimizeFunctionTitle"), 
+          parent,
+          S.get("minimizeFunctionTitle"),
           true);
-    infoPanel.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+    infoPanel.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
     infoPanel.add(pane, BorderLayout.CENTER);
     infoPanel.add(doneButton, BorderLayout.SOUTH);
     doneButton.setVisible(false);
@@ -72,7 +74,8 @@ public class MinimizeButton  extends JButton {
                 infoPanel.dispose();
               }
 
-              public void run() {
+              @Override
+			public void run() {
                 doneButton.addActionListener(Event -> done());
                 infoPanel.setVisible(true);
               }
@@ -81,7 +84,8 @@ public class MinimizeButton  extends JButton {
     dialogThread.start();
     final var optimizeThread = new Thread(
         new Runnable() {
-            public void run() {
+            @Override
+			public void run() {
                 model.getOutputExpressions().forcedOptimize(info, format);
                 doneButton.setVisible(true);
             }

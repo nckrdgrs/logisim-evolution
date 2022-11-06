@@ -11,15 +11,18 @@ package com.cburch.logisim.analyze.file;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileFilter;
+
 import com.cburch.logisim.analyze.data.CsvInterpretor;
 import com.cburch.logisim.analyze.data.CsvParameter;
 import com.cburch.logisim.analyze.gui.CsvReadParameterDialog;
 import com.cburch.logisim.analyze.model.AnalyzerModel;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
-import javax.swing.JFrame;
-import javax.swing.filechooser.FileFilter;
+import com.cburch.logisim.analyze.model.Var;
 
 public class TruthtableCsvFile {
 
@@ -35,16 +38,14 @@ public class TruthtableCsvFile {
     try (PrintStream out = new PrintStream(file)) {
       final var tt = model.getTruthTable();
       tt.compactVisibleRows();
-      for (var i = 0; i < inputs.vars.size(); i++) {
-        final var cur = inputs.vars.get(i);
+      for (final Var cur : inputs.vars) {
         final var name = cur.width == 1 ? cur.name : cur.name + "[" + (cur.width - 1) + "..0]";
         out.print(DEFAULT_QUOTE + name + DEFAULT_QUOTE + DEFAULT_SEPARATOR);
         for (var j = 1; j < cur.width; j++) out.print(DEFAULT_SEPARATOR);
       }
       out.print(DEFAULT_QUOTE + "|" + DEFAULT_QUOTE);
-      for (var i = 0; i < outputs.vars.size(); i++) {
+      for (final Var cur : outputs.vars) {
         out.print(DEFAULT_SEPARATOR);
-        final var cur = outputs.vars.get(i);
         final var name = cur.width == 1 ? cur.name : cur.name + "[" + (cur.width - 1) + "..0]";
         out.print(DEFAULT_QUOTE + name + DEFAULT_QUOTE);
         for (var j = 1; j < cur.width; j++) out.print(DEFAULT_SEPARATOR);

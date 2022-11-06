@@ -9,14 +9,16 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.util.Locale;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 @SuppressWarnings("rawtypes")
 class LocaleSelector extends JList implements LocaleListener, ListSelectionListener {

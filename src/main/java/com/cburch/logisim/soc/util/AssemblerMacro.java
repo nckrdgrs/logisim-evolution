@@ -11,13 +11,14 @@ package com.cburch.logisim.soc.util;
 
 import static com.cburch.logisim.soc.Strings.S;
 
-import com.cburch.logisim.util.StringGetter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
+
+import com.cburch.logisim.util.StringGetter;
 
 public class AssemblerMacro {
 

@@ -9,25 +9,26 @@
 
 package com.cburch.logisim.soc.nios2;
 
-import com.cburch.logisim.soc.data.AssemblerHighlighter;
-import org.fife.ui.rsyntaxtextarea.Token;
 import org.fife.ui.rsyntaxtextarea.TokenMap;
+import org.fife.ui.rsyntaxtextarea.TokenTypes;
+
+import com.cburch.logisim.soc.data.AssemblerHighlighter;
 
 // FIXME: this class seems to be unused
 public class Nios2SyntaxHighlighter extends AssemblerHighlighter {
   @Override
   public TokenMap getWordsToHighlight() {
     TokenMap map = super.getWordsToHighlight();
-    for (int i = 0; i < Nios2State.registerABINames.length; i++)
-      map.put(Nios2State.registerABINames[i], Token.OPERATOR);
-    map.put("pc", Token.OPERATOR);
+    for (String registerABIName : Nios2State.registerABINames)
+		map.put(registerABIName, TokenTypes.OPERATOR);
+    map.put("pc", TokenTypes.OPERATOR);
     for (int i = 0; i < 32; i++) {
-      map.put("r" + i, Token.OPERATOR);
-      map.put("c" + i, Token.OPERATOR);
-      map.put("ctl" + i, Token.OPERATOR);
+      map.put("r" + i, TokenTypes.OPERATOR);
+      map.put("c" + i, TokenTypes.OPERATOR);
+      map.put("ctl" + i, TokenTypes.OPERATOR);
     }
     for (String opcode : Nios2State.ASSEMBLER.getOpcodes())
-      map.put(opcode.toLowerCase(), Token.RESERVED_WORD);
+      map.put(opcode.toLowerCase(), TokenTypes.RESERVED_WORD);
     return map;
   }
 }

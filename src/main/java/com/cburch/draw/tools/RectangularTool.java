@@ -9,16 +9,18 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+
 import com.cburch.draw.actions.ModelAddAction;
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 
 abstract class RectangularTool extends AbstractTool {
   private boolean active;
@@ -47,7 +49,7 @@ abstract class RectangularTool extends AbstractTool {
       return Bounds.EMPTY_BOUNDS;
     }
 
-    final var ctrlDown = (mods & MouseEvent.CTRL_DOWN_MASK) != 0;
+    final var ctrlDown = (mods & InputEvent.CTRL_DOWN_MASK) != 0;
     if (ctrlDown) {
       x0 = canvas.snapX(x0);
       y0 = canvas.snapY(y0);
@@ -55,8 +57,8 @@ abstract class RectangularTool extends AbstractTool {
       y1 = canvas.snapY(y1);
     }
 
-    final var altDown = (mods & MouseEvent.ALT_DOWN_MASK) != 0;
-    final var shiftDown = (mods & MouseEvent.SHIFT_DOWN_MASK) != 0;
+    final var altDown = (mods & InputEvent.ALT_DOWN_MASK) != 0;
+    final var shiftDown = (mods & InputEvent.SHIFT_DOWN_MASK) != 0;
     if (altDown) {
       if (shiftDown) {
         final var r = Math.min(Math.abs(x0 - x1), Math.abs(y0 - y1));

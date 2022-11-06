@@ -9,6 +9,16 @@
 
 package com.cburch.logisim.gui.generic;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.util.HashMap;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.circuit.Simulator;
@@ -24,15 +34,6 @@ import com.cburch.logisim.std.memory.Register;
 import com.cburch.logisim.util.AlphanumComparator;
 import com.cburch.logisim.util.CollectionUtil;
 import com.cburch.logisim.util.LocaleListener;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.util.HashMap;
-import java.util.stream.Collectors;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 public class RegTabContent extends JScrollPane implements LocaleListener, Simulator.Listener {
   private static final long serialVersionUID = 1L;

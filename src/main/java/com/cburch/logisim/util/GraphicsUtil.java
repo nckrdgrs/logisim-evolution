@@ -9,16 +9,16 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.draw.util.TextMetrics;
-import com.cburch.logisim.circuit.RadixOption;
-import com.cburch.logisim.data.Value;
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+
+import com.cburch.draw.util.TextMetrics;
+import com.cburch.logisim.circuit.RadixOption;
+import com.cburch.logisim.data.Value;
 
 public final class GraphicsUtil {
 

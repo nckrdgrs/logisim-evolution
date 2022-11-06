@@ -11,13 +11,15 @@ package com.cburch.logisim.fpga.gui;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
-import com.cburch.logisim.gui.icons.DrcIcon;
 import java.awt.Color;
 import java.awt.Component;
+
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+
+import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
+import com.cburch.logisim.gui.icons.DrcIcon;
 
 public class ListModelCellRenderer extends JLabel implements ListCellRenderer<Object> {
   /** */

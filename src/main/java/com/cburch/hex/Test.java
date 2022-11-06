@@ -11,15 +11,17 @@ package com.cburch.hex;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import javax.swing.WindowConstants;
 
 public class Test {
   public static void main(String[] args) {
     final var frame = new JFrame();
     final var model = new Model();
     final var editor = new HexEditor(model);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     frame.getContentPane().add(new JScrollPane(editor));
     frame.pack();
     frame.setVisible(true);

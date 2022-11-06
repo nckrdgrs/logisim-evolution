@@ -11,6 +11,13 @@ package com.cburch.logisim.std.memory;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.event.InputEvent;
+import java.math.BigInteger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.circuit.appear.DynamicElement;
 import com.cburch.logisim.circuit.appear.DynamicElementProvider;
 import com.cburch.logisim.data.Attribute;
@@ -33,11 +40,6 @@ import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.tools.key.JoinedConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.math.BigInteger;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class Counter extends InstanceFactory implements DynamicElementProvider {
   /**
@@ -89,7 +91,7 @@ public class Counter extends InstanceFactory implements DynamicElementProvider {
     setKeyConfigurator(
         JoinedConfigurator.create(
             new BitWidthConfigurator(StdAttr.WIDTH),
-            new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK)));
+            new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK)));
     setInstanceLogger(RegisterLogger.class);
     setKeyConfigurator(new BitWidthConfigurator(StdAttr.WIDTH));
   }

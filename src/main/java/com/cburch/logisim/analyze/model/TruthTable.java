@@ -640,8 +640,7 @@ public class TruthTable {
       final var changed = new boolean[columns.size()];
       // loop rows by index to avoid java.util.ConcurrentModificationException
       //noinspection ForLoopReplaceableByForEach
-      for (var i = 0; i < rows.size(); ++i) {
-        final var r = rows.get(i);
+      for (final Row r : rows) {
         if (r.inputs[index] == Entry.DONT_CARE) continue;
         setDontCare(r, b, true, changed); // mutates row
       }

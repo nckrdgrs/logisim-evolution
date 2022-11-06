@@ -9,17 +9,19 @@
 
 package com.cburch.draw.shapes;
 
-import com.cburch.draw.model.AbstractCanvasObject;
-import com.cburch.logisim.data.AttributeOption;
-import com.cburch.logisim.data.Location;
-import com.cburch.logisim.util.StringUtil;
-import com.cburch.logisim.util.UnmodifiableList;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+
 import org.w3c.dom.Element;
+
+import com.cburch.draw.model.AbstractCanvasObject;
+import com.cburch.logisim.data.AttributeOption;
+import com.cburch.logisim.data.Location;
+import com.cburch.logisim.util.StringUtil;
+import com.cburch.logisim.util.UnmodifiableList;
 
 public final class SvgReader {
   private static final Pattern PATH_REGEX = Pattern.compile("[a-zA-Z]|[-\\d.]+");

@@ -9,6 +9,16 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.List;
+
+import javax.swing.Icon;
+
 import com.cburch.draw.actions.ModelAddAction;
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.icons.DrawLineIcon;
@@ -19,14 +29,6 @@ import com.cburch.draw.shapes.Poly;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.List;
-import javax.swing.Icon;
 
 public class LineTool extends AbstractTool {
   private final DrawingAttributeSet attrs;
@@ -146,7 +148,7 @@ public class LineTool extends AbstractTool {
 
   private void updateMouse(Canvas canvas, int mx, int my, int mods) {
     if (active) {
-      final var shift = (mods & MouseEvent.SHIFT_DOWN_MASK) != 0;
+      final var shift = (mods & InputEvent.SHIFT_DOWN_MASK) != 0;
       var newEnd =
           (shift) ? LineUtil.snapTo8Cardinals(mouseStart, mx, my) : Location.create(mx, my, false);
 

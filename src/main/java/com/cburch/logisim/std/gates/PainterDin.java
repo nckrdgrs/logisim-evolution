@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.std.gates;
 
+import java.util.HashMap;
+
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.util.HashMap;
 
 class PainterDin {
   private static void paint(

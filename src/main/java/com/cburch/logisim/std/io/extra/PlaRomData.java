@@ -11,15 +11,17 @@ package com.cburch.logisim.std.io.extra;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.util.Arrays;
+
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.instance.InstanceData;
 import com.cburch.logisim.util.LocaleManager;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.util.Arrays;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
 
 public class PlaRomData implements InstanceData {
   private byte inputs;

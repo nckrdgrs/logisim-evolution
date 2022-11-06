@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.circuit;
 
-import com.cburch.logisim.fpga.data.BoardRectangle;
-import com.cburch.logisim.fpga.data.MapComponent;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.cburch.logisim.fpga.data.BoardRectangle;
+import com.cburch.logisim.fpga.data.MapComponent;
 
 public class CircuitMapInfo {
 

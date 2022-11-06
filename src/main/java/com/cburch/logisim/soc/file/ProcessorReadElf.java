@@ -11,16 +11,17 @@ package com.cburch.logisim.soc.file;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.instance.Instance;
 import com.cburch.logisim.soc.data.SocBusTransaction;
 import com.cburch.logisim.soc.data.SocInstanceFactory;
 import com.cburch.logisim.soc.data.SocProcessorInterface;
 import com.cburch.logisim.soc.file.ElfProgramHeader.ProgramHeader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class ProcessorReadElf {
 
@@ -157,7 +158,7 @@ public class ProcessorReadElf {
       }
       long sectionSize = ElfHeader.getLongValue(h.getValue(ElfProgramHeader.P_FILESZ));
       long memSize = ElfHeader.getLongValue(h.getValue(ElfProgramHeader.P_MEMSZ));
-      if ((sectionSize > (long) Integer.MAX_VALUE) || (memSize > (long) Integer.MAX_VALUE)) {
+      if ((sectionSize > Integer.MAX_VALUE) || (memSize > Integer.MAX_VALUE)) {
         status = LOADABLE_SECTION_TOO_BIG;
         return false;
       }
@@ -176,7 +177,7 @@ public class ProcessorReadElf {
       long startAddr = ElfHeader.getLongValue(h.getValue(ElfProgramHeader.P_PADDR));
       for (int j = 0; j < memSize; j++) {
         int data = (j < buffer.length) ? buffer[j] : 0;
-        int addr = ElfHeader.getIntValue(ElfHeader.returnCorrectValue(startAddr + (long) j, true));
+        int addr = ElfHeader.getIntValue(ElfHeader.returnCorrectValue(startAddr + j, true));
         SocBusTransaction trans =
             new SocBusTransaction(
                 SocBusTransaction.WRITE_TRANSACTION,

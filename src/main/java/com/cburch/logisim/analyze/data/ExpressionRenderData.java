@@ -11,10 +11,6 @@ package com.cburch.logisim.analyze.data;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.model.Expression;
-import com.cburch.logisim.analyze.model.Expression.Notation;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.GraphicsUtil;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -29,6 +25,11 @@ import java.awt.image.BufferedImage;
 import java.text.AttributedString;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.cburch.logisim.analyze.model.Expression;
+import com.cburch.logisim.analyze.model.Expression.Notation;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.GraphicsUtil;
 
 public class ExpressionRenderData {
 

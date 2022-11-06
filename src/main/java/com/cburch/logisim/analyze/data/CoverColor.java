@@ -9,13 +9,14 @@
 
 package com.cburch.logisim.analyze.data;
 
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.prefs.PrefMonitor;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
+
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.prefs.PrefMonitor;
 
 public class CoverColor implements PreferenceChangeListener {
   public static final CoverColor COVER_COLOR = new CoverColor();

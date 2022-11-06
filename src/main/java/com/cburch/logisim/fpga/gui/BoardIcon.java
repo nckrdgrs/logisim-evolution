@@ -9,13 +9,15 @@
 
 package com.cburch.logisim.fpga.gui;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+
 import javax.swing.Icon;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class BoardIcon implements Icon {
   private Image image;
@@ -27,7 +29,7 @@ public class BoardIcon implements Icon {
         (boardImage == null)
             ? null
             : boardImage.getScaledInstance(
-                this.getIconWidth(), this.getIconHeight(), BufferedImage.SCALE_SMOOTH);
+                this.getIconWidth(), this.getIconHeight(), Image.SCALE_SMOOTH);
   }
 
   @Override
@@ -55,6 +57,6 @@ public class BoardIcon implements Icon {
         (boardImage == null)
             ? null
             : boardImage.getScaledInstance(
-                this.getIconWidth(), this.getIconHeight(), BufferedImage.SCALE_SMOOTH);
+                this.getIconWidth(), this.getIconHeight(), Image.SCALE_SMOOTH);
   }
 }

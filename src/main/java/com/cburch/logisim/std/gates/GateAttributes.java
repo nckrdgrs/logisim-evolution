@@ -11,6 +11,9 @@ package com.cburch.logisim.std.gates;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Font;
+import java.util.List;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
@@ -18,8 +21,6 @@ import com.cburch.logisim.data.Attributes;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.instance.StdAttr;
-import java.awt.Font;
-import java.util.List;
 
 public class GateAttributes extends AbstractAttributeSet {
   static final int MAX_INPUTS = 64;

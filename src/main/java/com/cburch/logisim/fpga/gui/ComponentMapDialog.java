@@ -11,15 +11,6 @@ package com.cburch.logisim.fpga.gui;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.contracts.BaseComponentListenerContract;
-import com.cburch.contracts.BaseWindowListenerContract;
-import com.cburch.logisim.fpga.data.BoardInformation;
-import com.cburch.logisim.fpga.data.ComponentMapParser;
-import com.cburch.logisim.fpga.data.MappableResourcesContainer;
-import com.cburch.logisim.fpga.file.XmlFileFilter;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.LocaleListener;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -29,14 +20,28 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.WindowEvent;
 import java.io.File;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.cburch.contracts.BaseComponentListenerContract;
+import com.cburch.contracts.BaseWindowListenerContract;
+import com.cburch.logisim.fpga.data.BoardInformation;
+import com.cburch.logisim.fpga.data.ComponentMapParser;
+import com.cburch.logisim.fpga.data.MappableResourcesContainer;
+import com.cburch.logisim.fpga.file.XmlFileFilter;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.LocaleListener;
 
 public class ComponentMapDialog
     implements ActionListener,
@@ -87,7 +92,7 @@ public class ComponentMapDialog
     panel.addWindowListener(this);
     panel.setResizable(false);
     panel.setAlwaysOnTop(true);
-    panel.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
+    panel.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 
     GridBagLayout thisLayout = new GridBagLayout();
     GridBagConstraints c = new GridBagConstraints();
@@ -99,7 +104,7 @@ public class ComponentMapDialog
     c.gridx = 0;
 
     /* Add some text */
-    unmappedText.setHorizontalAlignment(JLabel.CENTER);
+    unmappedText.setHorizontalAlignment(SwingConstants.CENTER);
     unmappedText.setPreferredSize(
         new Dimension(boardPicture.getWidth() / 3, AppPreferences.getScaled(25)));
     c.gridx = 0;
@@ -107,12 +112,12 @@ public class ComponentMapDialog
     c.fill = GridBagConstraints.HORIZONTAL;
     c.gridwidth = 1;
     panel.add(unmappedText, c);
-    mappedText.setHorizontalAlignment(JLabel.CENTER);
+    mappedText.setHorizontalAlignment(SwingConstants.CENTER);
     mappedText.setPreferredSize(
         new Dimension(boardPicture.getWidth() / 3, AppPreferences.getScaled(25)));
     c.gridx = 1;
     panel.add(mappedText, c);
-    commandText.setHorizontalAlignment(JLabel.CENTER);
+    commandText.setHorizontalAlignment(SwingConstants.CENTER);
     commandText.setPreferredSize(
         new Dimension(boardPicture.getWidth() / 3, AppPreferences.getScaled(25)));
     c.gridx = 2;

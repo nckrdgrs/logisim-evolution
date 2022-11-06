@@ -9,6 +9,12 @@
 
 package com.cburch.logisim.proj;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.JFileChooser;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitListener;
 import com.cburch.logisim.circuit.CircuitLocker;
@@ -34,10 +40,6 @@ import com.cburch.logisim.util.EventSourceWeakSupport;
 import com.cburch.logisim.util.JFileChoosers;
 import com.cburch.logisim.vhdl.base.HdlModel;
 import com.cburch.logisim.vhdl.sim.VhdlSimulatorTop;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import javax.swing.JFileChooser;
 
 public class Project {
   private static class ActionData {

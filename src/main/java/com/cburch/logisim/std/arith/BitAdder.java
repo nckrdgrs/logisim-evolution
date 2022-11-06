@@ -11,6 +11,8 @@ package com.cburch.logisim.std.arith;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Graphics;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.Attributes;
@@ -29,7 +31,6 @@ import com.cburch.logisim.tools.key.BitWidthConfigurator;
 import com.cburch.logisim.tools.key.IntegerConfigurator;
 import com.cburch.logisim.tools.key.JoinedConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Graphics;
 
 public class BitAdder extends InstanceFactory {
   /**

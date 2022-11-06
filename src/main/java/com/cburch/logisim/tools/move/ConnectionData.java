@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.tools.move;
 
+import java.util.List;
+
 import com.cburch.logisim.circuit.Wire;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.data.Location;
-import java.util.List;
 
 class ConnectionData {
   private final Location loc;

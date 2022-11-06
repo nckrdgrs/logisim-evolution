@@ -9,10 +9,11 @@
 
 package com.cburch.gray;
 
-import com.cburch.logisim.tools.AddTool;
-import com.cburch.logisim.tools.Library;
 import java.util.Arrays;
 import java.util.List;
+
+import com.cburch.logisim.tools.AddTool;
+import com.cburch.logisim.tools.Library;
 
 /** The library of components that the user can access. */
 public class Components extends Library {

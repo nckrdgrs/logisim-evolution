@@ -11,21 +11,24 @@ package com.cburch.logisim.soc.data;
 
 import static com.cburch.logisim.soc.Strings.S;
 
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.logisim.instance.InstanceComponent;
-import com.cburch.logisim.util.LocaleListener;
-import com.cburch.logisim.util.LocaleManager;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
+
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.logisim.instance.InstanceComponent;
+import com.cburch.logisim.util.LocaleListener;
+import com.cburch.logisim.util.LocaleManager;
 
 public class SocMemMapModel extends AbstractTableModel
     implements SocBusSlaveListener, LocaleListener, BaseMouseListenerContract {
@@ -45,9 +48,9 @@ public class SocMemMapModel extends AbstractTableModel
     public Component getTableCellRendererComponent(
         JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
       if (column < 2)
-        setHorizontalAlignment(JLabel.CENTER);
+        setHorizontalAlignment(SwingConstants.CENTER);
       else
-        setHorizontalAlignment(JLabel.LEFT);
+        setHorizontalAlignment(SwingConstants.LEFT);
       setText(value.toString());
       return this;
     }
@@ -70,15 +73,15 @@ public class SocMemMapModel extends AbstractTableModel
       switch (column) {
         case 0 -> {
           setText(String.format("0x%08X", s.getStartAddress()));
-          setHorizontalAlignment(JLabel.CENTER);
+          setHorizontalAlignment(SwingConstants.CENTER);
         }
         case 1 -> {
           setText(String.format("0x%08X", s.getEndAddress()));
-          setHorizontalAlignment(JLabel.CENTER);
+          setHorizontalAlignment(SwingConstants.CENTER);
         }
         default -> {
           setText(s.getName());
-          setHorizontalAlignment(JLabel.LEFT);
+          setHorizontalAlignment(SwingConstants.LEFT);
         }
       }
       return this;

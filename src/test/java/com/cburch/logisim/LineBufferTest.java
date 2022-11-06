@@ -15,18 +15,20 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mockStatic;
 
-import com.cburch.logisim.fpga.hdlgenerator.Hdl;
-import com.cburch.logisim.util.LineBuffer;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.commons.text.WordUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.cburch.logisim.fpga.hdlgenerator.Hdl;
+import com.cburch.logisim.util.LineBuffer;
 
 /** Tests LogisimVersion class. */
 @ExtendWith(MockitoExtension.class)
@@ -316,8 +318,7 @@ public class LineBufferTest extends TestBase {
     var found = false;
     for (final var ctor : ctors) {
       // we care default, argumentless ctor only.
-      if (!ctor.getDeclaringClass().equals(LineBuffer.class)) continue;
-      if (ctor.getParameterCount() != 0) continue;
+      if (!ctor.getDeclaringClass().equals(LineBuffer.class) || (ctor.getParameterCount() != 0)) continue;
       assertEquals(0, ctor.getParameterCount());
       // FIXME: temporary change!
       // assertTrue(Modifier.isPublic(ctor.getModifiers()));

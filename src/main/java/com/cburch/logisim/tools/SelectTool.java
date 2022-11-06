@@ -11,6 +11,17 @@ package com.cburch.logisim.tools;
 
 import static com.cburch.logisim.tools.Strings.S;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.circuit.ReplacementMap;
 import com.cburch.logisim.comp.Component;
@@ -35,16 +46,6 @@ import com.cburch.logisim.tools.move.MoveRequestListener;
 import com.cburch.logisim.util.AutoLabel;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringGetter;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 public class SelectTool extends Tool {
 
@@ -619,7 +620,7 @@ public class SelectTool extends Tool {
   }
 
   private boolean shouldConnect(int modsEx) {
-    final var shiftReleased = (modsEx & MouseEvent.SHIFT_DOWN_MASK) == 0;
+    final var shiftReleased = (modsEx & InputEvent.SHIFT_DOWN_MASK) == 0;
     final var defaultValue = AppPreferences.MOVE_KEEP_CONNECT.getBoolean();
     return shiftReleased ? defaultValue : !defaultValue;
   }

@@ -24,11 +24,13 @@ class PrefMonitorInt extends AbstractPrefMonitor<Integer> {
     prefs.addPreferenceChangeListener(this);
   }
 
-  public Integer get() {
+  @Override
+public Integer get() {
     return value;
   }
 
-  public void preferenceChange(PreferenceChangeEvent event) {
+  @Override
+public void preferenceChange(PreferenceChangeEvent event) {
     final var prefs = event.getNode();
     final var prop = event.getKey();
     final var name = getIdentifier();
@@ -42,7 +44,8 @@ class PrefMonitorInt extends AbstractPrefMonitor<Integer> {
     }
   }
 
-  public void set(Integer newValue) {
+  @Override
+public void set(Integer newValue) {
     final var newVal = newValue;
     if (value != newVal) {
       AppPreferences.getPrefs().putInt(getIdentifier(), newVal);

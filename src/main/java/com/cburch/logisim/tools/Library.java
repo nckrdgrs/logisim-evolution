@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.tools;
 
-import com.cburch.logisim.comp.ComponentFactory;
-import com.cburch.logisim.util.LibraryUtil;
 import java.util.Collections;
 import java.util.List;
+
+import com.cburch.logisim.comp.ComponentFactory;
+import com.cburch.logisim.util.LibraryUtil;
 
 public abstract class Library {
   private boolean hidden = false;

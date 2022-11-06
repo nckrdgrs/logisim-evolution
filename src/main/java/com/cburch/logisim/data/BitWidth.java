@@ -9,16 +9,17 @@
 
 package com.cburch.logisim.data;
 
+import java.awt.Component;
+
 import com.cburch.logisim.gui.generic.ComboBox;
 import com.cburch.logisim.util.StringGetter;
-import java.awt.Component;
 
 public class BitWidth implements Comparable<BitWidth> {
   static class Attribute extends com.cburch.logisim.data.Attribute<BitWidth> {
     private final BitWidth[] choices;
     private final int min;
     private final int max;
-  
+
     public Attribute(String name, StringGetter disp) {
       super(name, disp);
       this.min = MINWIDTH;

@@ -9,19 +9,21 @@
 
 package com.cburch.logisim.gui.generic;
 
-import com.cburch.logisim.gui.menu.LogisimMenuBar;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.util.CollectionUtil;
-import com.cburch.logisim.util.MacCompatibility;
-import com.cburch.logisim.util.WindowClosable;
 import java.awt.Image;
 import java.awt.Window;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+
+import com.cburch.logisim.gui.menu.LogisimMenuBar;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.util.CollectionUtil;
+import com.cburch.logisim.util.MacCompatibility;
+import com.cburch.logisim.util.WindowClosable;
 
 public class LFrame extends JFrame implements WindowClosable {
   private static final long serialVersionUID = 1L;

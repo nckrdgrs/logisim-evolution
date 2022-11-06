@@ -11,9 +11,6 @@ package com.cburch.logisim.gui.start;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.generated.BuildInfo;
-import com.cburch.logisim.util.LineBuffer;
-import com.cburch.logisim.util.StringUtil;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -24,8 +21,12 @@ import java.awt.Image;
 import java.awt.image.ImageObserver;
 import java.net.URL;
 import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
+
+import com.cburch.logisim.generated.BuildInfo;
+import com.cburch.logisim.util.LineBuffer;
 
 class AboutCredits extends JComponent {
   private static final long serialVersionUID = 1L;

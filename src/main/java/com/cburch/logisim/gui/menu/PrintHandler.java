@@ -11,12 +11,6 @@ package com.cburch.logisim.gui.menu;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.gui.generic.TikZWriter;
-import com.cburch.logisim.gui.main.ExportImage;
-import com.cburch.logisim.gui.main.ExportImage.ImageFileFilter;
-import com.cburch.logisim.util.GifEncoder;
-import com.cburch.logisim.util.JFileChoosers;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -30,9 +24,17 @@ import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.io.File;
+
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
+
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.gui.generic.TikZWriter;
+import com.cburch.logisim.gui.main.ExportImage;
+import com.cburch.logisim.gui.main.ExportImage.ImageFileFilter;
+import com.cburch.logisim.util.GifEncoder;
+import com.cburch.logisim.util.JFileChoosers;
 
 public abstract class PrintHandler implements Printable {
 

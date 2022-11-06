@@ -11,6 +11,8 @@ package com.cburch.logisim.soc.rv32im;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.Graphics2D;
+
 import com.cburch.logisim.circuit.appear.DynamicElement;
 import com.cburch.logisim.circuit.appear.DynamicElement.Path;
 import com.cburch.logisim.circuit.appear.DynamicElementProvider;
@@ -36,7 +38,6 @@ import com.cburch.logisim.soc.gui.CpuDrawSupport;
 import com.cburch.logisim.soc.gui.SocCpuShape;
 import com.cburch.logisim.tools.MenuExtender;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Graphics2D;
 
 public class Rv32imRiscV extends SocInstanceFactory implements DynamicElementProvider {
   /**

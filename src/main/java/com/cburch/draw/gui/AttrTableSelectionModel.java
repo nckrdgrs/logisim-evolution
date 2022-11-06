@@ -11,6 +11,8 @@ package com.cburch.draw.gui;
 
 import static com.cburch.draw.Strings.S;
 
+import java.util.HashMap;
+
 import com.cburch.draw.actions.ModelChangeAttributeAction;
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.canvas.SelectionEvent;
@@ -19,7 +21,6 @@ import com.cburch.draw.model.AttributeMapKey;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.gui.generic.AttributeSetTableModel;
-import java.util.HashMap;
 
 class AttrTableSelectionModel extends AttributeSetTableModel implements SelectionListener {
   private final Canvas canvas;

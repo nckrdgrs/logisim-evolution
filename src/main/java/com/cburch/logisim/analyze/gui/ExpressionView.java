@@ -9,11 +9,6 @@
 
 package com.cburch.logisim.analyze.gui;
 
-import com.cburch.logisim.analyze.data.ExpressionRenderData;
-import com.cburch.logisim.analyze.model.Expression;
-import com.cburch.logisim.analyze.model.Expression.Notation;
-import com.cburch.logisim.analyze.model.Expressions;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -21,7 +16,14 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+
 import javax.swing.JPanel;
+
+import com.cburch.logisim.analyze.data.ExpressionRenderData;
+import com.cburch.logisim.analyze.model.Expression;
+import com.cburch.logisim.analyze.model.Expression.Notation;
+import com.cburch.logisim.analyze.model.Expressions;
+import com.cburch.logisim.prefs.AppPreferences;
 
 class ExpressionView extends JPanel {
 

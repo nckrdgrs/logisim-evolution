@@ -14,5 +14,6 @@ public interface AttributeOptionInterface {
 
   String toDisplayString();
 
-  String toString();
+  @Override
+String toString();
 }

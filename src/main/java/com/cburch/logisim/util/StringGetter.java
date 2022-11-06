@@ -10,5 +10,6 @@
 package com.cburch.logisim.util;
 
 public interface StringGetter {
-  String toString();
+  @Override
+String toString();
 }

@@ -12,10 +12,12 @@ package com.cburch.logisim;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.cburch.logisim.util.CollectionUtil;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.junit.jupiter.api.Test;
+
+import com.cburch.logisim.util.CollectionUtil;
 
 public class CollectionUtilTest extends TestBase {
 

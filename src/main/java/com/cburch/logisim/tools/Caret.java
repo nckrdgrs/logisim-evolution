@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.tools;
 
-import com.cburch.logisim.data.Bounds;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+
+import com.cburch.logisim.data.Bounds;
 
 public interface Caret {
   Bounds getBounds(Graphics g);

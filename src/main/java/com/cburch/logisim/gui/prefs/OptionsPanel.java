@@ -10,6 +10,7 @@
 package com.cburch.logisim.gui.prefs;
 
 import java.awt.LayoutManager;
+
 import javax.swing.JPanel;
 
 public abstract class OptionsPanel extends JPanel {

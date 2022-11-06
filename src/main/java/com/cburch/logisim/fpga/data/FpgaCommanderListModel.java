@@ -9,15 +9,17 @@
 
 package com.cburch.logisim.fpga.data;
 
-import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
-import com.cburch.logisim.fpga.gui.ListModelCellRenderer;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.swing.AbstractListModel;
 import javax.swing.ListCellRenderer;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
+
+import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
+import com.cburch.logisim.fpga.gui.ListModelCellRenderer;
 
 @SuppressWarnings("serial")
 public class FpgaCommanderListModel extends AbstractListModel<Object> {

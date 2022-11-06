@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.circuit;
 
+import java.util.Collection;
+
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.wiring.Pin;
 import com.cburch.logisim.vhdl.base.VhdlEntity;
-import java.util.Collection;
 
 public class CircuitChange {
   public static CircuitChange add(Circuit circuit, Component comp) {

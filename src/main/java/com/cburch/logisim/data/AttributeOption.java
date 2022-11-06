@@ -28,11 +28,13 @@ public class AttributeOption implements AttributeOptionInterface {
     this.desc = desc;
   }
 
-  public Object getValue() {
+  @Override
+public Object getValue() {
     return value;
   }
 
-  public String toDisplayString() {
+  @Override
+public String toDisplayString() {
     return desc.toString();
   }
 

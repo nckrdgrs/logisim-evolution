@@ -9,22 +9,23 @@
 
 package com.cburch.logisim.vhdl.sim;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.tools.MessageBox;
 import com.cburch.logisim.util.FileUtil;
 import com.cburch.logisim.util.Softwares;
 import com.cburch.logisim.vhdl.base.VhdlSimConstants;
 import com.cburch.logisim.vhdl.base.VhdlSimConstants.State;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * The TCL binder is a TCL program creating a socket server. The signals have to be written to the
@@ -70,7 +71,7 @@ public class VhdlSimulatorTclBinder {
     builder = new ProcessBuilder(command);
 
     Map<String, String> env = builder.environment();
-    
+
     builder.directory(new File(VhdlSimConstants.SIM_PATH + "comp/"));
 
     /* Redirect error on stdout */

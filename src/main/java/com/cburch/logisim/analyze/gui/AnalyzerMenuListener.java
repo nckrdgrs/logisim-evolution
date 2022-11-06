@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.analyze.gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.cburch.logisim.gui.menu.LogisimMenuBar;
 import com.cburch.logisim.gui.menu.MenuListener;
 import com.cburch.logisim.gui.menu.PrintHandler;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AnalyzerMenuListener extends MenuListener {
 

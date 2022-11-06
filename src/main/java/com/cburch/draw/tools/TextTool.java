@@ -9,6 +9,18 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.Collections;
+import java.util.List;
+
+import javax.swing.AbstractAction;
+import javax.swing.Icon;
+import javax.swing.KeyStroke;
+
 import com.cburch.draw.actions.ModelAddAction;
 import com.cburch.draw.actions.ModelEditTextAction;
 import com.cburch.draw.actions.ModelRemoveAction;
@@ -21,16 +33,6 @@ import com.cburch.logisim.data.AttributeEvent;
 import com.cburch.logisim.data.AttributeListener;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.gui.icons.TextIcon;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.Collections;
-import java.util.List;
-import javax.swing.AbstractAction;
-import javax.swing.Icon;
-import javax.swing.KeyStroke;
 
 public class TextTool extends AbstractTool {
   private static final TextIcon ICON = new TextIcon();

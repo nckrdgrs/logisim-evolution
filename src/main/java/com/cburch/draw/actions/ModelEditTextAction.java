@@ -11,11 +11,12 @@ package com.cburch.draw.actions;
 
 import static com.cburch.draw.Strings.S;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import com.cburch.draw.model.CanvasModel;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.shapes.Text;
-import java.util.Collection;
-import java.util.Collections;
 
 public class ModelEditTextAction extends ModelAction {
   private final Text text;

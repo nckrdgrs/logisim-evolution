@@ -9,6 +9,19 @@
 
 package com.cburch.logisim.gui.main;
 
+import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitMutation;
 import com.cburch.logisim.circuit.Wire;
@@ -22,17 +35,6 @@ import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.std.memory.Ram;
 import com.cburch.logisim.std.memory.Rom;
 import com.cburch.logisim.util.CollectionUtil;
-import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 class SelectionBase {
 

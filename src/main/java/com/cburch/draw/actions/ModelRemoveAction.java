@@ -11,12 +11,13 @@ package com.cburch.draw.actions;
 
 import static com.cburch.draw.Strings.S;
 
-import com.cburch.draw.model.CanvasModel;
-import com.cburch.draw.model.CanvasObject;
-import com.cburch.draw.util.ZOrder;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
+
+import com.cburch.draw.model.CanvasModel;
+import com.cburch.draw.model.CanvasObject;
+import com.cburch.draw.util.ZOrder;
 
 public class ModelRemoveAction extends ModelAction {
   private final Map<CanvasObject, Integer> removed;

@@ -9,10 +9,6 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.contracts.BaseLayoutManagerContract;
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.contracts.BaseMouseMotionListenerContract;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Cursor;
@@ -21,8 +17,14 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+
+import com.cburch.contracts.BaseLayoutManagerContract;
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.contracts.BaseMouseMotionListenerContract;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class HorizontalSplitPane extends JPanel {
   abstract static class Dragbar extends JComponent

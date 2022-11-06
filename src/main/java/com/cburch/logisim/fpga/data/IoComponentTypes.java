@@ -30,13 +30,13 @@ package com.cburch.logisim.fpga.data;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.logisim.std.io.DipSwitch;
-import com.cburch.logisim.std.io.ReptarLocalBus;
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.EnumSet;
 import java.util.Set;
+
+import com.cburch.logisim.std.io.DipSwitch;
+import com.cburch.logisim.std.io.ReptarLocalBus;
 
 public enum IoComponentTypes {
   Led,
@@ -243,7 +243,7 @@ public enum IoComponentTypes {
         part = (float) height / (float) 3;
         for (var w = 0; w < width; w++)
           for (var h = 0; h < height; h++)
-            partialMap[w][h] = (int) ((float) h / part);
+            partialMap[w][h] = (int) (h / part);
         break;
       case SevenSegment: hasDp = true;
       case SevenSegmentNoDp:
@@ -264,16 +264,16 @@ public enum IoComponentTypes {
           for (var h = 0; h < height; h++) {
             switch (mapRotation) {
               case ROTATION_CCW_90 -> {
-                xIndex = (int) ((float) (height - h - 1) / partY);
-                yIndex = (int) ((float) w / partX);
+                xIndex = (int) ((height - h - 1) / partY);
+                yIndex = (int) (w / partX);
               }
               case ROTATION_CW_90 -> {
-                xIndex = (int) ((float) h / partY);
-                yIndex = (int) ((float) (width - w - 1) / partX);
+                xIndex = (int) (h / partY);
+                yIndex = (int) ((width - w - 1) / partX);
               }
               default -> {
-                xIndex = (int) ((float) w / partX);
-                yIndex = (int) ((float) h / partY);
+                xIndex = (int) (w / partX);
+                yIndex = (int) (h / partY);
               }
             }
             partialMap[w][h] = indexes[yIndex][xIndex];
@@ -296,16 +296,16 @@ public enum IoComponentTypes {
             var realColumn = 0;
             switch (mapRotation) {
               case ROTATION_CCW_90 -> {
-                realRow = (int) ((float) w / partX);
-                realColumn = (int) ((float) (height - h - 1) / partY);
+                realRow = (int) (w / partX);
+                realColumn = (int) ((height - h - 1) / partY);
               }
               case ROTATION_CW_90 -> {
-                realRow = (int) ((float) (width - w - 1) / partX);
-                realColumn = (int) ((float) h / partY);
+                realRow = (int) ((width - w - 1) / partX);
+                realColumn = (int) (h / partY);
               }
               default -> {
-                realRow = (int) ((float) h / partY);
-                realColumn = (int) ((float) w / partX);
+                realRow = (int) (h / partY);
+                realColumn = (int) (w / partX);
               }
             }
             partialMap[w][h] = (realRow * nrOfColumns) + realColumn;
@@ -350,15 +350,15 @@ public enum IoComponentTypes {
             part = (float) height / (float) nrOfPins;
             boxXpos = x;
             boxWidth = width;
-            boxYpos = y + (int) ((float) yPinNr * part);
-            boxHeight = (int) ((float) (yPinNr + 1) * part) - (int) ((float) yPinNr * part);
+            boxYpos = y + (int) (yPinNr * part);
+            boxHeight = (int) ((yPinNr + 1) * part) - (int) (yPinNr * part);
             break;
           }
           default: {
             part = (float) width / (float) nrOfPins;
-            boxXpos = x + (int) ((float) pinNr * part);
+            boxXpos = x + (int) (pinNr * part);
             boxYpos = y;
-            boxWidth = (int) ((float) (pinNr + 1) * part) - (int) (pinNr * part);
+            boxWidth = (int) ((pinNr + 1) * part) - (int) (pinNr * part);
             boxHeight = height;
             break;
           }
@@ -367,8 +367,8 @@ public enum IoComponentTypes {
         break;
       case RgbLed:
         part = (float) height / (float) 3;
-        final var by = y + (int) ((float) pinNr * part);
-        final var bh = (int) ((float) (pinNr + 1) * part) - (int) ((float) pinNr * part);
+        final var by = y + (int) (pinNr * part);
+        final var bh = (int) ((pinNr + 1) * part) - (int) (pinNr * part);
         g.fillRect(x, by, width, bh);
         break;
       case SevenSegment: hasDp = true;
@@ -413,11 +413,11 @@ public enum IoComponentTypes {
                   realYIndexPlusOne = yIndex + 1;
                 }
               }
-              boxXpos = x + (int) ((float) realXIndex * partX);
-              boxYpos = y + (int) ((float) realYIndex * partY);
+              boxXpos = x + (int) (realXIndex * partX);
+              boxYpos = y + (int) (realYIndex * partY);
               /* the below calculation we do to avoid truncation errors causing empty lines between the segments */
-              boxWidth = (int) ((float) realXIndexPlusOne * partX) - (int) ((float) realXIndex * partX);
-              boxHeight = (int) ((float) realYIndexPlusOne * partY) - (int) ((float) realYIndex * partY);
+              boxWidth = (int) (realXIndexPlusOne * partX) - (int) (realXIndex * partX);
+              boxHeight = (int) (realYIndexPlusOne * partY) - (int) (realYIndex * partY);
               g.fillRect(boxXpos, boxYpos, boxWidth, boxHeight);
             }
           }
@@ -444,24 +444,24 @@ public enum IoComponentTypes {
         var nextYPosition = 0;
         switch (mapRotation) {
           case ROTATION_CCW_90 -> {
-            xPosition = (int) ((float) selectedRow * partX);
-            nextXPosition = (int) ((float) (selectedRow + 1) * partX);
-            yPosition = (int) ((float) (nrOfColumns - selectedColumn - 1) * partY);
-            nextYPosition = (int) ((float) (nrOfColumns - selectedColumn) * partY);
+            xPosition = (int) (selectedRow * partX);
+            nextXPosition = (int) ((selectedRow + 1) * partX);
+            yPosition = (int) ((nrOfColumns - selectedColumn - 1) * partY);
+            nextYPosition = (int) ((nrOfColumns - selectedColumn) * partY);
             break;
           }
           case ROTATION_CW_90 -> {
-            xPosition = (int) ((float) (nrOfRows - selectedRow - 1) * partX);
-            nextXPosition = (int) ((float) (nrOfRows - selectedRow) * partX);
-            yPosition = (int) ((float) selectedColumn * partY);
-            nextYPosition = (int) ((float) (selectedColumn + 1) * partY);
+            xPosition = (int) ((nrOfRows - selectedRow - 1) * partX);
+            nextXPosition = (int) ((nrOfRows - selectedRow) * partX);
+            yPosition = (int) (selectedColumn * partY);
+            nextYPosition = (int) ((selectedColumn + 1) * partY);
             break;
           }
           default -> {
-            xPosition = (int) ((float) selectedColumn * partX);
-            nextXPosition = (int) ((float) (selectedColumn + 1) * partX);
-            yPosition = (int) ((float) selectedRow * partY);
-            nextYPosition = (int) ((float) (selectedRow + 1) * partY);
+            xPosition = (int) (selectedColumn * partX);
+            nextXPosition = (int) ((selectedColumn + 1) * partX);
+            yPosition = (int) (selectedRow * partY);
+            nextYPosition = (int) ((selectedRow + 1) * partY);
             break;
           }
         }

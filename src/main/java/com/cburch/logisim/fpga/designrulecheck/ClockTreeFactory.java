@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.fpga.designrulecheck;
 
-import com.cburch.logisim.comp.Component;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.cburch.logisim.comp.Component;
 
 public class ClockTreeFactory {
 

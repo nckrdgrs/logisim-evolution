@@ -71,7 +71,7 @@ public class ArithmeticIcon extends BaseIcon {
       g2.fillOval(0, getIconHeight() / 2, getIconWidth() / 2, getIconHeight() / 2);
       font =
           g2.getFont()
-              .deriveFont(scale((float) getIconWidth() / (float) (2.8)))
+              .deriveFont(scale(getIconWidth() / (float) (2.8)))
               .deriveFont(Font.BOLD);
       textLayout = new TextLayout("!", font, g2.getFontRenderContext());
       g2.setColor(Color.WHITE);

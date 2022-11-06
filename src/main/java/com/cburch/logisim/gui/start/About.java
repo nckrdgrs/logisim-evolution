@@ -9,12 +9,10 @@
 
 package com.cburch.logisim.gui.start;
 
-import com.cburch.logisim.generated.BuildInfo;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.util.UniquelyNamedThread;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -22,6 +20,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
+
+import com.cburch.logisim.generated.BuildInfo;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.util.UniquelyNamedThread;
 
 public class About {
   static final int PADDING = 20;

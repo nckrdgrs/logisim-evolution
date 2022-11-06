@@ -9,10 +9,12 @@
 
 package com.cburch.logisim.tools;
 
-import com.cburch.logisim.gui.generic.OptionPane;
 import java.awt.Dimension;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+
+import com.cburch.logisim.gui.generic.OptionPane;
 
 public class MessageBox {
 

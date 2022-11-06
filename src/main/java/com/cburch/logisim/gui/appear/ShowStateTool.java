@@ -9,12 +9,14 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import javax.swing.Icon;
+
 import com.cburch.draw.toolbar.ToolbarClickableItem;
 import com.cburch.draw.tools.DrawingAttributeSet;
 import com.cburch.logisim.gui.icons.ShowStateIcon;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import javax.swing.Icon;
 
 public class ShowStateTool implements ToolbarClickableItem {
 

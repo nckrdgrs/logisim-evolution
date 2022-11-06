@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.fpga.designrulecheck;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.Splitter;
 import com.cburch.logisim.circuit.Wire;
 import com.cburch.logisim.instance.InstanceComponent;
-import java.util.HashSet;
-import java.util.Set;
 
 public class SimpleDrcContainer {
 

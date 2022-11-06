@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.soc.memory;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Random;
+
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.instance.InstanceComponent;
 import com.cburch.logisim.instance.InstanceData;
@@ -18,9 +22,6 @@ import com.cburch.logisim.soc.data.SocBusSlaveListener;
 import com.cburch.logisim.soc.data.SocBusTransaction;
 import com.cburch.logisim.soc.data.SocSupport;
 import com.cburch.logisim.util.StringUtil;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Random;
 
 public class SocMemoryState implements SocBusSlaveInterface {
 

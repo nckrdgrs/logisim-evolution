@@ -11,14 +11,10 @@ package com.cburch.logisim.gui.prefs;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.data.Direction;
-import com.cburch.logisim.fpga.gui.ZoomSlider;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.proj.Projects;
-import com.cburch.logisim.util.TableLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -27,11 +23,18 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import com.cburch.logisim.data.Direction;
+import com.cburch.logisim.fpga.gui.ZoomSlider;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.proj.Projects;
+import com.cburch.logisim.util.TableLayout;
 
 class WindowOptions extends OptionsPanel {
   private static final long serialVersionUID = 1L;
@@ -139,7 +142,7 @@ class WindowOptions extends OptionsPanel {
     zoomLabel = new JLabel(S.get("windowToolbarZoomfactor"));
     zoomValue =
         new ZoomSlider(
-            JSlider.HORIZONTAL, 100, 300, (int) (AppPreferences.SCALE_FACTOR.get() * 100));
+            SwingConstants.HORIZONTAL, 100, 300, (int) (AppPreferences.SCALE_FACTOR.get() * 100));
     zoomAutoButton = new JButton();
     zoomAutoButton.addActionListener(listener);
     zoomAutoButton.setActionCommand(cmdSetAutoScaleFactor);
@@ -239,7 +242,7 @@ class WindowOptions extends OptionsPanel {
       final var source = (JSlider) e.getSource();
       if (!source.getValueIsAdjusting()) {
         int value = source.getValue();
-        AppPreferences.SCALE_FACTOR.set((double) value / 100.0);
+        AppPreferences.SCALE_FACTOR.set(value / 100.0);
         final var nowOpen = Projects.getOpenProjects();
         for (final var proj : nowOpen) {
           proj.getFrame().revalidate();

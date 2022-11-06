@@ -9,11 +9,6 @@
 
 package com.cburch.draw.canvas;
 
-import com.cburch.draw.model.CanvasModelEvent;
-import com.cburch.draw.model.CanvasObject;
-import com.cburch.draw.model.Handle;
-import com.cburch.draw.model.HandleGesture;
-import com.cburch.logisim.data.Location;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,6 +19,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+
+import com.cburch.draw.model.CanvasModelEvent;
+import com.cburch.draw.model.CanvasObject;
+import com.cburch.draw.model.Handle;
+import com.cburch.draw.model.HandleGesture;
+import com.cburch.logisim.data.Location;
 
 public class Selection {
   private static final String MOVING_HANDLE = "movingHandle";

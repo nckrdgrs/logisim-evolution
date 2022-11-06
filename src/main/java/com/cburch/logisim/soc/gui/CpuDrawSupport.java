@@ -11,6 +11,11 @@ package com.cburch.logisim.soc.gui;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.event.MouseEvent;
+
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.instance.InstancePoker;
@@ -20,10 +25,6 @@ import com.cburch.logisim.soc.data.SocUpSimulationState;
 import com.cburch.logisim.soc.data.SocUpStateInterface;
 import com.cburch.logisim.soc.data.TraceInfo;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.FontMetrics;
-import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
 
 public class CpuDrawSupport {
 

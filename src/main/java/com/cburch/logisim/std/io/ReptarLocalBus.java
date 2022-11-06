@@ -11,6 +11,9 @@ package com.cburch.logisim.std.io;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.util.ArrayList;
+
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
@@ -23,8 +26,6 @@ import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
-import java.awt.Color;
-import java.util.ArrayList;
 
 public class ReptarLocalBus extends InstanceFactory {
   /**

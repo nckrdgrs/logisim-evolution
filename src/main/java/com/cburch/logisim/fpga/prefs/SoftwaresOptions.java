@@ -11,12 +11,6 @@ package com.cburch.logisim.fpga.prefs;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.logisim.fpga.gui.FpgaCommander;
-import com.cburch.logisim.fpga.settings.VendorSoftware;
-import com.cburch.logisim.gui.prefs.OptionsPanel;
-import com.cburch.logisim.gui.prefs.PreferencesFrame;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.Softwares;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -24,11 +18,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import com.cburch.logisim.fpga.gui.FpgaCommander;
+import com.cburch.logisim.fpga.settings.VendorSoftware;
+import com.cburch.logisim.gui.prefs.OptionsPanel;
+import com.cburch.logisim.gui.prefs.PreferencesFrame;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.Softwares;
 
 public class SoftwaresOptions extends OptionsPanel {
 
@@ -97,7 +100,7 @@ public class SoftwaresOptions extends OptionsPanel {
     vivadoPathButton.addActionListener(myListener);
     AppPreferences.getPrefs().addPreferenceChangeListener(myListener);
 
-    final var sep = new JSeparator(JSeparator.HORIZONTAL);
+    final var sep = new JSeparator(SwingConstants.HORIZONTAL);
     final var layout = new GridBagLayout();
     final var c = new GridBagConstraints();
     setLayout(layout);
@@ -112,7 +115,7 @@ public class SoftwaresOptions extends OptionsPanel {
     c.gridwidth = 4;
     c.weightx = 1.0;
     c.fill = GridBagConstraints.HORIZONTAL;
-    add(new JSeparator(JSeparator.HORIZONTAL), c);
+    add(new JSeparator(SwingConstants.HORIZONTAL), c);
 
     c.gridx = 0;
     c.gridy = gridY++;
@@ -149,7 +152,7 @@ public class SoftwaresOptions extends OptionsPanel {
     c.gridwidth = 4;
     c.weightx = 1.0;
     c.fill = GridBagConstraints.HORIZONTAL;
-    add(new JSeparator(JSeparator.HORIZONTAL), c);
+    add(new JSeparator(SwingConstants.HORIZONTAL), c);
 
     c.gridx = 0;
     c.gridy = gridY++;
@@ -174,7 +177,7 @@ public class SoftwaresOptions extends OptionsPanel {
     c.gridwidth = 4;
     c.weightx = 1.0;
     c.fill = GridBagConstraints.HORIZONTAL;
-    add(new JSeparator(JSeparator.HORIZONTAL), c);
+    add(new JSeparator(SwingConstants.HORIZONTAL), c);
 
     c.gridx = 0;
     c.gridy = gridY++;
@@ -199,7 +202,7 @@ public class SoftwaresOptions extends OptionsPanel {
     c.gridwidth = 4;
     c.weightx = 1.0;
     c.fill = GridBagConstraints.HORIZONTAL;
-    add(new JSeparator(JSeparator.HORIZONTAL), c);
+    add(new JSeparator(SwingConstants.HORIZONTAL), c);
 
     c.gridx = 0;
     c.gridy = gridY++;

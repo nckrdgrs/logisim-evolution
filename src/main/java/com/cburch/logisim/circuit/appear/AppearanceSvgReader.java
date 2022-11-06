@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.circuit.appear;
 
+import java.util.List;
+
+import org.w3c.dom.Element;
+
 import com.cburch.draw.model.AbstractCanvasObject;
 import com.cburch.draw.shapes.SvgReader;
 import com.cburch.logisim.circuit.Circuit;
@@ -25,8 +29,6 @@ import com.cburch.logisim.std.io.TtyShape;
 import com.cburch.logisim.std.memory.CounterShape;
 import com.cburch.logisim.std.memory.RegisterShape;
 import com.cburch.logisim.std.wiring.Pin;
-import java.util.List;
-import org.w3c.dom.Element;
 
 public class AppearanceSvgReader {
   public static class PinInfo {
@@ -132,7 +134,7 @@ public class AppearanceSvgReader {
   }
 
   private static Boolean isInputPinReference(Element elt) {
-    
+
     if (elt.hasAttribute("dir")) {
       final var direction = elt.getAttribute("dir");
       return direction.equals("in");

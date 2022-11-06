@@ -9,11 +9,6 @@
 
 package com.cburch.logisim.comp;
 
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.tools.Caret;
-import com.cburch.logisim.tools.CaretEvent;
-import com.cburch.logisim.tools.CaretListener;
-import com.cburch.logisim.util.GraphicsUtil;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Toolkit;
@@ -24,6 +19,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.tools.Caret;
+import com.cburch.logisim.tools.CaretEvent;
+import com.cburch.logisim.tools.CaretListener;
+import com.cburch.logisim.util.GraphicsUtil;
 
 class TextFieldCaret implements Caret, TextFieldListener {
 

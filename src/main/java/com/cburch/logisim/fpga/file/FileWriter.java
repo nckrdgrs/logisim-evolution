@@ -11,13 +11,14 @@ package com.cburch.logisim.fpga.file;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.logisim.fpga.gui.Reporter;
-import com.cburch.logisim.fpga.hdlgenerator.Hdl;
-import com.cburch.logisim.generated.BuildInfo;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.cburch.logisim.fpga.gui.Reporter;
+import com.cburch.logisim.fpga.hdlgenerator.Hdl;
+import com.cburch.logisim.generated.BuildInfo;
 
 public class FileWriter {
 

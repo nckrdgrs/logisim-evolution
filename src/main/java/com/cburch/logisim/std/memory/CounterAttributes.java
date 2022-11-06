@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.util.List;
+import java.util.Objects;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
@@ -17,9 +20,6 @@ import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.prefs.AppPreferences;
-
-import java.util.List;
-import java.util.Objects;
 
 class CounterAttributes extends AbstractAttributeSet {
 

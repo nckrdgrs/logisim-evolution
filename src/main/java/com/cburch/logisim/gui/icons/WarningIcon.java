@@ -9,7 +9,6 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
@@ -17,7 +16,10 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
+
 import javax.swing.Icon;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class WarningIcon implements Icon {
   private final int wixth;
@@ -45,7 +47,7 @@ public class WarningIcon implements Icon {
     g2.setStroke(new BasicStroke(scale(1)));
     g2.setColor(Color.BLACK);
     g2.drawPolygon(xpos, ypos, 3);
-    final var f = g2.getFont().deriveFont((float) wixth / (float) 1.3).deriveFont(Font.BOLD);
+    final var f = g2.getFont().deriveFont(wixth / (float) 1.3).deriveFont(Font.BOLD);
     final var t = new TextLayout("!", f, g2.getFontRenderContext());
     final var xc = (float) wixth / (float) 2 - (float) t.getBounds().getCenterX();
     final var yc = (float) (5 * wixth) / (float) 8 - (float) t.getBounds().getCenterY();

@@ -9,15 +9,18 @@
 
 package com.cburch.logisim.tools;
 
+import java.util.Arrays;
+import java.util.List;
+
+import javax.swing.Icon;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.comp.ComponentFactory;
 import com.cburch.logisim.util.IconsUtil;
 import com.cburch.logisim.util.LibraryUtil;
 import com.cburch.logisim.util.StringGetter;
-import java.util.Arrays;
-import java.util.List;
-import javax.swing.Icon;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This class allows an object to be created holding all the information essential to showing a

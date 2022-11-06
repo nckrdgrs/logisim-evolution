@@ -44,8 +44,7 @@ public class RomHdlGeneratorFactory extends InlinedHdlGeneratorFactory {
 
   @Override
   public boolean isHdlSupportedTarget(AttributeSet attrs) {
-    if (attrs == null) return false;
-    if (attrs.getValue(Mem.LINE_ATTR) == null) return false;
+    if ((attrs == null) || (attrs.getValue(Mem.LINE_ATTR) == null)) return false;
     return attrs.getValue(Mem.LINE_ATTR).equals(Mem.SINGLE);
   }
 }

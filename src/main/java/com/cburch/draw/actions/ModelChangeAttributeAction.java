@@ -11,14 +11,15 @@ package com.cburch.draw.actions;
 
 import static com.cburch.draw.Strings.S;
 
-import com.cburch.draw.model.AttributeMapKey;
-import com.cburch.draw.model.CanvasModel;
-import com.cburch.draw.model.CanvasObject;
-import com.cburch.logisim.data.Attribute;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
+
+import com.cburch.draw.model.AttributeMapKey;
+import com.cburch.draw.model.CanvasModel;
+import com.cburch.draw.model.CanvasObject;
+import com.cburch.logisim.data.Attribute;
 
 public class ModelChangeAttributeAction extends ModelAction {
   private final Map<AttributeMapKey, Object> oldValues;

@@ -11,15 +11,16 @@ package com.cburch.logisim.gui.appear;
 
 import static com.cburch.logisim.gui.Strings.S;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitMutator;
 import com.cburch.logisim.circuit.CircuitTransaction;
 import com.cburch.logisim.proj.Action;
 import com.cburch.logisim.proj.Project;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class RevertAppearanceAction extends Action {
   private final Circuit circuit;

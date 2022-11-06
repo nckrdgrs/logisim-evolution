@@ -9,13 +9,14 @@
 
 package com.cburch.logisim.analyze.model;
 
-import com.cburch.logisim.util.CollectionUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JTextArea;
+
+import com.cburch.logisim.util.CollectionUtil;
 
 public class OutputExpressions {
   private class MyListener implements VariableListListener, TruthTableListener {

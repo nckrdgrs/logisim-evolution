@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.soc.util;
 
-import com.cburch.logisim.circuit.CircuitState;
-import com.cburch.logisim.soc.data.SocProcessorInterface;
-import com.cburch.logisim.soc.file.ElfProgramHeader;
-import com.cburch.logisim.soc.file.ElfSectionHeader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+
+import com.cburch.logisim.circuit.CircuitState;
+import com.cburch.logisim.soc.data.SocProcessorInterface;
+import com.cburch.logisim.soc.file.ElfProgramHeader;
+import com.cburch.logisim.soc.file.ElfSectionHeader;
 
 public interface AssemblerInterface {
   void decode(int instruction);

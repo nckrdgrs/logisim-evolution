@@ -11,6 +11,15 @@ package com.cburch.logisim.std.memory;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Window;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
+import java.util.WeakHashMap;
+
+import javax.swing.JLabel;
+
 import com.cburch.contracts.BaseMouseListenerContract;
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitState;
@@ -29,13 +38,6 @@ import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.proj.Project;
-import java.awt.Window;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-import java.util.WeakHashMap;
-import javax.swing.JLabel;
 
 public class Rom extends Mem {
   /**

@@ -9,18 +9,19 @@
 
 package com.cburch.hex;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+
 import javax.swing.JComponent;
 import javax.swing.Scrollable;
 import javax.swing.SwingConstants;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class HexEditor extends JComponent implements Scrollable {
   private static final long serialVersionUID = 1L;

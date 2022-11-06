@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.circuit;
 
+import java.util.ArrayList;
+
+import javax.swing.SwingUtilities;
+
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.comp.ComponentDrawContext;
 import com.cburch.logisim.gui.generic.OptionPane;
@@ -17,8 +21,6 @@ import com.cburch.logisim.gui.log.ComponentSelector;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.util.CollectionUtil;
 import com.cburch.logisim.util.UniquelyNamedThread;
-import java.util.ArrayList;
-import javax.swing.SwingUtilities;
 
 public class Simulator {
 

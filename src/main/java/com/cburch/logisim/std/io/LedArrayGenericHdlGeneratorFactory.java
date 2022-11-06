@@ -9,7 +9,6 @@
 
 package com.cburch.logisim.std.io;
 
-import com.cburch.logisim.util.LineBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +20,7 @@ import com.cburch.logisim.fpga.data.FpgaIoInformationContainer;
 import com.cburch.logisim.fpga.data.LedArrayDriving;
 import com.cburch.logisim.fpga.hdlgenerator.AbstractHdlGeneratorFactory;
 import com.cburch.logisim.fpga.hdlgenerator.Hdl;
+import com.cburch.logisim.util.LineBuffer;
 
 public class LedArrayGenericHdlGeneratorFactory {
   public static String LedArrayOutputs = "externalLeds";
@@ -257,7 +257,7 @@ public class LedArrayGenericHdlGeneratorFactory {
   }
 
   public static List<String> getArrayConnections(FpgaIoInformationContainer array, int id) {
-    final var connections = new ArrayList<String>(
+    final var connections = new ArrayList<>(
         switch (array.getArrayDriveMode()) {
           case LedArrayDriving.LED_DEFAULT, LedArrayDriving.LED_ROW_SCANNING, LedArrayDriving.LED_COLUMN_SCANNING ->
               getLedArrayConnections(array, id);

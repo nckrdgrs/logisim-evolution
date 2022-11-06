@@ -1,5 +1,10 @@
 package com.cburch.logisim.soc.gui;
 
+import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
 import com.cburch.contracts.BaseWindowListenerContract;
 import com.cburch.logisim.circuit.CircuitEvent;
 import com.cburch.logisim.circuit.CircuitListener;
@@ -9,8 +14,6 @@ import com.cburch.logisim.tools.CircuitStateHolder;
 import com.cburch.logisim.util.LocaleListener;
 import com.cburch.logisim.util.LocaleManager;
 import com.cburch.logisim.util.StringGetter;
-import java.awt.event.WindowEvent;
-import javax.swing.JFrame;
 
 public class ListeningFrame extends JFrame
     implements BaseWindowListenerContract, LocaleListener, CircuitListener, ComponentListener {
@@ -30,7 +33,7 @@ public class ListeningFrame extends JFrame
       h.registerComponentListener(this);
     }
     updateTitle();
-    this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
   }
 
   public ListeningFrame(StringGetter t) {

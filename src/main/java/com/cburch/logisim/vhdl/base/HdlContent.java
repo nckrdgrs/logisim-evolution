@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.vhdl.base;
 
-import com.cburch.logisim.util.EventSourceWeakSupport;
 import java.util.Arrays;
+
+import com.cburch.logisim.util.EventSourceWeakSupport;
 
 public abstract class HdlContent implements HdlModel, Cloneable {
   protected static <T> T[] concat(T[] first, T[] second) {

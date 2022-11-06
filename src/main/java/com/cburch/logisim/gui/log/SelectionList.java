@@ -9,9 +9,6 @@
 
 package com.cburch.logisim.gui.log;
 
-import com.cburch.logisim.circuit.RadixOption;
-import com.cburch.logisim.util.CollectionUtil;
-import com.cburch.logisim.util.IconsUtil;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -28,6 +25,7 @@ import java.io.IOException;
 import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.swing.AbstractAction;
 import javax.swing.AbstractCellEditor;
 import javax.swing.BorderFactory;
@@ -49,6 +47,10 @@ import javax.swing.TransferHandler;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellEditor;
+
+import com.cburch.logisim.circuit.RadixOption;
+import com.cburch.logisim.util.CollectionUtil;
+import com.cburch.logisim.util.IconsUtil;
 
 public class SelectionList extends JTable {
 

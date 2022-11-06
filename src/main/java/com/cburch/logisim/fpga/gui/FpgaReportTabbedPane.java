@@ -9,11 +9,6 @@
 
 package com.cburch.logisim.fpga.gui;
 
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.contracts.BaseWindowListenerContract;
-import com.cburch.logisim.fpga.data.FpgaCommanderListModel;
-import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
-import com.cburch.logisim.proj.Project;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -25,6 +20,7 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+
 import javax.swing.JComponent;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -32,7 +28,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.text.DefaultCaret;
+
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.contracts.BaseWindowListenerContract;
+import com.cburch.logisim.fpga.data.FpgaCommanderListModel;
+import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
+import com.cburch.logisim.proj.Project;
 
 public class FpgaReportTabbedPane extends JTabbedPane
     implements BaseMouseListenerContract, BaseWindowListenerContract {
@@ -86,8 +89,8 @@ public class FpgaReportTabbedPane extends JTabbedPane
     var caret = (DefaultCaret) textAreaInfo.getCaret();
     caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
     final var textMessages = new JScrollPane(textAreaInfo);
-    textMessages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    textMessages.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    textMessages.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    textMessages.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     panelInfos = new JPanel();
     panelInfos.setLayout(consolesLayout);
     panelInfos.add(textMessages);
@@ -107,8 +110,8 @@ public class FpgaReportTabbedPane extends JTabbedPane
     warnings.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     warnings.addMouseListener(this);
     final var textWarnings = new JScrollPane(warnings);
-    textWarnings.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    textWarnings.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    textWarnings.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    textWarnings.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     panelWarnings = new JPanel();
     panelWarnings.setLayout(consolesLayout);
     panelWarnings.add(textWarnings);
@@ -133,8 +136,8 @@ public class FpgaReportTabbedPane extends JTabbedPane
     errors.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     errors.addMouseListener(this);
     final var textErrors = new JScrollPane(errors);
-    textErrors.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    textErrors.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    textErrors.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    textErrors.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     panelErrors = new JPanel();
     panelErrors.setLayout(consolesLayout);
     panelErrors.add(textErrors);
@@ -157,8 +160,8 @@ public class FpgaReportTabbedPane extends JTabbedPane
     caret = (DefaultCaret) textAreaConsole.getCaret();
     caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
     final var textConsole = new JScrollPane(textAreaConsole);
-    textConsole.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    textConsole.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    textConsole.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    textConsole.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     panelConsole = new JPanel();
     panelConsole.setLayout(consolesLayout);
     panelConsole.add(textConsole);

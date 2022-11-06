@@ -11,16 +11,17 @@ package com.cburch.logisim.tools;
 
 import static com.cburch.logisim.tools.Strings.S;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.file.LoadedLibrary;
-import com.cburch.logisim.file.LogisimFile;
-import com.cburch.logisim.gui.generic.OptionPane;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.file.LoadedLibrary;
+import com.cburch.logisim.file.LogisimFile;
+import com.cburch.logisim.gui.generic.OptionPane;
 
 public final class LibraryTools {
 
@@ -103,11 +104,9 @@ public final class LibraryTools {
 
   // Why name case matters that it is reflected in argument `uppercasedNames` name?
   public static Map<String, String> getToolLocation(Library lib, String location, List<String> upercasedNames) {
-    final var toolIter = lib.getTools().iterator();
     final var ret = new HashMap<String, String>();
     final var MyLocation = (location.isEmpty()) ? lib.getName() : location + "->" + lib.getName();
-    while (toolIter.hasNext()) {
-      final var tool = toolIter.next();
+    for (Tool tool : lib.getTools()) {
       if (upercasedNames.contains(tool.getName().toUpperCase())) {
         ret.put(tool.getName(), MyLocation);
       }
@@ -119,10 +118,8 @@ public final class LibraryTools {
   }
 
   public static boolean isLibraryConform(Library lib, Set<String> names, Set<String> tools, Map<String, String> error) {
-    final var toolIter = lib.getTools().iterator();
     var hasErrors = false;
-    while (toolIter.hasNext()) {
-      final var tool = toolIter.next();
+    for (Tool tool : lib.getTools()) {
       if (tools.contains(tool.getName().toUpperCase())) {
         hasErrors = true;
         if (!error.containsKey(tool.getName())) {

@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.std.gates;
 
+import java.util.AbstractList;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.instance.StdAttr;
-import java.util.AbstractList;
 
 class GateAttributeList extends AbstractList<Attribute<?>> {
   private static final Attribute<?>[] BASE_ATTRIBUTES = {

@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+
 import javax.swing.ProgressMonitor;
 
 /**
@@ -219,7 +220,7 @@ public class GifEncoder {
             limit = (1 << numbits) - 1;
           }
 
-          prefix = (short) ((short) c & 0xFF);
+          prefix = (short) (c & 0xFF);
         }
       }
 

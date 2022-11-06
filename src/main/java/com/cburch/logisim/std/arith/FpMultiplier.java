@@ -11,6 +11,8 @@ package com.cburch.logisim.std.arith;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Bounds;
@@ -23,7 +25,6 @@ import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.tools.key.BitWidthConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
 
 public class FpMultiplier extends InstanceFactory {
   /**

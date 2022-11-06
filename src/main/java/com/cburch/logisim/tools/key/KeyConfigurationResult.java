@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.tools.key;
 
-import com.cburch.logisim.data.Attribute;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.cburch.logisim.data.Attribute;
 
 public class KeyConfigurationResult {
   private final KeyConfigurationEvent event;

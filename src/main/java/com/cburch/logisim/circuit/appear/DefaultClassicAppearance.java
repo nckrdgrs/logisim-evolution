@@ -9,6 +9,12 @@
 
 package com.cburch.logisim.circuit.appear;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.shapes.Curve;
 import com.cburch.draw.shapes.DrawAttr;
@@ -17,11 +23,6 @@ import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.instance.Instance;
 import com.cburch.logisim.instance.StdAttr;
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
 
 public class DefaultClassicAppearance {
 

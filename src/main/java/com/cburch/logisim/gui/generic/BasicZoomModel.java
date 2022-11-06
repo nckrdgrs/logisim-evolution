@@ -9,12 +9,14 @@
 
 package com.cburch.logisim.gui.generic;
 
-import com.cburch.logisim.prefs.PrefMonitor;
 import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.List;
+
 import javax.swing.SwingUtilities;
+
+import com.cburch.logisim.prefs.PrefMonitor;
 
 public class BasicZoomModel implements ZoomModel {
   private final List<Double> zoomOptions;

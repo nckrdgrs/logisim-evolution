@@ -9,7 +9,6 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
@@ -17,7 +16,10 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
+
 import javax.swing.Icon;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class ErrorIcon implements Icon {
 
@@ -76,9 +78,9 @@ public class ErrorIcon implements Icon {
     g2.setColor(Color.RED.darker().darker());
     g2.drawPolygon(xPos, ypos, 8);
     g2.setColor(Color.WHITE);
-    final var f = g2.getFont().deriveFont((float) mywh / (float) 1.3).deriveFont(Font.BOLD);
+    final var f = g2.getFont().deriveFont(mywh / (float) 1.3).deriveFont(Font.BOLD);
     final var t = new TextLayout("X", f, g2.getFontRenderContext());
-    final var xc = (float) mywh / (float) 2 - (float) t.getBounds().getCenterX() + (float) xoff;
+    final var xc = (float) mywh / (float) 2 - (float) t.getBounds().getCenterX() + xoff;
     final var yc = (float) mywh / (float) 2 - (float) t.getBounds().getCenterY();
     t.draw(g2, xc, yc);
     if (forwardArrow) {

@@ -9,10 +9,6 @@
 
 package com.cburch.logisim.vhdl.gui;
 
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.util.SmartScroller;
-import com.cburch.logisim.vhdl.sim.VhdlSimulatorListener;
-import com.cburch.logisim.vhdl.sim.VhdlSimulatorTop;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,11 +16,17 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
+
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.util.SmartScroller;
+import com.cburch.logisim.vhdl.sim.VhdlSimulatorListener;
+import com.cburch.logisim.vhdl.sim.VhdlSimulatorTop;
 
 public class VhdlSimulatorConsole extends JPanel {
 

@@ -9,6 +9,8 @@
 
 package com.cburch.logisim.gui.main;
 
+import javax.swing.JPopupMenu;
+
 import com.cburch.logisim.circuit.SubcircuitFactory;
 import com.cburch.logisim.data.AttributeEvent;
 import com.cburch.logisim.data.AttributeListener;
@@ -34,7 +36,6 @@ import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.PokeTool;
 import com.cburch.logisim.tools.Tool;
 import com.cburch.logisim.vhdl.base.VhdlEntity;
-import javax.swing.JPopupMenu;
 
 class ToolboxManip implements ProjectExplorer.Listener {
   private final Project proj;

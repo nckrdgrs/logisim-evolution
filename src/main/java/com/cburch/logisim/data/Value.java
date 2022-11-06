@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.data;
 
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.Cache;
 import java.awt.Color;
 import java.util.Arrays;
+
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.Cache;
 
 public class Value {
 
@@ -528,8 +529,7 @@ public class Value {
   }
 
   public long toLongValue() {
-    if (error != 0) return -1L;
-    if (unknown != 0) return -1L;
+    if ((error != 0) || (unknown != 0)) return -1L;
     return value;
   }
 
@@ -596,8 +596,7 @@ public class Value {
   public Value xor(Value other) {
     if (other == null) return this;
     if (this.width <= 1 && other.width <= 1) {
-      if (this == ERROR || other == ERROR) return ERROR;
-      if (this == UNKNOWN || other == UNKNOWN) return ERROR;
+      if (this == ERROR || other == ERROR || this == UNKNOWN || other == UNKNOWN) return ERROR;
       if (this == NIL || other == NIL) return ERROR;
       if ((this == TRUE) == (other == TRUE)) return FALSE;
       return TRUE;

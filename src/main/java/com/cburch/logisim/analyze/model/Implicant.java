@@ -112,7 +112,7 @@ public class Implicant implements Comparable<Implicant> {
     // the HashMap keeps track of the group (key) implicant and the number of min/max terms in this group (HashSet)
     final var currentTable = new HashMap<Integer, HashMap<Implicant, HashSet<Implicant>>>();
     final var newTable = new HashMap<Integer, HashMap<Implicant, HashSet<Implicant>>>();
-    // for terms to cover is the "key" the min/maxterms that need to be covered, and the ArrayList 
+    // for terms to cover is the "key" the min/maxterms that need to be covered, and the ArrayList
     // the set of prime covers that cover the key
     final var termsToCover = new HashMap<Implicant, ArrayList<Implicant>>();
     var allDontCare = true;
@@ -137,12 +137,11 @@ public class Implicant implements Comparable<Implicant> {
       newTable.get(nrOfOnes).put(implicant, implicantsSet);
     }
 
-    if (allDontCare) return Collections.emptyList();
     // In case the number of inputs is bigger than approx. 8 inputs, this
     // algorithm takes a long time. To prevent "freezing" of logisim, we
     // only perform an optimization for systems with more than 6 inputs on
     // user request. Otherwise we exit here and return the set of min/maxterms
-    if ((nrOfInputs > MAXIMAL_NR_OF_INPUTS_FOR_AUTO_MINIMAL_FORM) && (outputArea == null)) {
+    if (allDontCare || ((nrOfInputs > MAXIMAL_NR_OF_INPUTS_FOR_AUTO_MINIMAL_FORM) && (outputArea == null))) {
       return Collections.emptyList();
     }
     report(outputArea, String.format("\n%s\n", S.fmt("implicantOutputName", variable)));
@@ -192,7 +191,7 @@ public class Implicant implements Comparable<Implicant> {
                 }
               }
             }
-          } 
+          }
         }
       }
       // now we add the primes to the set
@@ -201,7 +200,7 @@ public class Implicant implements Comparable<Implicant> {
           if (implicant.isPrime && !implicant.isDontCare) {
             primes.put(implicant, currentTable.get(key).get(implicant));
             if ((nrOfPrimes % 16L) == 0L) report(outputArea, "\n");
-            report(outputArea, String.format("%s ", 
+            report(outputArea, String.format("%s ",
                   getGroupRepresentation(implicant.values, implicant.unknowns, nrOfInputs)));
             nrOfPrimes++;
           }

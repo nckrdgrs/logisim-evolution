@@ -12,6 +12,7 @@ package com.cburch.logisim.fpga.file;
 import static com.cburch.logisim.fpga.Strings.S;
 
 import java.io.File;
+
 import javax.swing.filechooser.FileFilter;
 
 public class PngFileFilter extends FileFilter {

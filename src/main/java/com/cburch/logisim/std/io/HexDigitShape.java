@@ -11,9 +11,10 @@ package com.cburch.logisim.std.io;
 
 import static com.cburch.logisim.std.Strings.S;
 
-import com.cburch.logisim.circuit.appear.DynamicElement;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import com.cburch.logisim.circuit.appear.DynamicElement;
 
 public class HexDigitShape extends SevenSegmentShape {
 

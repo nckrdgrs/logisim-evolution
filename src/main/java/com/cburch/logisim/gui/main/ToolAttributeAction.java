@@ -11,6 +11,9 @@ package com.cburch.logisim.gui.main;
 
 import static com.cburch.logisim.gui.Strings.S;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitAttributes;
 import com.cburch.logisim.circuit.CircuitMutator;
@@ -26,8 +29,6 @@ import com.cburch.logisim.tools.Tool;
 import com.cburch.logisim.tools.key.KeyConfigurationEvent;
 import com.cburch.logisim.tools.key.KeyConfigurationResult;
 import com.cburch.logisim.vhdl.base.VhdlEntity;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ToolAttributeAction extends Action {
   private final KeyConfigurationResult config;

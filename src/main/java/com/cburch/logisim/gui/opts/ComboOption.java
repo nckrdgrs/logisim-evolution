@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.gui.opts;
 
+import javax.swing.JComboBox;
+
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.util.StringGetter;
-import javax.swing.JComboBox;
 
 class ComboOption {
   private final Object value;

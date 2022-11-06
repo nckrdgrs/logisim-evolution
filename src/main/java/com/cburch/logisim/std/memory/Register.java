@@ -11,6 +11,10 @@ package com.cburch.logisim.std.memory;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+
 import com.cburch.logisim.circuit.appear.DynamicElement;
 import com.cburch.logisim.circuit.appear.DynamicElementProvider;
 import com.cburch.logisim.data.Attribute;
@@ -36,9 +40,6 @@ import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.tools.key.JoinedConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
 
 public class Register extends InstanceFactory implements DynamicElementProvider {
   /**
@@ -228,7 +229,7 @@ public class Register extends InstanceFactory implements DynamicElementProvider 
     setKeyConfigurator(
         JoinedConfigurator.create(
             new BitWidthConfigurator(StdAttr.WIDTH),
-            new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK)));
+            new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK)));
     setIcon(new FlipFlopIcon(FlipFlopIcon.REGISTER));
     setInstancePoker(RegisterPoker.class);
     setInstanceLogger(RegisterLogger.class);

@@ -11,6 +11,9 @@ package com.cburch.logisim.std.plexers;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Graphics;
+import java.util.List;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.Attributes;
@@ -22,8 +25,6 @@ import com.cburch.logisim.tools.FactoryDescription;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.Tool;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Graphics;
-import java.util.List;
 
 public class PlexersLibrary extends Library {
   /**

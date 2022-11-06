@@ -11,6 +11,13 @@ package com.cburch.logisim.circuit.appear;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.List;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
 import com.cburch.draw.model.HandleGesture;
@@ -20,11 +27,6 @@ import com.cburch.logisim.instance.Instance;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.wiring.Pin;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.List;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 public class AppearancePort extends AppearanceElement {
   private static final int INPUT_RADIUS = 4;

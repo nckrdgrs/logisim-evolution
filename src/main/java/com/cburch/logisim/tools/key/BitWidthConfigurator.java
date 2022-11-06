@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.tools.key;
 
+import java.awt.event.InputEvent;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Value;
-import java.awt.event.InputEvent;
 
 public class BitWidthConfigurator extends NumericConfigurator<BitWidth> {
   public BitWidthConfigurator(Attribute<BitWidth> attr) {

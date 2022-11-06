@@ -9,6 +9,11 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.gui.AttrTableDrawManager;
 import com.cburch.draw.toolbar.ToolbarModel;
@@ -23,9 +28,6 @@ import com.cburch.logisim.gui.generic.ZoomModel;
 import com.cburch.logisim.gui.menu.EditHandler;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.proj.Project;
-import java.util.ArrayList;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 
 public class AppearanceView {
   private static final ArrayList<Double> ZOOM_OPTIONS =

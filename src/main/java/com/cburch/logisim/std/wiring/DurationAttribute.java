@@ -11,9 +11,10 @@ package com.cburch.logisim.std.wiring;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import javax.swing.JTextField;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.util.StringGetter;
-import javax.swing.JTextField;
 
 public class DurationAttribute extends Attribute<Integer> {
   private final int min;

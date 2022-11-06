@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.std.gates;
 
+import java.awt.event.KeyEvent;
+
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.gui.main.Canvas;
 import com.cburch.logisim.tools.SetAttributeAction;
-import java.awt.event.KeyEvent;
 
 public class GateKeyboardModifier {
   public static boolean tookKeyboardStrokes(

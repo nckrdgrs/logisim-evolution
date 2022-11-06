@@ -11,8 +11,6 @@ package com.cburch.logisim.util;
 
 import static com.cburch.logisim.util.Strings.S;
 
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Component;
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,7 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.JFileChooser;
+
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public final class Softwares {
 

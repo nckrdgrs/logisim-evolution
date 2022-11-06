@@ -11,10 +11,6 @@ package com.cburch.logisim.gui.prefs;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.data.Value;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.prefs.PrefMonitor;
-import com.cburch.logisim.proj.Projects;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -23,10 +19,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import com.cburch.logisim.data.Value;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.prefs.PrefMonitor;
+import com.cburch.logisim.proj.Projects;
 
 public class SimOptions extends OptionsPanel {
 

@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.logisim.util.UniquelyNamedThread;
 import java.awt.Rectangle;
+
+import com.cburch.logisim.util.UniquelyNamedThread;
 
 class CanvasPaintThread extends UniquelyNamedThread {
   private static final int REPAINT_TIMESPAN = 50; // 50 ms between repaints

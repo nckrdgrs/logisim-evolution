@@ -11,6 +11,8 @@ package com.cburch.logisim.soc.nios2;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.gui.generic.OptionPane;
@@ -19,7 +21,6 @@ import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.soc.util.AssemblerAsmInstruction;
 import com.cburch.logisim.soc.util.AssemblerExecutionInterface;
 import com.cburch.logisim.soc.util.AssemblerToken;
-import java.util.ArrayList;
 
 public class Nios2CustomInstructions implements AssemblerExecutionInterface {
 
@@ -32,7 +33,8 @@ public class Nios2CustomInstructions implements AssemblerExecutionInterface {
   private int n;
   private boolean custActive = false;
 
-  public boolean execute(Object processorState, CircuitState circuitState) {
+  @Override
+public boolean execute(Object processorState, CircuitState circuitState) {
     if (!valid) return false;
     Nios2State.ProcessorState state = (Nios2State.ProcessorState) processorState;
     int regAValue = state.getRegisterValue(regA);
@@ -80,7 +82,8 @@ public class Nios2CustomInstructions implements AssemblerExecutionInterface {
     return true;
   }
 
-  public String getAsmInstruction() {
+  @Override
+public String getAsmInstruction() {
     if (!valid) return null;
     StringBuilder s = new StringBuilder();
     s.append("custom");
@@ -92,11 +95,13 @@ public class Nios2CustomInstructions implements AssemblerExecutionInterface {
     return s.toString();
   }
 
-  public int getBinInstruction() {
+  @Override
+public int getBinInstruction() {
     return instruction;
   }
 
-  public boolean setAsmInstruction(AssemblerAsmInstruction instr) {
+  @Override
+public boolean setAsmInstruction(AssemblerAsmInstruction instr) {
     if (!instr.getOpcode().equalsIgnoreCase("custom")) {
       valid = false;
       return false;
@@ -170,7 +175,8 @@ public class Nios2CustomInstructions implements AssemblerExecutionInterface {
     return true;
   }
 
-  public boolean setBinInstruction(int instr) {
+  @Override
+public boolean setBinInstruction(int instr) {
     instruction = instr;
     valid = false;
     if (Nios2Support.getOpcode(instr) == CUSTOM) {
@@ -187,25 +193,30 @@ public class Nios2CustomInstructions implements AssemblerExecutionInterface {
     return valid;
   }
 
-  public boolean performedJump() {
+  @Override
+public boolean performedJump() {
     return false;
   }
 
-  public boolean isValid() {
+  @Override
+public boolean isValid() {
     return valid;
   }
 
-  public String getErrorMessage() {
+  @Override
+public String getErrorMessage() {
     return null;
   }
 
-  public ArrayList<String> getInstructions() {
+  @Override
+public ArrayList<String> getInstructions() {
     ArrayList<String> opcodes = new ArrayList<>();
     opcodes.add("custom");
     return opcodes;
   }
 
-  public int getInstructionSizeInBytes(String instruction) {
+  @Override
+public int getInstructionSizeInBytes(String instruction) {
     if (instruction.equalsIgnoreCase("custom")) return 4;
     return -1;
   }

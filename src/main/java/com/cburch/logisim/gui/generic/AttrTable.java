@@ -11,13 +11,6 @@ package com.cburch.logisim.gui.generic;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.fpga.gui.HdlColorRenderer;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.JDialogOk;
-import com.cburch.logisim.util.JInputComponent;
-import com.cburch.logisim.util.JInputDialog;
-import com.cburch.logisim.util.LocaleListener;
-import com.cburch.logisim.util.LocaleManager;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -31,6 +24,7 @@ import java.awt.event.FocusListener;
 import java.util.ArrayList;
 import java.util.EventObject;
 import java.util.LinkedList;
+
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -47,6 +41,14 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableModel;
+
+import com.cburch.logisim.fpga.gui.HdlColorRenderer;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.JDialogOk;
+import com.cburch.logisim.util.JInputComponent;
+import com.cburch.logisim.util.JInputDialog;
+import com.cburch.logisim.util.LocaleListener;
+import com.cburch.logisim.util.LocaleManager;
 
 @SuppressWarnings("serial")
 public class AttrTable extends JPanel implements LocaleListener {

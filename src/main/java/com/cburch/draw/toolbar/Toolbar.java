@@ -10,6 +10,7 @@
 package com.cburch.draw.toolbar;
 
 import java.awt.BorderLayout;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;

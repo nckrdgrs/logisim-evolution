@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.data.AttributeSet;
-import com.cburch.logisim.util.PropertyChangeWeakSupport;
 import java.beans.PropertyChangeListener;
 import java.util.Collection;
 import java.util.HashSet;
+
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.data.AttributeSet;
+import com.cburch.logisim.util.PropertyChangeWeakSupport;
 
 class Clipboard {
   public static final String CONTENTS_PROPERTY = "contents";

@@ -9,9 +9,6 @@
 
 package com.cburch.logisim.proj;
 
-import com.cburch.logisim.gui.main.Frame;
-import com.cburch.logisim.util.MacCompatibility;
-import com.cburch.logisim.util.PropertyChangeWeakSupport;
 import java.awt.Point;
 import java.awt.Window;
 import java.awt.event.WindowAdapter;
@@ -22,6 +19,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.WeakHashMap;
+
+import com.cburch.logisim.gui.main.Frame;
+import com.cburch.logisim.util.MacCompatibility;
+import com.cburch.logisim.util.PropertyChangeWeakSupport;
 
 public final class Projects {
 
@@ -48,7 +49,7 @@ public final class Projects {
     @Override
     public void windowClosing(WindowEvent event) {
       final var frame = (Frame) event.getSource();
-      if ((frame.getExtendedState() & Frame.ICONIFIED) == 0) {
+      if ((frame.getExtendedState() & java.awt.Frame.ICONIFIED) == 0) {
         mostRecentFrame = frame;
         try {
           frameLocations.put(frame, frame.getLocationOnScreen());
@@ -137,7 +138,7 @@ public final class Projects {
         if (ret == null) {
           ret = frame;
         }
-        if (ret.isVisible() && (ret.getExtendedState() & Frame.ICONIFIED) != 0) {
+        if (ret.isVisible() && (ret.getExtendedState() & java.awt.Frame.ICONIFIED) != 0) {
           backup = ret;
         }
       }

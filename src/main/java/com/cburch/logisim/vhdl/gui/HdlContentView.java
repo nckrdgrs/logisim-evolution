@@ -11,6 +11,22 @@ package com.cburch.logisim.vhdl.gui;
 
 import static com.cburch.logisim.vhdl.Strings.S;
 
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.io.File;
+import java.io.IOException;
+
+import javax.swing.JFileChooser;
+import javax.swing.JPanel;
+import javax.swing.event.DocumentEvent;
+
+import org.fife.ui.rsyntaxtextarea.RSyntaxDocument;
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
+import org.fife.ui.rtextarea.RTextScrollPane;
+
 import com.cburch.contracts.BaseDocumentListenerContract;
 import com.cburch.draw.toolbar.ToolbarModel;
 import com.cburch.logisim.gui.generic.OptionPane;
@@ -22,19 +38,6 @@ import com.cburch.logisim.vhdl.base.HdlModel;
 import com.cburch.logisim.vhdl.base.HdlModelListener;
 import com.cburch.logisim.vhdl.file.HdlFile;
 import com.cburch.logisim.vhdl.syntax.VhdlSyntax;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.io.File;
-import java.io.IOException;
-import javax.swing.JFileChooser;
-import javax.swing.JPanel;
-import javax.swing.event.DocumentEvent;
-import org.fife.ui.rsyntaxtextarea.RSyntaxDocument;
-import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
-import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
-import org.fife.ui.rtextarea.RTextScrollPane;
 
 public class HdlContentView extends JPanel
     implements BaseDocumentListenerContract, HdlModelListener {

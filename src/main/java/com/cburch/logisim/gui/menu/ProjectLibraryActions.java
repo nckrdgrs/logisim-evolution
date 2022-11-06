@@ -11,18 +11,20 @@ package com.cburch.logisim.gui.menu;
 
 import static com.cburch.logisim.gui.Strings.S;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.jar.JarFile;
+
+import javax.swing.JFileChooser;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
 import com.cburch.logisim.file.Loader;
 import com.cburch.logisim.file.LogisimFileActions;
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.tools.Library;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.jar.JarFile;
-import javax.swing.JFileChooser;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
 
 public class ProjectLibraryActions {
   private ProjectLibraryActions() {}

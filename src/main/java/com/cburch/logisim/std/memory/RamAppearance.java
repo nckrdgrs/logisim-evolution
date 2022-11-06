@@ -11,6 +11,9 @@ package com.cburch.logisim.std.memory;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.BasicStroke;
+import java.awt.Graphics2D;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Direction;
@@ -19,8 +22,6 @@ import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.BasicStroke;
-import java.awt.Graphics2D;
 
 
 public class RamAppearance {
@@ -348,8 +349,7 @@ public class RamAppearance {
 
   private static Port getDataInPort(int portIndex, AttributeSet attrs) {
     final var nrDins = getNrDataInPorts(attrs);
-    if (nrDins == 0 || portIndex < 0) return null;
-    if (portIndex >= nrDins) return null;
+    if (nrDins == 0 || portIndex < 0 || (portIndex >= nrDins)) return null;
     var ypos = getControlHeight(attrs);
     final var classic = classicAppearance(attrs);
     final var bits = attrs.getValue(Mem.DATA_ATTR);
@@ -378,8 +378,7 @@ public class RamAppearance {
 
   private static Port getDataOutPort(int portIndex, AttributeSet attrs) {
     final var nrDouts = getNrDataOutPorts(attrs);
-    if (nrDouts == 0 || portIndex < 0) return null;
-    if (portIndex >= nrDouts) return null;
+    if (nrDouts == 0 || portIndex < 0 || (portIndex >= nrDouts)) return null;
     var ypos = getControlHeight(attrs);
     var xpos = Mem.SymbolWidth + 40;
     var portType = Port.OUTPUT;
@@ -414,8 +413,7 @@ public class RamAppearance {
 
   private static Port getOEPort(int portIndex, AttributeSet attrs) {
     final var nrOEs = getNrOEPorts(attrs);
-    if (nrOEs == 0 || portIndex < 0) return null;
-    if (portIndex >= nrOEs) return null;
+    if (nrOEs == 0 || portIndex < 0 || (portIndex >= nrOEs)) return null;
     var ypos = 60;
     if (attrs.getValue(Mem.ENABLES_ATTR).equals(Mem.USELINEENABLES) && classicAppearance(attrs))
       ypos = 20;
@@ -426,8 +424,7 @@ public class RamAppearance {
 
   private static Port getWEPort(int portIndex, AttributeSet attrs) {
     final var nrWEs = getNrWEPorts(attrs);
-    if (nrWEs == 0 || portIndex < 0) return null;
-    if (portIndex >= nrWEs) return null;
+    if (nrWEs == 0 || portIndex < 0 || (portIndex >= nrWEs)) return null;
     var ypos = 50;
     if (attrs.getValue(Mem.ENABLES_ATTR).equals(Mem.USELINEENABLES) && classicAppearance(attrs))
       ypos = 30;
@@ -438,8 +435,7 @@ public class RamAppearance {
 
   private static Port getClkPort(int portIndex, AttributeSet attrs) {
     final var nrClks = getNrClkPorts(attrs);
-    if (nrClks == 0 || portIndex < 0) return null;
-    if (portIndex >= nrClks) return null;
+    if (nrClks == 0 || portIndex < 0 || (portIndex >= nrClks)) return null;
     var ypos = 70;
     if (attrs.getValue(Mem.ENABLES_ATTR).equals(Mem.USELINEENABLES) && classicAppearance(attrs))
       ypos = 40;
@@ -452,8 +448,7 @@ public class RamAppearance {
 
   private static Port getLEPort(int portIndex, AttributeSet attrs) {
     final var nrLEs = getNrLEPorts(attrs);
-    if (nrLEs == 0 || portIndex < 0) return null;
-    if (portIndex >= nrLEs) return null;
+    if (nrLEs == 0 || portIndex < 0 || (portIndex >= nrLEs)) return null;
     var ypos = 70;
     if (attrs.getValue(Mem.ENABLES_ATTR).equals(Mem.USELINEENABLES) && classicAppearance(attrs))
       ypos = 40;
@@ -473,8 +468,7 @@ public class RamAppearance {
 
   private static Port getBEPort(int portIndex, AttributeSet attrs) {
     final var nrBEs = getNrBEPorts(attrs);
-    if (nrBEs == 0 || portIndex < 0) return null;
-    if (portIndex >= nrBEs) return null;
+    if (nrBEs == 0 || portIndex < 0 || (portIndex >= nrBEs)) return null;
     final var ypos = 70 + (nrBEs - portIndex - 1) * 10;
     final var result = new Port(0, ypos, Port.INPUT, 1);
     switch (portIndex) {

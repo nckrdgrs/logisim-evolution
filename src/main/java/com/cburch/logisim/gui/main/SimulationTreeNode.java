@@ -9,11 +9,13 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.logisim.comp.ComponentFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+
 import javax.swing.tree.TreeNode;
+
+import com.cburch.logisim.comp.ComponentFactory;
 
 public class SimulationTreeNode implements TreeNode {
   protected final SimulationTreeModel model;

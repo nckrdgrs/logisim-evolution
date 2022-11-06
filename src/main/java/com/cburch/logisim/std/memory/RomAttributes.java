@@ -9,6 +9,11 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.awt.Font;
+import java.util.Arrays;
+import java.util.List;
+import java.util.WeakHashMap;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
@@ -18,10 +23,6 @@ import com.cburch.logisim.instance.Instance;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.proj.Project;
-import java.awt.Font;
-import java.util.Arrays;
-import java.util.List;
-import java.util.WeakHashMap;
 
 class RomAttributes extends AbstractAttributeSet {
 

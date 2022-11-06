@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.data.Location;
-import java.util.Collection;
-import java.util.Collections;
 
 class ClipboardContents {
   static final ClipboardContents EMPTY = new ClipboardContents(Collections.emptySet(), null, null);

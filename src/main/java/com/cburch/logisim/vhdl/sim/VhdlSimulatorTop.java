@@ -9,6 +9,19 @@
 
 package com.cburch.logisim.vhdl.sim;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.help.UnsupportedOperationException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.circuit.CircuitEvent;
 import com.cburch.logisim.circuit.CircuitListener;
 import com.cburch.logisim.circuit.CircuitState;
@@ -20,16 +33,6 @@ import com.cburch.logisim.util.SocketClient;
 import com.cburch.logisim.vhdl.base.VhdlEntity;
 import com.cburch.logisim.vhdl.base.VhdlSimConstants;
 import com.cburch.logisim.vhdl.base.VhdlSimConstants.State;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.List;
-import javax.help.UnsupportedOperationException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * VHDL simulator allows Logisim to simulate the behavior of VHDL architectures. It delegate this
@@ -236,10 +239,7 @@ public class VhdlSimulatorTop implements CircuitListener {
 
     /* Test current circuit */
     for (Component comp : s.getCircuit().getNonWires()) {
-      if (comp.getFactory().getClass().equals(VhdlEntity.class)) {
-        return true;
-      }
-      if (comp.getFactory().getClass().equals(VhdlEntityComponent.class)) return true;
+      if (comp.getFactory().getClass().equals(VhdlEntity.class) || comp.getFactory().getClass().equals(VhdlEntityComponent.class)) return true;
     }
 
     /* Test sub-circuits */

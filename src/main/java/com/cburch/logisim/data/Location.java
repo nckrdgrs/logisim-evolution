@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.data;
 
-import com.cburch.logisim.util.Cache;
 import java.util.Comparator;
 import java.util.List;
+
+import com.cburch.logisim.util.Cache;
 
 /**
  * Represents an immutable rectangular bounding box. This is analogous to java.awt's <code>Point

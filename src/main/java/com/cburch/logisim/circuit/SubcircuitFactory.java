@@ -11,6 +11,21 @@ package com.cburch.logisim.circuit;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
+import java.awt.AlphaComposite;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Composite;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.font.TextLayout;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
@@ -33,19 +48,6 @@ import com.cburch.logisim.tools.MenuExtender;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringGetter;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.AlphaComposite;
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.font.TextLayout;
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 
 public class SubcircuitFactory extends InstanceFactory {
   private class CircuitFeature implements StringGetter, MenuExtender, ActionListener {

@@ -11,6 +11,19 @@ package com.cburch.logisim.soc.bus;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.util.HashMap;
+
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellRenderer;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.gui.main.Frame;
 import com.cburch.logisim.instance.Instance;
@@ -26,17 +39,6 @@ import com.cburch.logisim.tools.CircuitStateHolder;
 import com.cburch.logisim.tools.MenuExtender;
 import com.cburch.logisim.util.LineBuffer;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.util.HashMap;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableCellRenderer;
 
 public class SocBusMenuProvider implements ActionListener {
 
@@ -265,7 +267,7 @@ public class SocBusMenuProvider implements ActionListener {
       final var frame = myInsertionFrames.get(state);
       frame.setVisible(true);
       var fstate = frame.getExtendedState();
-      fstate &= ~Frame.ICONIFIED;
+      fstate &= ~java.awt.Frame.ICONIFIED;
       frame.setExtendedState(fstate);
     }
 
@@ -320,7 +322,7 @@ public class SocBusMenuProvider implements ActionListener {
       }
       myTraceFrame.setVisible(true);
       var fstate = myTraceFrame.getExtendedState();
-      fstate &= ~Frame.ICONIFIED;
+      fstate &= ~java.awt.Frame.ICONIFIED;
       myTraceFrame.setExtendedState(fstate);
     }
 

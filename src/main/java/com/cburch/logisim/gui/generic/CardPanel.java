@@ -12,6 +12,7 @@ package com.cburch.logisim.gui.generic;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
+
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;

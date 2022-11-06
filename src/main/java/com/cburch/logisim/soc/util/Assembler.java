@@ -11,6 +11,25 @@ package com.cburch.logisim.soc.util;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+import javax.swing.text.BadLocationException;
+
+import org.fife.ui.rsyntaxtextarea.RSyntaxDocument;
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import org.fife.ui.rsyntaxtextarea.TokenTypes;
+import org.fife.ui.rsyntaxtextarea.parser.AbstractParser;
+import org.fife.ui.rsyntaxtextarea.parser.DefaultParseResult;
+import org.fife.ui.rsyntaxtextarea.parser.DefaultParserNotice;
+import org.fife.ui.rsyntaxtextarea.parser.ParseResult;
+import org.fife.ui.rtextarea.GutterIconInfo;
+import org.fife.ui.rtextarea.RTextScrollPane;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.gui.icons.ErrorIcon;
@@ -19,24 +38,6 @@ import com.cburch.logisim.soc.file.ElfSectionHeader;
 import com.cburch.logisim.util.LocaleListener;
 import com.cburch.logisim.util.LocaleManager;
 import com.cburch.logisim.util.StringGetter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import javax.swing.text.BadLocationException;
-import org.fife.ui.rsyntaxtextarea.RSyntaxDocument;
-import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
-import org.fife.ui.rsyntaxtextarea.Token;
-import org.fife.ui.rsyntaxtextarea.parser.AbstractParser;
-import org.fife.ui.rsyntaxtextarea.parser.DefaultParseResult;
-import org.fife.ui.rsyntaxtextarea.parser.DefaultParserNotice;
-import org.fife.ui.rsyntaxtextarea.parser.ParseResult;
-import org.fife.ui.rtextarea.GutterIconInfo;
-import org.fife.ui.rtextarea.RTextArea;
-import org.fife.ui.rtextarea.RTextScrollPane;
 
 public class Assembler extends AbstractParser implements LocaleListener {
 
@@ -381,13 +382,13 @@ public class Assembler extends AbstractParser implements LocaleListener {
     }
     /* first pass: check all highlighted tokens and convert them to assembler tokens */
     while (first != null) {
-      if (first.getType() != Token.NULL
-          && first.getType() != Token.COMMENT_EOL
-          && first.getType() != Token.WHITESPACE) {
+      if (first.getType() != TokenTypes.NULL
+          && first.getType() != TokenTypes.COMMENT_EOL
+          && first.getType() != TokenTypes.WHITESPACE) {
         final var name = first.getLexeme();
         final var type = first.getType();
         final var offset = first.getOffset();
-        if (type == Token.LITERAL_CHAR) {
+        if (type == TokenTypes.LITERAL_CHAR) {
           switch (name) {
             case ",":
               lineTokens.add(new AssemblerToken(AssemblerToken.SEPERATOR, null, offset));
@@ -452,24 +453,24 @@ public class Assembler extends AbstractParser implements LocaleListener {
           }
         } else
           switch (type) {
-            case Token.LITERAL_NUMBER_DECIMAL_INT ->
+            case TokenTypes.LITERAL_NUMBER_DECIMAL_INT ->
                 lineTokens.add(new AssemblerToken(AssemblerToken.DEC_NUMBER, name, offset));
-            case Token.LITERAL_NUMBER_HEXADECIMAL ->
+            case TokenTypes.LITERAL_NUMBER_HEXADECIMAL ->
                 lineTokens.add(new AssemblerToken(AssemblerToken.HEX_NUMBER, name, offset));
-            case Token.FUNCTION ->
+            case TokenTypes.FUNCTION ->
                 lineTokens.add(new AssemblerToken(AssemblerToken.ASM_INSTRUCTION, name, offset));
-            case Token.OPERATOR -> lineTokens.add(
+            case TokenTypes.OPERATOR -> lineTokens.add(
                 new AssemblerToken(
                     name.equals("pc") ? AssemblerToken.PROGRAM_COUNTER : AssemblerToken.REGISTER,
                     name,
                     offset));
-            case Token.RESERVED_WORD ->
+            case TokenTypes.RESERVED_WORD ->
                 lineTokens.add(new AssemblerToken(AssemblerToken.INSTRUCTION, name, offset));
-            case Token.LITERAL_STRING_DOUBLE_QUOTE ->
+            case TokenTypes.LITERAL_STRING_DOUBLE_QUOTE ->
                 lineTokens.add(new AssemblerToken(AssemblerToken.STRING, name, offset));
-            case Token.IDENTIFIER ->
+            case TokenTypes.IDENTIFIER ->
                 lineTokens.add(new AssemblerToken(AssemblerToken.MAYBE_LABEL, name, offset));
-            case Token.PREPROCESSOR ->
+            case TokenTypes.PREPROCESSOR ->
                 lineTokens.add(new AssemblerToken(AssemblerToken.MACRO_PARAMETER, name, offset));
           }
       }

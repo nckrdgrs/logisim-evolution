@@ -11,18 +11,6 @@ package com.cburch.logisim.gui.main;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.circuit.CircuitState;
-import com.cburch.logisim.comp.ComponentDrawContext;
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.file.Loader;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.gui.generic.TikZWriter;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.util.GifEncoder;
-import com.cburch.logisim.util.StringGetter;
-import com.cburch.logisim.util.UniquelyNamedThread;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -33,6 +21,7 @@ import java.awt.Insets;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
+
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -51,8 +40,22 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileFilter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.circuit.CircuitState;
+import com.cburch.logisim.comp.ComponentDrawContext;
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.file.Loader;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.gui.generic.TikZWriter;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.util.GifEncoder;
+import com.cburch.logisim.util.StringGetter;
+import com.cburch.logisim.util.UniquelyNamedThread;
 
 public class ExportImage {
 
@@ -330,7 +333,7 @@ public class ExportImage {
       formatSvg.addChangeListener(this);
       formatPng.setSelected(true);
 
-      slider = new JSlider(JSlider.HORIZONTAL, -3 * SLIDER_DIVISIONS, 3 * SLIDER_DIVISIONS, 0);
+      slider = new JSlider(SwingConstants.HORIZONTAL, -3 * SLIDER_DIVISIONS, 3 * SLIDER_DIVISIONS, 0);
       slider.setMajorTickSpacing(10);
       slider.addChangeListener(this);
       curScale = new JLabel("222%");

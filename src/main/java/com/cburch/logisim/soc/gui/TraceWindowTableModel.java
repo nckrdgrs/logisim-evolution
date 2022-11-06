@@ -9,6 +9,18 @@
 
 package com.cburch.logisim.soc.gui;
 
+import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Map;
+
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
+
 import com.cburch.contracts.BaseMouseListenerContract;
 import com.cburch.logisim.circuit.CircuitEvent;
 import com.cburch.logisim.circuit.CircuitListener;
@@ -20,16 +32,6 @@ import com.cburch.logisim.soc.bus.SocBusMenuProvider;
 import com.cburch.logisim.soc.data.SocBusStateInfo;
 import com.cburch.logisim.soc.data.SocBusStateInfo.SocBusState;
 import com.cburch.logisim.tools.CircuitStateHolder;
-import java.awt.Dimension;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Map;
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableCellRenderer;
 
 public class TraceWindowTableModel extends AbstractTableModel
     implements BaseMouseListenerContract,

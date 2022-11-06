@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.Preferences;
+
 import javax.swing.JCheckBox;
 
 public class PrefMonitorBoolean extends AbstractPrefMonitor<Boolean> implements ActionListener {
@@ -29,7 +30,8 @@ public class PrefMonitorBoolean extends AbstractPrefMonitor<Boolean> implements 
     prefs.addPreferenceChangeListener(this);
   }
 
-  public Boolean get() {
+  @Override
+public Boolean get() {
     return value;
   }
 
@@ -38,7 +40,8 @@ public class PrefMonitorBoolean extends AbstractPrefMonitor<Boolean> implements 
     return value;
   }
 
-  public void preferenceChange(PreferenceChangeEvent event) {
+  @Override
+public void preferenceChange(PreferenceChangeEvent event) {
     final var prefs = event.getNode();
     final var prop = event.getKey();
     final var name = getIdentifier();
@@ -52,7 +55,8 @@ public class PrefMonitorBoolean extends AbstractPrefMonitor<Boolean> implements 
     }
   }
 
-  public void set(Boolean newValue) {
+  @Override
+public void set(Boolean newValue) {
     if (value != newValue) {
       AppPreferences.getPrefs().putBoolean(getIdentifier(), newValue);
     }

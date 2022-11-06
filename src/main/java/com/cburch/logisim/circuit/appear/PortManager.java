@@ -9,10 +9,6 @@
 
 package com.cburch.logisim.circuit.appear;
 
-import com.cburch.logisim.data.Direction;
-import com.cburch.logisim.data.Location;
-import com.cburch.logisim.instance.Instance;
-import com.cburch.logisim.instance.StdAttr;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -20,6 +16,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import com.cburch.logisim.data.Direction;
+import com.cburch.logisim.data.Location;
+import com.cburch.logisim.instance.Instance;
+import com.cburch.logisim.instance.StdAttr;
 
 class PortManager {
   private static Location computeDefaultLocation(CircuitAppearance appear, Instance pin, Map<Instance, AppearancePort> others) {

@@ -9,6 +9,11 @@
 
 package com.cburch.logisim.gui.main;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
+import javax.swing.tree.TreeNode;
+
 import com.cburch.logisim.circuit.CircuitAttributes;
 import com.cburch.logisim.circuit.CircuitEvent;
 import com.cburch.logisim.circuit.CircuitListener;
@@ -19,9 +24,6 @@ import com.cburch.logisim.comp.ComponentFactory;
 import com.cburch.logisim.data.AttributeEvent;
 import com.cburch.logisim.data.AttributeListener;
 import com.cburch.logisim.instance.StdAttr;
-import java.util.ArrayList;
-import java.util.Comparator;
-import javax.swing.tree.TreeNode;
 
 class SimulationTreeCircuitNode extends SimulationTreeNode
     implements CircuitListener, AttributeListener, Comparator<Component> {

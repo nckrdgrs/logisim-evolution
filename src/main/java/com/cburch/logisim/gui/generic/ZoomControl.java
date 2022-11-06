@@ -11,10 +11,6 @@ package com.cburch.logisim.gui.generic;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.logisim.gui.icons.ZoomIcon;
-import com.cburch.logisim.gui.main.Canvas;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -30,6 +26,7 @@ import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
+
 import javax.swing.DefaultBoundedRangeModel;
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -38,6 +35,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
+
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.logisim.gui.icons.ZoomIcon;
+import com.cburch.logisim.gui.main.Canvas;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class ZoomControl extends JPanel {
   private static final long serialVersionUID = 1L;

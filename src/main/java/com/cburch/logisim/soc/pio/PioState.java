@@ -9,6 +9,8 @@
 
 package com.cburch.logisim.soc.pio;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Value;
@@ -21,7 +23,6 @@ import com.cburch.logisim.soc.data.SocBusSlaveListener;
 import com.cburch.logisim.soc.data.SocBusTransaction;
 import com.cburch.logisim.soc.data.SocSupport;
 import com.cburch.logisim.util.StringUtil;
-import java.util.ArrayList;
 
 public class PioState implements SocBusSlaveInterface {
 

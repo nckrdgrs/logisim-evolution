@@ -9,10 +9,12 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.logisim.circuit.CircuitState;
 import java.util.HashMap;
 import java.util.List;
+
 import javax.swing.tree.TreeNode;
+
+import com.cburch.logisim.circuit.CircuitState;
 
 class SimulationTreeTopNode extends SimulationTreeNode {
 

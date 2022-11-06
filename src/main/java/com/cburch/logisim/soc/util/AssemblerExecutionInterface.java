@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.soc.util;
 
-import com.cburch.logisim.circuit.CircuitState;
 import java.util.ArrayList;
+
+import com.cburch.logisim.circuit.CircuitState;
 
 public interface AssemblerExecutionInterface {
   boolean execute(Object processorState, CircuitState circuitState);

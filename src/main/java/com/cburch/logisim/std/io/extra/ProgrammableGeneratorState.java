@@ -11,10 +11,6 @@ package com.cburch.logisim.std.io.extra;
 
 import static com.cburch.logisim.std.Strings.S;
 
-import com.cburch.logisim.data.Value;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.instance.InstanceData;
-import com.cburch.logisim.util.LocaleManager;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -22,11 +18,17 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.util.Arrays;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import com.cburch.logisim.data.Value;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.instance.InstanceData;
+import com.cburch.logisim.util.LocaleManager;
 
 public class ProgrammableGeneratorState implements InstanceData, Cloneable {
   Value sending = Value.FALSE;

@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.std.gates;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.analyze.model.Expression;
 import com.cburch.logisim.comp.ComponentFactory;
-import java.util.ArrayList;
 
 /**
  * This represents the actual gate selection used corresponding to an expression, without any

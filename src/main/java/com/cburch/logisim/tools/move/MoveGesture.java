@@ -9,12 +9,6 @@
 
 package com.cburch.logisim.tools.move;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.circuit.Wire;
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.data.Direction;
-import com.cburch.logisim.data.Location;
-import com.cburch.logisim.util.CollectionUtil;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -22,6 +16,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.circuit.Wire;
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.data.Direction;
+import com.cburch.logisim.data.Location;
+import com.cburch.logisim.util.CollectionUtil;
 
 public class MoveGesture {
 

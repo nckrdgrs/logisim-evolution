@@ -11,6 +11,11 @@ package com.cburch.logisim.std.wiring;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+
+import javax.swing.Icon;
+
 import com.cburch.logisim.circuit.Wire;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
@@ -31,9 +36,6 @@ import com.cburch.logisim.tools.WireRepair;
 import com.cburch.logisim.tools.key.BitWidthConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.IconsUtil;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import javax.swing.Icon;
 
 public class Transistor extends InstanceFactory {
   /**

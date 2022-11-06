@@ -9,13 +9,14 @@
 
 package com.cburch.logisim.circuit;
 
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.data.Attribute;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.data.Attribute;
 
 class CircuitMutatorImpl implements CircuitMutator {
   private final ArrayList<CircuitChange> log;

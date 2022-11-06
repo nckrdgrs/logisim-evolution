@@ -9,13 +9,14 @@
 
 package com.cburch.draw.model;
 
-import com.cburch.draw.canvas.Selection;
-import com.cburch.draw.shapes.Text;
-import com.cburch.logisim.data.Bounds;
 import java.awt.Graphics;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
+import com.cburch.draw.canvas.Selection;
+import com.cburch.draw.shapes.Text;
+import com.cburch.logisim.data.Bounds;
 
 public interface CanvasModel {
   // listener methods

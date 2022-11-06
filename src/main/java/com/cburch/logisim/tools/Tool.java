@@ -9,6 +9,12 @@
 
 package com.cburch.logisim.tools;
 
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.Set;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.comp.ComponentDrawContext;
@@ -17,11 +23,6 @@ import com.cburch.logisim.data.AttributeDefaultProvider;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.gui.main.Canvas;
 import com.cburch.logisim.util.LibraryUtil;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.Set;
 
 //
 // DRAWING TOOLS

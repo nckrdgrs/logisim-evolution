@@ -9,6 +9,19 @@
 
 package com.cburch.draw.tools;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import javax.swing.Icon;
+
 import com.cburch.draw.actions.ModelMoveHandleAction;
 import com.cburch.draw.actions.ModelRemoveAction;
 import com.cburch.draw.actions.ModelTranslateAction;
@@ -22,17 +35,6 @@ import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.gui.icons.SelectIcon;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import javax.swing.Icon;
 
 public class SelectTool extends AbstractTool {
   private static final int IDLE = 0;
@@ -305,7 +307,7 @@ public class SelectTool extends AbstractTool {
     if (clicked == null) {
       clicked = getObjectAt(canvas.getModel(), e.getX(), e.getY(), false);
     }
-    final var shiftPressed = (e.getModifiersEx() & MouseEvent.SHIFT_DOWN_MASK) != 0;
+    final var shiftPressed = (e.getModifiersEx() & InputEvent.SHIFT_DOWN_MASK) != 0;
     if (clicked != null) {
       if (shiftPressed && selection.isSelected(clicked)) {
         selection.setSelected(clicked, false);
@@ -444,7 +446,7 @@ public class SelectTool extends AbstractTool {
       }
     }
 
-    final var shiftPressed = (mods & MouseEvent.SHIFT_DOWN_MASK) != 0;
+    final var shiftPressed = (mods & InputEvent.SHIFT_DOWN_MASK) != 0;
     final var ctrlPressed = (mods & InputEvent.CTRL_DOWN_MASK) != 0;
 
     switch (curAction) {

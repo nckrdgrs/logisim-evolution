@@ -11,11 +11,6 @@ package com.cburch.logisim.soc.pio;
 
 import static com.cburch.logisim.soc.Strings.S;
 
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.instance.Instance;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.soc.data.SocSupport;
-import com.cburch.logisim.tools.MenuExtender;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,9 +18,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
+
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.instance.Instance;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.soc.data.SocSupport;
+import com.cburch.logisim.tools.MenuExtender;
 
 public class PioMenu implements ActionListener, MenuExtender {
 

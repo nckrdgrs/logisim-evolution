@@ -10,6 +10,7 @@
 package com.cburch.logisim.util;
 
 import java.awt.Desktop;
+
 import javax.swing.JMenuBar;
 
 public final class MacCompatibility {

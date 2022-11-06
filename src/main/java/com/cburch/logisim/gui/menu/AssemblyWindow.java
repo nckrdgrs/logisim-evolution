@@ -9,16 +9,6 @@
 
 package com.cburch.logisim.gui.menu;
 
-import com.cburch.contracts.BaseKeyListenerContract;
-import com.cburch.contracts.BaseWindowListenerContract;
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.circuit.CircuitState;
-import com.cburch.logisim.circuit.Simulator;
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.gui.generic.LFrame;
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.std.memory.Register;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -33,6 +23,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.prefs.Preferences;
 import java.util.regex.Pattern;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComboBox;
@@ -48,6 +39,17 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Document;
+
+import com.cburch.contracts.BaseKeyListenerContract;
+import com.cburch.contracts.BaseWindowListenerContract;
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.circuit.CircuitState;
+import com.cburch.logisim.circuit.Simulator;
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.gui.generic.LFrame;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.std.memory.Register;
 
 public class AssemblyWindow
     implements ActionListener,
@@ -210,10 +212,8 @@ public class AssemblyWindow
   @SuppressWarnings("unchecked")
   private void fillCombo() {
     final var comps = curCircuit.getNonWires();
-    final var iter = comps.iterator();
     entry.clear();
-    while (iter.hasNext()) {
-      final var comp = iter.next();
+    for (Component comp : comps) {
       if (comp.getFactory().getName().equals("Register")) {
         if (!comp.getAttributeSet().getValue(StdAttr.LABEL).equals("")) {
           entry.put(comp.getAttributeSet().getValue(StdAttr.LABEL), comp);

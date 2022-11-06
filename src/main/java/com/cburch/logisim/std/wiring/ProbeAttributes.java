@@ -11,6 +11,10 @@ package com.cburch.logisim.std.wiring;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Font;
+import java.util.Arrays;
+import java.util.List;
+
 import com.cburch.logisim.circuit.RadixOption;
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
@@ -22,9 +26,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.prefs.ConvertEvent;
 import com.cburch.logisim.prefs.ConvertEventListener;
-import java.awt.Font;
-import java.util.Arrays;
-import java.util.List;
 
 public class ProbeAttributes extends AbstractAttributeSet implements ConvertEventListener {
   public static ProbeAttributes instance = new ProbeAttributes();

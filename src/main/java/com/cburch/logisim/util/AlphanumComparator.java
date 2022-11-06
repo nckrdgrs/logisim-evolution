@@ -70,7 +70,8 @@ public class AlphanumComparator implements Comparator<String> {
     return chunk.toString();
   }
 
-  public int compare(String s1, String s2) {
+  @Override
+public int compare(String s1, String s2) {
     if ((s1 == null) || (s2 == null)) {
       return 0;
     }

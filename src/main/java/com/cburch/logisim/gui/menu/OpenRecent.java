@@ -11,8 +11,6 @@ package com.cburch.logisim.gui.menu;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.proj.ProjectActions;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -21,8 +19,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.proj.ProjectActions;
 
 class OpenRecent extends JMenu implements PropertyChangeListener {
   private static final long serialVersionUID = 1L;

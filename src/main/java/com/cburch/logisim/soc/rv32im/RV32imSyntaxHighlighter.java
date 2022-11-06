@@ -9,20 +9,21 @@
 
 package com.cburch.logisim.soc.rv32im;
 
-import com.cburch.logisim.soc.data.AssemblerHighlighter;
-import org.fife.ui.rsyntaxtextarea.Token;
 import org.fife.ui.rsyntaxtextarea.TokenMap;
+import org.fife.ui.rsyntaxtextarea.TokenTypes;
+
+import com.cburch.logisim.soc.data.AssemblerHighlighter;
 
 public class RV32imSyntaxHighlighter extends AssemblerHighlighter {
   @Override
   public TokenMap getWordsToHighlight() {
     TokenMap map = super.getWordsToHighlight();
-    for (int i = 0; i < RV32imState.registerABINames.length; i++)
-      map.put(RV32imState.registerABINames[i], Token.OPERATOR);
-    map.put("pc", Token.OPERATOR);
-    for (int i = 0; i < 32; i++) map.put("x" + i, Token.OPERATOR);
+    for (String registerABIName : RV32imState.registerABINames)
+		map.put(registerABIName, TokenTypes.OPERATOR);
+    map.put("pc", TokenTypes.OPERATOR);
+    for (int i = 0; i < 32; i++) map.put("x" + i, TokenTypes.OPERATOR);
     for (String opcode : RV32imState.ASSEMBLER.getOpcodes())
-      map.put(opcode.toLowerCase(), Token.RESERVED_WORD);
+      map.put(opcode.toLowerCase(), TokenTypes.RESERVED_WORD);
     return map;
   }
 }

@@ -9,17 +9,17 @@
 
 package com.cburch.logisim.std.base;
 
-import com.cburch.logisim.data.AbstractAttributeSet;
-import com.cburch.logisim.data.Attribute;
-import com.cburch.logisim.data.AttributeOption;
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.instance.StdAttr;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+
+import com.cburch.logisim.data.AbstractAttributeSet;
+import com.cburch.logisim.data.Attribute;
+import com.cburch.logisim.data.AttributeOption;
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.instance.StdAttr;
 
 public class TextAttributes extends AbstractAttributeSet {
   private static final List<Attribute<?>> ATTRIBUTES =

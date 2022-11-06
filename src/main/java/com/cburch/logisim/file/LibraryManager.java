@@ -11,9 +11,6 @@ package com.cburch.logisim.file;
 
 import static com.cburch.logisim.file.Strings.S;
 
-import com.cburch.logisim.tools.Library;
-import com.cburch.logisim.util.LineBuffer;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -24,6 +21,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.regex.Pattern;
+
+import com.cburch.logisim.tools.Library;
+import com.cburch.logisim.util.LineBuffer;
 
 public final class LibraryManager {
 

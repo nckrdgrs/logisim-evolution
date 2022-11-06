@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.std.io;
 
+import java.util.Arrays;
+
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.gui.start.TtyInterface;
 import com.cburch.logisim.instance.InstanceData;
-import java.util.Arrays;
 
 class TtyState implements InstanceData, Cloneable {
   private Value lastClock;

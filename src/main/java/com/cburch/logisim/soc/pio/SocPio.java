@@ -11,6 +11,8 @@ package com.cburch.logisim.soc.pio;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.Graphics2D;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.Bounds;
@@ -29,7 +31,6 @@ import com.cburch.logisim.soc.data.SocProcessorInterface;
 import com.cburch.logisim.soc.data.SocSimulationManager;
 import com.cburch.logisim.tools.MenuExtender;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Graphics2D;
 
 public class SocPio extends SocInstanceFactory {
   /**

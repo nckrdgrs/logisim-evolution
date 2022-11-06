@@ -303,7 +303,7 @@ public class ElfHeader {
     int result = 0;
     for (int i = 0; i < NrOfBytes; i++) {
       int index = startIndex + i;
-      int value = (index < buffer.length) ? ((int) buffer[startIndex + i]) & 0xFF : 0;
+      int value = (index < buffer.length) ? (buffer[startIndex + i]) & 0xFF : 0;
       if (isLittleEndian) {
         result >>= 8;
         result &= INTMASK; /* prevent sign extensions */

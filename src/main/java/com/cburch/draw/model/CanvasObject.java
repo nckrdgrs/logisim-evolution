@@ -9,12 +9,13 @@
 
 package com.cburch.draw.model;
 
+import java.awt.Graphics;
+import java.util.List;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
-import java.awt.Graphics;
-import java.util.List;
 
 public interface CanvasObject {
   Handle canDeleteHandle(Location desired);

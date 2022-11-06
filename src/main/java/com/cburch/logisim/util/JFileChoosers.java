@@ -9,10 +9,12 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.io.File;
 import java.io.IOException;
+
 import javax.swing.JFileChooser;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public final class JFileChoosers {
 

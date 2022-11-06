@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.std.io.extra;
 
+import java.util.Arrays;
+
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.instance.InstanceData;
-import java.util.Arrays;
 
 class DiagramState implements InstanceData {
   // the array cell where to save the actual input value

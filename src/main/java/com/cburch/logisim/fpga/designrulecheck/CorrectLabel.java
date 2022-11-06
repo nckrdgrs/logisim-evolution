@@ -11,13 +11,14 @@ package com.cburch.logisim.fpga.designrulecheck;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.cburch.logisim.fpga.gui.Reporter;
 import com.cburch.logisim.fpga.hdlgenerator.Hdl;
 import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
 import com.cburch.logisim.fpga.hdlgenerator.Vhdl;
 import com.cburch.logisim.gui.generic.OptionPane;
-import java.util.Arrays;
-import java.util.List;
 
 public class CorrectLabel {
   public static String getCorrectLabel(String label) {

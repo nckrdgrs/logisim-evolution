@@ -11,18 +11,13 @@ package com.cburch.logisim.soc.gui;
 
 import static com.cburch.logisim.soc.Strings.S;
 
-import com.cburch.contracts.BaseWindowListenerContract;
-import com.cburch.logisim.circuit.CircuitState;
-import com.cburch.logisim.soc.data.SocBusStateInfo;
-import com.cburch.logisim.soc.data.SocBusTransaction;
-import com.cburch.logisim.util.LocaleListener;
-import com.cburch.logisim.util.LocaleManager;
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -30,6 +25,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import com.cburch.contracts.BaseWindowListenerContract;
+import com.cburch.logisim.circuit.CircuitState;
+import com.cburch.logisim.soc.data.SocBusStateInfo;
+import com.cburch.logisim.soc.data.SocBusTransaction;
+import com.cburch.logisim.util.LocaleListener;
+import com.cburch.logisim.util.LocaleManager;
 
 public class BusTransactionInsertionGui extends JFrame
     implements BaseWindowListenerContract, ActionListener, LocaleListener {
@@ -62,10 +65,10 @@ public class BusTransactionInsertionGui extends JFrame
     c.gridy = 0;
     c.gridwidth = 1;
     c.fill = GridBagConstraints.BOTH;
-    address.setHorizontalAlignment(JLabel.RIGHT);
+    address.setHorizontalAlignment(SwingConstants.RIGHT);
     add(address, c);
     c.gridy++;
-    inputdata.setHorizontalAlignment(JLabel.RIGHT);
+    inputdata.setHorizontalAlignment(SwingConstants.RIGHT);
     add(inputdata, c);
     c.gridx++;
     inputDataValue.setText("00000000");
@@ -102,7 +105,7 @@ public class BusTransactionInsertionGui extends JFrame
     insertButton.addActionListener(this);
     add(insertButton, c);
     c.gridy++;
-    resultLabel.setHorizontalAlignment(JLabel.CENTER);
+    resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
     add(resultLabel, c);
     c.gridy++;
     add(result, c);

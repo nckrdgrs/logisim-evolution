@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.vhdl.gui.HdlToolbarModel;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
+
+import com.cburch.logisim.vhdl.gui.HdlToolbarModel;
 
 public class HdlIcon extends BaseIcon {
 
@@ -30,7 +31,7 @@ public class HdlIcon extends BaseIcon {
     g2.setColor(Color.BLACK);
     g2.drawRect(0, scale(4), scale(16), scale(12));
     g2.setColor(Color.LIGHT_GRAY);
-    final var font = g2.getFont().deriveFont((float) getIconWidth() / (float) 4.5);
+    final var font = g2.getFont().deriveFont(getIconWidth() / (float) 4.5);
     var t = new TextLayout("LIBRARY", font, g2.getFontRenderContext());
     t.draw(
         g2,

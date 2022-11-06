@@ -11,14 +11,6 @@ package com.cburch.logisim.analyze.gui;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.contracts.BaseKeyListenerContract;
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.contracts.BaseMouseMotionListenerContract;
-import com.cburch.logisim.analyze.model.Entry;
-import com.cburch.logisim.analyze.model.TruthTable;
-import com.cburch.logisim.analyze.model.TruthTableEvent;
-import com.cburch.logisim.analyze.model.TruthTableListener;
-import com.cburch.logisim.util.GraphicsUtil;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -33,8 +25,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
+
+import com.cburch.contracts.BaseKeyListenerContract;
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.contracts.BaseMouseMotionListenerContract;
+import com.cburch.logisim.analyze.model.Entry;
+import com.cburch.logisim.analyze.model.TruthTable;
+import com.cburch.logisim.analyze.model.TruthTableEvent;
+import com.cburch.logisim.analyze.model.TruthTableListener;
+import com.cburch.logisim.util.GraphicsUtil;
 
 class TableTabCaret {
   private class Listener

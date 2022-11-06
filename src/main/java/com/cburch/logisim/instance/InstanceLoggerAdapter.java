@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.instance;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.gui.log.LoggableContract;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 class InstanceLoggerAdapter implements LoggableContract {
 

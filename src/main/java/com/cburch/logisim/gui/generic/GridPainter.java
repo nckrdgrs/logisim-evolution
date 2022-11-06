@@ -9,7 +9,6 @@
 
 package com.cburch.logisim.gui.generic;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -18,6 +17,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.Arrays;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class GridPainter implements PropertyChangeListener {
   public static final String ZOOM_PROPERTY = "zoom";

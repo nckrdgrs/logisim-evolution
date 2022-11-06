@@ -9,10 +9,13 @@
 
 package com.cburch.logisim.fpga.gui;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.util.Hashtable;
+
 import javax.swing.JLabel;
 import javax.swing.JSlider;
+import javax.swing.SwingConstants;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class ZoomSlider extends JSlider {
 
@@ -32,7 +35,7 @@ public class ZoomSlider extends JSlider {
   }
 
   public ZoomSlider() {
-    setup(JSlider.HORIZONTAL, 100, 200, 100);
+    setup(SwingConstants.HORIZONTAL, 100, 200, 100);
   }
 
   private void setup(int orientation, int min, int max, int value) {

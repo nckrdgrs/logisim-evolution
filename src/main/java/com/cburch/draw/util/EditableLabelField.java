@@ -9,13 +9,15 @@
 
 package com.cburch.draw.util;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+
 import javax.swing.BorderFactory;
 import javax.swing.JTextField;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class EditableLabelField extends JTextField {
   static final int FIELD_BORDER = 2;

@@ -11,15 +11,16 @@ package com.cburch.logisim.std.io;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Attributes;
 import com.cburch.logisim.tools.AddTool;
 import com.cburch.logisim.tools.FactoryDescription;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.Tool;
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
 
 public class IoLibrary extends Library {
   /**

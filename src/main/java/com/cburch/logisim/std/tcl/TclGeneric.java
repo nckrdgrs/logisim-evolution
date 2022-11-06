@@ -11,6 +11,10 @@ package com.cburch.logisim.std.tcl;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Window;
+import java.util.WeakHashMap;
+
 import com.cburch.hdl.HdlModel;
 import com.cburch.hdl.HdlModelListener;
 import com.cburch.logisim.data.Attribute;
@@ -22,9 +26,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.hdl.VhdlContentComponent;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Color;
-import java.awt.Window;
-import java.util.WeakHashMap;
 
 /**
  * The TclGeneric component is a standard TclComponent but who has its interface defined by a VHDL

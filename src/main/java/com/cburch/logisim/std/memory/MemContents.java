@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.util.Arrays;
+
 import com.cburch.hex.HexModel;
 import com.cburch.hex.HexModelListener;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.util.EventSourceWeakSupport;
-import java.util.Arrays;
 
 public class MemContents implements Cloneable, HexModel {
   public static MemContents create(int addrBits, int width, boolean randomize) {

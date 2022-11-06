@@ -11,6 +11,26 @@ package com.cburch.logisim.fpga.gui;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+
 import com.cburch.draw.shapes.Rectangle;
 import com.cburch.logisim.fpga.data.BoardInformation;
 import com.cburch.logisim.fpga.data.BoardRectangle;
@@ -24,23 +44,6 @@ import com.cburch.logisim.fpga.data.PinActivity;
 import com.cburch.logisim.fpga.data.PullBehaviors;
 import com.cburch.logisim.fpga.settings.VendorSoftware;
 import com.cburch.logisim.std.io.LedArrayGenericHdlGeneratorFactory;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Frame;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.HashMap;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 
 public class FpgaIoInformationSettingsDialog {
 
@@ -590,7 +593,7 @@ public class FpgaIoInformationSettingsDialog {
     selWindow.pack();
     selWindow.setLocationRelativeTo(IOcomps.getParentFrame());
     selWindow.setModal(true);
-    selWindow.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+    selWindow.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
     selWindow.setAlwaysOnTop(true);
     abort = false;
     while (!abort) {
@@ -973,7 +976,7 @@ public class FpgaIoInformationSettingsDialog {
     selWindow.pack();
     selWindow.setModal(true);
     selWindow.setResizable(false);
-    selWindow.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+    selWindow.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
     selWindow.setAlwaysOnTop(true);
     selWindow.setLocationRelativeTo(panel);
     var saveSettings = false;

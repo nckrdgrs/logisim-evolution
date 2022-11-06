@@ -11,17 +11,6 @@ package com.cburch.logisim.tools;
 
 import static com.cburch.logisim.tools.Strings.S;
 
-import com.cburch.logisim.circuit.CircuitMutation;
-import com.cburch.logisim.circuit.Wire;
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.comp.ComponentDrawContext;
-import com.cburch.logisim.data.Location;
-import com.cburch.logisim.data.Value;
-import com.cburch.logisim.gui.main.Canvas;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.proj.Action;
-import com.cburch.logisim.util.GraphicsUtil;
-import com.cburch.logisim.util.StringGetter;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -33,6 +22,18 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
+
+import com.cburch.logisim.circuit.CircuitMutation;
+import com.cburch.logisim.circuit.Wire;
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.comp.ComponentDrawContext;
+import com.cburch.logisim.data.Location;
+import com.cburch.logisim.data.Value;
+import com.cburch.logisim.gui.main.Canvas;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.proj.Action;
+import com.cburch.logisim.util.GraphicsUtil;
+import com.cburch.logisim.util.StringGetter;
 
 public class WiringTool extends Tool {
   /**
@@ -64,8 +65,7 @@ public class WiringTool extends Tool {
 
   private Wire checkForRepairs(Canvas canvas, Wire w, Location end) {
     // don't repair a short wire to nothing
-    if (w.getLength() <= 10) return w;
-    if (!canvas.getCircuit().getNonWires(end).isEmpty()) return w;
+    if ((w.getLength() <= 10) || !canvas.getCircuit().getNonWires(end).isEmpty()) return w;
 
     int delta = (end.equals(w.getEnd0()) ? 10 : -10);
     Location cand;

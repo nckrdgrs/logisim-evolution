@@ -9,6 +9,13 @@
 
 package com.cburch.logisim.std.tcl;
 
+import java.awt.Dialog;
+import java.awt.Frame;
+import java.awt.Window;
+import java.util.Arrays;
+import java.util.List;
+import java.util.WeakHashMap;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.instance.StdAttr;
@@ -16,12 +23,6 @@ import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.std.hdl.HdlContent;
 import com.cburch.logisim.std.hdl.HdlContentEditor;
 import com.cburch.logisim.std.hdl.VhdlContentComponent;
-import java.awt.Dialog;
-import java.awt.Frame;
-import java.awt.Window;
-import java.util.Arrays;
-import java.util.List;
-import java.util.WeakHashMap;
 
 /**
  * This attribute set is the same as the one for the TclComponent but it adds an attribute to

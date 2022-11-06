@@ -9,10 +9,12 @@
 
 package com.cburch.logisim.fpga.gui;
 
-import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
 import javax.swing.JProgressBar;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.cburch.logisim.fpga.designrulecheck.SimpleDrcContainer;
 
 public class Reporter {
 

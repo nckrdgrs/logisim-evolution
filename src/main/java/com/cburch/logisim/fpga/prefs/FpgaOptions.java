@@ -11,15 +11,6 @@ package com.cburch.logisim.fpga.prefs;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.gui.prefs.ColorChooserButton;
-import com.cburch.logisim.gui.prefs.OptionsPanel;
-import com.cburch.logisim.gui.prefs.PrefOption;
-import com.cburch.logisim.gui.prefs.PrefOptionList;
-import com.cburch.logisim.gui.prefs.PreferencesFrame;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.prefs.PrefMonitorBoolean;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -29,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -36,6 +28,16 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.gui.prefs.ColorChooserButton;
+import com.cburch.logisim.gui.prefs.OptionsPanel;
+import com.cburch.logisim.gui.prefs.PrefOption;
+import com.cburch.logisim.gui.prefs.PrefOptionList;
+import com.cburch.logisim.gui.prefs.PreferencesFrame;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.prefs.PrefMonitorBoolean;
 
 @SuppressWarnings("serial")
 public class FpgaOptions extends OptionsPanel {

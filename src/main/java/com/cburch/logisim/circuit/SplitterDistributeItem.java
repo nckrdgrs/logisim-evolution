@@ -11,11 +11,13 @@ package com.cburch.logisim.circuit;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.util.StringGetter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JMenuItem;
+
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.util.StringGetter;
 
 class SplitterDistributeItem extends JMenuItem implements ActionListener {
   private static final long serialVersionUID = 1L;

@@ -11,6 +11,27 @@ package com.cburch.logisim.soc.data;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.TableCellRenderer;
+
 import com.cburch.contracts.BaseWindowListenerContract;
 import com.cburch.logisim.circuit.ComponentDataGuiProvider;
 import com.cburch.logisim.comp.Component;
@@ -27,24 +48,6 @@ import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.LocaleListener;
 import com.cburch.logisim.util.LocaleManager;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.TableCellRenderer;
 
 public class SocBusStateInfo extends JDialog
     implements ActionListener, LocaleListener, BaseWindowListenerContract {
@@ -194,7 +197,7 @@ public class SocBusStateInfo extends JDialog
     memMap = new SocMemMapModel();
     setTitle(S.get("SocMemMapWindowTitle") + getName());
     setLayout(new BorderLayout());
-    title = new JLabel(S.get("SocMemoryMapTitle"), JLabel.CENTER);
+    title = new JLabel(S.get("SocMemoryMapTitle"), SwingConstants.CENTER);
     add(title, BorderLayout.NORTH);
     JTable table =
         new JTable(memMap) {

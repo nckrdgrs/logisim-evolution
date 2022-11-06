@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.tools;
 
-import com.cburch.logisim.data.Bounds;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import com.cburch.logisim.data.Bounds;
 
 public class AbstractCaret implements Caret {
   private final ArrayList<CaretListener> listeners = new ArrayList<>();

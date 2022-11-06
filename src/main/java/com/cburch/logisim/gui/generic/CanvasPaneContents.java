@@ -12,16 +12,21 @@ package com.cburch.logisim.gui.generic;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.event.MouseWheelListener;
+
 import javax.swing.Scrollable;
 
 public interface CanvasPaneContents extends Scrollable {
-  Dimension getPreferredScrollableViewportSize();
+  @Override
+Dimension getPreferredScrollableViewportSize();
 
-  int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction);
+  @Override
+int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction);
 
-  boolean getScrollableTracksViewportHeight();
+  @Override
+boolean getScrollableTracksViewportHeight();
 
-  boolean getScrollableTracksViewportWidth();
+  @Override
+boolean getScrollableTracksViewportWidth();
 
   @Override
   int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction);

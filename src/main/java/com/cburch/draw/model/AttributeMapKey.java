@@ -9,8 +9,9 @@
 
 package com.cburch.draw.model;
 
-import com.cburch.logisim.data.Attribute;
 import java.util.Objects;
+
+import com.cburch.logisim.data.Attribute;
 
 public class AttributeMapKey {
   private final Attribute<?> attr;

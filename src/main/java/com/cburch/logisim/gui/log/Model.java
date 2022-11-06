@@ -11,6 +11,12 @@ package com.cburch.logisim.gui.log;
 
 import static com.cburch.logisim.gui.Strings.S;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitEvent;
 import com.cburch.logisim.circuit.CircuitListener;
@@ -22,11 +28,6 @@ import com.cburch.logisim.data.Location;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.std.wiring.Pin;
 import com.cburch.logisim.util.EventSourceWeakSupport;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
 
 public class Model implements CircuitListener, SignalInfo.Listener {
 
@@ -583,13 +584,7 @@ public class Model implements CircuitListener, SignalInfo.Listener {
   }
 
   public void propagationCompleted(boolean ticked, boolean stepped, boolean propagated) {
-    if (!stepped && !propagated) {
-      // No signals have changed. This was a nudge that resulted in no signal
-      // changes, or a tick in single-step mode that hasn't yet propagated
-      // anywhere. There is nothing to record.
-      return;
-    }
-    if (isCoarse() && !propagated) {
+    if ((!stepped && !propagated) || (isCoarse() && !propagated)) {
       // This is a transient fluctuation that can be entirely ignored.
       return;
     }

@@ -11,6 +11,9 @@ package com.cburch.logisim.soc.rv32im;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.soc.data.SocBusTransaction;
@@ -18,8 +21,6 @@ import com.cburch.logisim.soc.file.ElfHeader;
 import com.cburch.logisim.soc.util.AssemblerAsmInstruction;
 import com.cburch.logisim.soc.util.AssemblerExecutionInterface;
 import com.cburch.logisim.soc.util.AssemblerToken;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class RV32imLoadAndStoreInstructions implements AssemblerExecutionInterface {
 

@@ -11,8 +11,6 @@ package com.cburch.logisim.analyze.gui;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.model.Entry;
-import com.cburch.logisim.gui.generic.OptionPane;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
@@ -21,6 +19,9 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.StringTokenizer;
+
+import com.cburch.logisim.analyze.model.Entry;
+import com.cburch.logisim.gui.generic.OptionPane;
 
 class TableTabClip implements ClipboardOwner {
   private static class Data implements Transferable, Serializable {

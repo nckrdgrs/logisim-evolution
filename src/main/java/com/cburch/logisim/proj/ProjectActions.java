@@ -11,19 +11,6 @@ package com.cburch.logisim.proj;
 
 import static com.cburch.logisim.proj.Strings.S;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.file.LoadFailedException;
-import com.cburch.logisim.file.LoadedLibrary;
-import com.cburch.logisim.file.Loader;
-import com.cburch.logisim.file.LogisimFile;
-import com.cburch.logisim.file.LogisimFileActions;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.gui.main.Frame;
-import com.cburch.logisim.gui.start.SplashScreen;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.tools.Library;
-import com.cburch.logisim.tools.LibraryTools;
-import com.cburch.logisim.util.JFileChoosers;
 import java.awt.Component;
 import java.io.File;
 import java.io.IOException;
@@ -37,9 +24,24 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.regex.Pattern;
+
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.file.LoadFailedException;
+import com.cburch.logisim.file.LoadedLibrary;
+import com.cburch.logisim.file.Loader;
+import com.cburch.logisim.file.LogisimFile;
+import com.cburch.logisim.file.LogisimFileActions;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.gui.main.Frame;
+import com.cburch.logisim.gui.start.SplashScreen;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.tools.Library;
+import com.cburch.logisim.tools.LibraryTools;
+import com.cburch.logisim.util.JFileChoosers;
 
 public final class ProjectActions {
   private static final String FILE_NAME_FORMAT_ERROR = "FileNameError";

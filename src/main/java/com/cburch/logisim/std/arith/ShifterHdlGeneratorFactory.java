@@ -9,6 +9,8 @@
 
 package com.cburch.logisim.std.arith;
 
+import java.util.HashMap;
+
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
@@ -18,7 +20,6 @@ import com.cburch.logisim.fpga.hdlgenerator.HdlParameters;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.LineBuffer;
-import java.util.HashMap;
 
 public class ShifterHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 

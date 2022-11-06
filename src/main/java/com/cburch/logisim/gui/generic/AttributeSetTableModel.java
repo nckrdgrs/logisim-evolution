@@ -11,6 +11,12 @@ package com.cburch.logisim.gui.generic;
 
 import static com.cburch.logisim.gui.Strings.S;
 
+import java.awt.Component;
+import java.awt.Window;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
 import com.cburch.logisim.circuit.SplitterAttributes;
 import com.cburch.logisim.comp.ComponentFactory;
 import com.cburch.logisim.data.Attribute;
@@ -18,11 +24,6 @@ import com.cburch.logisim.data.AttributeEvent;
 import com.cburch.logisim.data.AttributeListener;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.gui.HdlColorRenderer;
-import java.awt.Component;
-import java.awt.Window;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 
 public abstract class AttributeSetTableModel implements AttrTableModel, AttributeListener {
   private final ArrayList<AttrTableModelListener> listeners;
@@ -238,9 +239,7 @@ public abstract class AttributeSetTableModel implements AttrTableModel, Attribut
 
     @Override
     public boolean multiEditCompatible(AttrTableModelRow other) {
-      if (!(other instanceof AttrRow o)) return false;
-      if (!(((Object) attr) instanceof SplitterAttributes.BitOutAttribute)) return false;
-      if (!(((Object) o.attr) instanceof SplitterAttributes.BitOutAttribute)) return false;
+      if (!(other instanceof AttrRow o) || !(((Object) attr) instanceof SplitterAttributes.BitOutAttribute) || !(((Object) o.attr) instanceof SplitterAttributes.BitOutAttribute)) return false;
       final var a = (SplitterAttributes.BitOutAttribute) (Object) attr;
       final var b = (SplitterAttributes.BitOutAttribute) (Object) o.attr;
       return a.sameOptions(b);

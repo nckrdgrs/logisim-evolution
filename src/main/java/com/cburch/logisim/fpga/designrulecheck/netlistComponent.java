@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.fpga.designrulecheck;
 
-import com.cburch.logisim.comp.Component;
-import com.cburch.logisim.fpga.data.ComponentMapInformationContainer;
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.std.wiring.Pin;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.cburch.logisim.comp.Component;
+import com.cburch.logisim.fpga.data.ComponentMapInformationContainer;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.std.wiring.Pin;
 
 public class netlistComponent {
 

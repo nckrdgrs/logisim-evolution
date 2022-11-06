@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.awt.Color;
+
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.StdAttr;
-import java.awt.Color;
 
 public class CounterPoker extends RegisterPoker {
 

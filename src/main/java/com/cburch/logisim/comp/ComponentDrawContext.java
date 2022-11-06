@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.comp;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.circuit.WireSet;
@@ -19,8 +22,6 @@ import com.cburch.logisim.data.Location;
 import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Graphics;
 
 public class ComponentDrawContext {
   private static final int PIN_OFFS = 2;

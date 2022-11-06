@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.vhdl.base;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
 import com.cburch.logisim.fpga.file.FileWriter;
 import com.cburch.logisim.fpga.hdlgenerator.AbstractHdlGeneratorFactory;
 import com.cburch.logisim.fpga.hdlgenerator.Hdl;
-import java.util.ArrayList;
 
 public class VhdlHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 

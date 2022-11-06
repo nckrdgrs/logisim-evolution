@@ -9,10 +9,12 @@
 
 package com.cburch.logisim.soc.data;
 
-import com.cburch.logisim.soc.util.AssemblerInterface;
 import java.awt.event.WindowListener;
 import java.util.LinkedList;
+
 import javax.swing.JPanel;
+
+import com.cburch.logisim.soc.util.AssemblerInterface;
 
 public interface SocUpStateInterface {
   int getLastRegisterWritten();

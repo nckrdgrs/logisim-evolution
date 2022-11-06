@@ -50,8 +50,8 @@ public class SymbolTable {
     index += 4;
     stSize = ElfHeader.getIntValue(buffer, index, 4, isLittleEndian);
     index += 4;
-    stInfo = ((int) buffer[index++]) & 0xFF;
-    stOther = ((int) buffer[index++]) & 0xFF;
+    stInfo = (buffer[index++]) & 0xFF;
+    stOther = (buffer[index++]) & 0xFF;
     stShndx = ElfHeader.getIntValue(buffer, index, 2, isLittleEndian);
     name = "";
   }

@@ -9,6 +9,12 @@
 
 package com.cburch.draw.canvas;
 
+import java.awt.Cursor;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import com.cburch.contracts.BaseKeyListenerContract;
 import com.cburch.contracts.BaseMouseListenerContract;
 import com.cburch.contracts.BaseMouseMotionListenerContract;
@@ -17,10 +23,6 @@ import com.cburch.draw.model.CanvasModelListener;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.logisim.circuit.appear.AppearancePort;
 import com.cburch.logisim.data.Location;
-import java.awt.Cursor;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 class CanvasListener
     implements BaseMouseListenerContract,
@@ -102,7 +104,7 @@ class CanvasListener
   }
 
   private boolean isButton1(MouseEvent e) {
-    return (e.getModifiersEx() & MouseEvent.BUTTON1_DOWN_MASK) != 0;
+    return (e.getModifiersEx() & InputEvent.BUTTON1_DOWN_MASK) != 0;
   }
 
   @Override

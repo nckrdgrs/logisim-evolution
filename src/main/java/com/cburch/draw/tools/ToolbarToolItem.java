@@ -9,13 +9,15 @@
 
 package com.cburch.draw.tools;
 
-import com.cburch.draw.toolbar.ToolbarItem;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
+
 import javax.swing.Icon;
+
+import com.cburch.draw.toolbar.ToolbarItem;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class ToolbarToolItem implements ToolbarItem {
   private final AbstractTool tool;

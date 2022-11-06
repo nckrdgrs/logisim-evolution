@@ -9,19 +9,21 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.draw.toolbar.ToolbarItem;
-import com.cburch.logisim.gui.menu.LogisimMenuItem;
-import com.cburch.logisim.gui.menu.MenuListener;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.IconsUtil;
-import com.cburch.logisim.util.StringGetter;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+
 import javax.swing.Icon;
+
+import com.cburch.draw.toolbar.ToolbarItem;
+import com.cburch.logisim.gui.menu.LogisimMenuItem;
+import com.cburch.logisim.gui.menu.MenuListener;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.IconsUtil;
+import com.cburch.logisim.util.StringGetter;
 
 public class LogisimToolbarItem implements ToolbarItem {
   private final MenuListener menu;

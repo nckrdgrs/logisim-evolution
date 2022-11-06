@@ -11,6 +11,17 @@ package com.cburch.logisim.analyze.file;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
+import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import javax.swing.filechooser.FileFilter;
+
 import com.cburch.logisim.analyze.data.CoverColor;
 import com.cburch.logisim.analyze.data.KarnaughMapGroups;
 import com.cburch.logisim.analyze.gui.KarnaughMapPanel;
@@ -22,15 +33,6 @@ import com.cburch.logisim.analyze.model.TruthTable;
 import com.cburch.logisim.analyze.model.Var;
 import com.cburch.logisim.analyze.model.Var.Bit;
 import com.cburch.logisim.prefs.AppPreferences;
-import java.awt.Color;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Date;
-import java.util.Locale;
-import javax.swing.filechooser.FileFilter;
 
 public class AnalyzerTexWriter {
 
@@ -45,8 +47,8 @@ public class AnalyzerTexWriter {
   private static int nrOfInCols(AnalyzerModel model) {
     var count = 0;
     var inputs = model.getInputs();
-    for (int i = 0; i < inputs.vars.size(); i++) {
-      count += inputs.vars.get(i).width;
+    for (Var element : inputs.vars) {
+      count += element.width;
     }
     return count;
   }
@@ -54,8 +56,8 @@ public class AnalyzerTexWriter {
   private static int nrOfOutCols(AnalyzerModel model) {
     var count = 0;
     final var outputs = model.getOutputs();
-    for (int i = 0; i < outputs.vars.size(); i++) {
-      count += outputs.vars.get(i).width;
+    for (Var element : outputs.vars) {
+      count += element.width;
     }
     return count;
   }
@@ -228,12 +230,12 @@ public class AnalyzerTexWriter {
       }
     }
     content.append("\\draw[kmbox] (").append(df.format(-0.5)).append(",")
-        .append(df.format((double) kmapRows + 0.5)).append(")\n");
+        .append(df.format(kmapRows + 0.5)).append(")\n");
     content.append("   node[below left]{").append(leftVars).append("}\n");
     content.append("   node[above right]{").append(topVars).append("} +(-0.2,0.2)\n");
     content.append("   node[above left]{").append(name).append("};");
     content.append("\\draw (0,").append(kmapRows).append(") -- (-0.7,")
-        .append(df.format((double) kmapRows + 0.7)).append(");\n");
+        .append(df.format(kmapRows + 0.7)).append(");\n");
     content.append("\\foreach \\x/\\1 in %\n");
     content.append(getGrayCode(KarnaughMapPanel.COL_VARS[table.getInputColumnCount()])).append(" {\n");
     content.append("   \\node at (\\x+0.5,").append(df.format(kmapRows + 0.2)).append(") {\\1};\n}\n");
@@ -298,8 +300,8 @@ public class AnalyzerTexWriter {
         double height = thiscover.getHeight() - OFFSET;
         content.append("{").append(df.format(width)).append("}{").append(df.format(height)).append("}]");
         content.append("(n").append(idx++).append(") at");
-        double y = (double) kmapRows - ((double) thiscover.getHeight()) / 2.0 - thiscover.getRow();
-        double x = ((double) thiscover.getWidth()) / 2.0 + thiscover.getCol();
+        double y = kmapRows - (thiscover.getHeight()) / 2.0 - thiscover.getRow();
+        double x = (thiscover.getWidth()) / 2.0 + thiscover.getCol();
         content.append("(").append(df.format(x)).append(",").append(df.format(y)).append(") {};\n");
       }
     }
@@ -432,8 +434,7 @@ public class AnalyzerTexWriter {
           out.println(S.get("latexKarnaughText"));
           out.println(SUB_SECTION_SEP);
           out.println("\\subsection{" + S.get("latexKarnaughEmpty") + "}");
-          for (int i = 0; i < model.getOutputs().vars.size(); i++) {
-            final var outp = model.getOutputs().vars.get(i);
+          for (final Var outp : model.getOutputs().vars) {
             if (outp.width == 1) {
               String func = "$" + outp.name + "$";
               out.println(getKarnaughEmpty(func, linedStyle, model));
@@ -447,8 +448,7 @@ public class AnalyzerTexWriter {
           out.println(SUB_SECTION_SEP);
           out.println("\\subsection{" + S.get("latexKarnaughFilledIn") + "}");
           var outcol = 0;
-          for (var i = 0; i < model.getOutputs().vars.size(); i++) {
-            Var outp = model.getOutputs().vars.get(i);
+          for (Var outp : model.getOutputs().vars) {
             if (outp.width == 1) {
               final var func = "$" + outp.name + "$";
               out.println(getKarnaugh(func, linedStyle, outcol++, model));
@@ -462,8 +462,7 @@ public class AnalyzerTexWriter {
           out.println(SUB_SECTION_SEP);
           out.println("\\subsection{" + S.get("latexKarnaughFilledInGroups") + "}");
           outcol = 0;
-          for (var i = 0; i < model.getOutputs().vars.size(); i++) {
-            final var outp = model.getOutputs().vars.get(i);
+          for (final Var outp : model.getOutputs().vars) {
             if (outp.width == 1) {
               final var func = "$" + outp.name + "$";
               out.println(getKarnaughGroups(outp.name, func, linedStyle, outcol++, model));

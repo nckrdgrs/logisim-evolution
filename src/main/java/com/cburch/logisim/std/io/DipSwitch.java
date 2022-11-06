@@ -11,6 +11,12 @@ package com.cburch.logisim.std.io;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import com.cburch.draw.shapes.DrawAttr;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
@@ -33,11 +39,6 @@ import com.cburch.logisim.tools.key.BitWidthConfigurator;
 import com.cburch.logisim.tools.key.DirectionConfigurator;
 import com.cburch.logisim.tools.key.JoinedConfigurator;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 public class DipSwitch extends InstanceFactory {
   /**
@@ -154,7 +155,7 @@ public class DipSwitch extends InstanceFactory {
     setKeyConfigurator(
         JoinedConfigurator.create(
             new BitWidthConfigurator(ATTR_SIZE),
-            new DirectionConfigurator(StdAttr.LABEL_LOC, KeyEvent.ALT_DOWN_MASK)));
+            new DirectionConfigurator(StdAttr.LABEL_LOC, InputEvent.ALT_DOWN_MASK)));
     setInstancePoker(Poker.class);
   }
 

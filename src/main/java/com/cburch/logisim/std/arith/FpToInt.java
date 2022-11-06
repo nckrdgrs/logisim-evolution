@@ -11,6 +11,8 @@ package com.cburch.logisim.std.arith;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.Attributes;
@@ -25,7 +27,6 @@ import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.tools.key.BitWidthConfigurator;
-import java.awt.Color;
 
 public class FpToInt extends InstanceFactory {
   /**

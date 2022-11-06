@@ -11,6 +11,10 @@ package com.cburch.logisim.std;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import com.cburch.logisim.soc.Soc;
 import com.cburch.logisim.std.arith.ArithmeticLibrary;
 import com.cburch.logisim.std.base.BaseLibrary;
@@ -26,9 +30,6 @@ import com.cburch.logisim.std.ttl.TtlLibrary;
 import com.cburch.logisim.std.wiring.WiringLibrary;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.Tool;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class Builtin extends Library {
   /**

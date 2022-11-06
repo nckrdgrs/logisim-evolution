@@ -11,10 +11,10 @@ package com.cburch.logisim.gui.main;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.circuit.Simulator;
-
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+
+import com.cburch.logisim.circuit.Simulator;
 
 public class TickCounter implements Simulator.Listener {
   private final DecimalFormat formatter;
@@ -65,12 +65,8 @@ public class TickCounter implements Simulator.Listener {
     final var elapsedTime = System.nanoTime() - startTime;
 
     // If we didn't have any elapsed time we can't compute a frequency.
-    if (elapsedTime == 0) {
-      return "";
-    }
-
     // If we didn't have any ticks we can't compute a frequency.
-    if (tickCount < 1) {
+    if ((elapsedTime == 0) || (tickCount < 1)) {
       return "";
     }
 
@@ -98,7 +94,8 @@ public class TickCounter implements Simulator.Listener {
     }
   }
 
-  public void simulatorStateChanged(Simulator.Event e) {
+  @Override
+public void simulatorStateChanged(Simulator.Event e) {
     simulator = e.getSource();
     clear();
   }

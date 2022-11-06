@@ -9,13 +9,13 @@
 
 package com.cburch.logisim.fpga.hdlgenerator;
 
+import java.util.List;
+import java.util.Set;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
 import com.cburch.logisim.fpga.designrulecheck.netlistComponent;
 import com.cburch.logisim.util.LineBuffer;
-
-import java.util.List;
-import java.util.Set;
 
 public interface HdlGeneratorFactory {
 

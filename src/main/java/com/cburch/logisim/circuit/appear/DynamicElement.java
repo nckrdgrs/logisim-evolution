@@ -11,6 +11,13 @@ package com.cburch.logisim.circuit.appear;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.List;
+
+import org.w3c.dom.Element;
+
 import com.cburch.draw.model.AbstractCanvasObject;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
@@ -31,11 +38,6 @@ import com.cburch.logisim.instance.InstanceComponent;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.util.List;
-import org.w3c.dom.Element;
 
 public abstract class DynamicElement extends AbstractCanvasObject {
 

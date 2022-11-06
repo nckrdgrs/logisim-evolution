@@ -9,6 +9,16 @@
 
 package com.cburch.draw.canvas;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JComponent;
+import javax.swing.JPopupMenu;
+
 import com.cburch.draw.model.CanvasModel;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.shapes.DrawAttr;
@@ -16,15 +26,6 @@ import com.cburch.draw.undo.UndoAction;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.util.GraphicsUtil;
-
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.event.MouseEvent;
-import javax.swing.JComponent;
-import javax.swing.JPopupMenu;
 
 public class Canvas extends JComponent {
   public static final String TOOL_PROPERTY = "tool";

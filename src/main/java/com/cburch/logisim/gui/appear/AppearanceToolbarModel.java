@@ -9,6 +9,12 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.toolbar.AbstractToolbarModel;
 import com.cburch.draw.toolbar.ToolbarItem;
@@ -22,11 +28,6 @@ import com.cburch.draw.tools.RectangleTool;
 import com.cburch.draw.tools.RoundRectangleTool;
 import com.cburch.draw.tools.TextTool;
 import com.cburch.draw.tools.ToolbarToolItem;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 class AppearanceToolbarModel extends AbstractToolbarModel implements PropertyChangeListener {
   private final Canvas canvas;

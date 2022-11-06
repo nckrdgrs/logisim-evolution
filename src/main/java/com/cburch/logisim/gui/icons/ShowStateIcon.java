@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class ShowStateIcon extends BaseIcon {
 
@@ -36,8 +37,8 @@ public class ShowStateIcon extends BaseIcon {
     final var textLayout = new TextLayout("101", font, gfx.getFontRenderContext());
     textLayout.draw(
         gfx,
-        (float) ((double) getIconWidth() / 2.0 - textLayout.getBounds().getCenterX()),
-        (float) ((double) getIconHeight() / 4.0 - textLayout.getBounds().getCenterY()));
+        (float) (getIconWidth() / 2.0 - textLayout.getBounds().getCenterX()),
+        (float) (getIconHeight() / 4.0 - textLayout.getBounds().getCenterY()));
     final var iconBorder = AppPreferences.ICON_BORDER;
     final var wh = AppPreferences.getScaled(AppPreferences.IconSize / 2 - iconBorder);
     final var offset = AppPreferences.getScaled(iconBorder);

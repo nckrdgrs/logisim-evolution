@@ -11,6 +11,14 @@ package com.cburch.logisim.std.memory;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.List;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.cburch.draw.shapes.SvgCreator;
 import com.cburch.draw.shapes.SvgReader;
 import com.cburch.draw.util.EditableLabel;
@@ -23,12 +31,6 @@ import com.cburch.logisim.std.base.Text;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringUtil;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.util.List;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 public class RegisterShape extends DynamicElement {
   static final Font DEFAULT_FONT = new Font("monospaced", Font.PLAIN, 10);

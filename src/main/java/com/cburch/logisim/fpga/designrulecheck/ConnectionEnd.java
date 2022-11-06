@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.fpga.designrulecheck;
 
-import com.cburch.logisim.comp.Component;
 import java.util.ArrayList;
+
+import com.cburch.logisim.comp.Component;
 
 public class ConnectionEnd {
 

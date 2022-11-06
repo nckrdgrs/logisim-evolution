@@ -11,6 +11,13 @@ package com.cburch.logisim.circuit.appear;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.List;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
 import com.cburch.draw.model.HandleGesture;
@@ -20,11 +27,6 @@ import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.List;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 public class AppearanceAnchor extends AppearanceElement {
   public static final Attribute<Direction> FACING = Attributes.forDirection("facing", S.getter("appearanceFacingAttr"));

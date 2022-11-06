@@ -11,17 +11,6 @@ package com.cburch.logisim.analyze.gui;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.file.AnalyzerTexWriter;
-import com.cburch.logisim.analyze.model.AnalyzerModel;
-import com.cburch.logisim.analyze.model.Implicant;
-import com.cburch.logisim.analyze.model.Parser;
-import com.cburch.logisim.analyze.model.TruthTableEvent;
-import com.cburch.logisim.analyze.model.TruthTableListener;
-import com.cburch.logisim.analyze.model.Var;
-import com.cburch.logisim.gui.generic.LFrame;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.LocaleListener;
-import com.cburch.logisim.util.LocaleManager;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ComponentAdapter;
@@ -29,6 +18,7 @@ import java.awt.event.ComponentEvent;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
 import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -41,6 +31,18 @@ import javax.swing.SwingWorker;
 import javax.swing.WindowConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import com.cburch.logisim.analyze.file.AnalyzerTexWriter;
+import com.cburch.logisim.analyze.model.AnalyzerModel;
+import com.cburch.logisim.analyze.model.Implicant;
+import com.cburch.logisim.analyze.model.Parser;
+import com.cburch.logisim.analyze.model.TruthTableEvent;
+import com.cburch.logisim.analyze.model.TruthTableListener;
+import com.cburch.logisim.analyze.model.Var;
+import com.cburch.logisim.gui.generic.LFrame;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.LocaleListener;
+import com.cburch.logisim.util.LocaleManager;
 
 public class Analyzer extends LFrame.SubWindow {
   private final AnalyzerMenuListener menuListener;
@@ -311,7 +313,7 @@ public class Analyzer extends LFrame.SubWindow {
       panel.add(new JLabel(S.get("analyzePleaseWait")), BorderLayout.PAGE_START);
       add(panel);
       setPreferredSize(new Dimension(300, 70));
-      setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+      setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
       pack();
       setLocationRelativeTo(parentComponent);
       try {

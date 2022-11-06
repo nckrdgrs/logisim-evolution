@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.util.HashMap;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
@@ -20,9 +24,6 @@ import com.cburch.logisim.fpga.hdlgenerator.HdlPorts;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.LineBuffer;
-import java.util.HashMap;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 public class CounterHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
@@ -72,7 +73,7 @@ public class CounterHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
   @Override
   public SortedMap<String, String> getPortMap(Netlist nets, Object mapInfo) {
-    final var result = new TreeMap<String, String>(super.getPortMap(nets, mapInfo));
+    final var result = new TreeMap<>(super.getPortMap(nets, mapInfo));
     if (mapInfo instanceof final netlistComponent compInfo && Hdl.isVhdl()) {
       final var nrOfBits = compInfo.getComponent().getAttributeSet().getValue(StdAttr.WIDTH).getWidth();
       if (nrOfBits == 1) {
@@ -101,7 +102,7 @@ public class CounterHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
               0    0   | halt
               0    1   | count up (default)
               1    0   | load
-              1    1   | count down 
+              1    1   | count down
           """)
         .empty();
     if (Hdl.isVhdl()) {
@@ -110,7 +111,7 @@ public class CounterHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
           countValue   <= s_counterValue;
 
           s_clock      <= {{clock}} {{when}} {{invertClock}} = 0 {{else}} {{not}}({{clock}});
-          
+
           makeCarry : {{process}}(upNotDown, s_counterValue) {{is}}
           {{begin}}
              {{if}} (upNotDown = '0') {{then}}

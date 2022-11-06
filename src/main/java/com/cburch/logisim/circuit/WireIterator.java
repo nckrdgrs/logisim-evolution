@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.circuit;
 
-import com.cburch.logisim.data.Location;
 import java.util.Iterator;
+
+import com.cburch.logisim.data.Location;
 
 class WireIterator implements Iterator<Location> {
   private int curX;

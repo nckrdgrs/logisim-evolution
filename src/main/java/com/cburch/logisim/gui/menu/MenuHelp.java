@@ -11,11 +11,6 @@ package com.cburch.logisim.gui.menu;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.generated.BuildInfo;
-import com.cburch.logisim.gui.generic.LFrame;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.gui.start.About;
-import com.cburch.logisim.util.MacCompatibility;
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -23,10 +18,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URI;
 import java.util.Locale;
+
 import javax.help.HelpSet;
 import javax.help.JHelp;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import com.cburch.logisim.generated.BuildInfo;
+import com.cburch.logisim.gui.generic.LFrame;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.gui.start.About;
+import com.cburch.logisim.util.MacCompatibility;
 
 class MenuHelp extends JMenu implements ActionListener {
 

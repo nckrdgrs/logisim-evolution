@@ -9,16 +9,18 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.logisim.circuit.CircuitState;
-import com.cburch.logisim.comp.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
+
+import com.cburch.logisim.circuit.CircuitState;
+import com.cburch.logisim.comp.Component;
 
 public class SimulationTreeModel implements TreeModel {
   private final ArrayList<TreeModelListener> listeners;

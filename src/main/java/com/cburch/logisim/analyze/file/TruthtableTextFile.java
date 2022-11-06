@@ -11,11 +11,6 @@ package com.cburch.logisim.analyze.file;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.model.AnalyzerModel;
-import com.cburch.logisim.analyze.model.Entry;
-import com.cburch.logisim.analyze.model.Var;
-import com.cburch.logisim.analyze.model.VariableList;
-import com.cburch.logisim.gui.generic.OptionPane;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -23,8 +18,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileFilter;
+
+import com.cburch.logisim.analyze.model.AnalyzerModel;
+import com.cburch.logisim.analyze.model.Entry;
+import com.cburch.logisim.analyze.model.Var;
+import com.cburch.logisim.analyze.model.VariableList;
+import com.cburch.logisim.gui.generic.OptionPane;
 
 public class TruthtableTextFile {
 

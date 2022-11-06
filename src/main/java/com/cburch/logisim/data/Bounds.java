@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.data;
 
-import com.cburch.logisim.util.Cache;
 import java.awt.Rectangle;
+
+import com.cburch.logisim.util.Cache;
 
 /**
  * Represents an immutable rectangular bounding box. This is analogous to java.awt's <code>Rectangle
@@ -174,8 +175,7 @@ public class Bounds {
   }
 
   public Bounds expand(int d) { // d pixels in each direction
-    if (this == EMPTY_BOUNDS) return this;
-    if (d == 0) return this;
+    if ((this == EMPTY_BOUNDS) || (d == 0)) return this;
     return create(x - d, y - d, wid + 2 * d, ht + 2 * d);
   }
 
@@ -258,8 +258,7 @@ public class Bounds {
   }
 
   public Bounds translate(int dx, int dy) {
-    if (this == EMPTY_BOUNDS) return this;
-    if (dx == 0 && dy == 0) return this;
+    if ((this == EMPTY_BOUNDS) || (dx == 0 && dy == 0)) return this;
     return create(x + dx, y + dy, wid, ht);
   }
 }

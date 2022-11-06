@@ -11,10 +11,11 @@ package com.cburch.logisim.analyze.gui;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
+import javax.swing.JFrame;
+
 import com.cburch.logisim.util.LocaleListener;
 import com.cburch.logisim.util.LocaleManager;
 import com.cburch.logisim.util.WindowMenuItemManager;
-import javax.swing.JFrame;
 
 public class AnalyzerManager extends WindowMenuItemManager implements LocaleListener {
   public static Analyzer getAnalyzer(java.awt.Component parent) {

@@ -11,24 +11,6 @@ package com.cburch.logisim.analyze.gui;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.contracts.BaseMouseMotionListenerContract;
-import com.cburch.logisim.analyze.data.ExpressionRenderData;
-import com.cburch.logisim.analyze.data.KarnaughMapGroups;
-import com.cburch.logisim.analyze.model.AnalyzerModel;
-import com.cburch.logisim.analyze.model.Entry;
-import com.cburch.logisim.analyze.model.Expression;
-import com.cburch.logisim.analyze.model.Expression.Notation;
-import com.cburch.logisim.analyze.model.OutputExpressionsEvent;
-import com.cburch.logisim.analyze.model.OutputExpressionsListener;
-import com.cburch.logisim.analyze.model.TruthTable;
-import com.cburch.logisim.analyze.model.TruthTableEvent;
-import com.cburch.logisim.analyze.model.TruthTableListener;
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.data.Value;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.GraphicsUtil;
-import com.cburch.logisim.util.LineBuffer;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -48,7 +30,27 @@ import java.text.AttributedString;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 import javax.swing.JPanel;
+
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.contracts.BaseMouseMotionListenerContract;
+import com.cburch.logisim.analyze.data.ExpressionRenderData;
+import com.cburch.logisim.analyze.data.KarnaughMapGroups;
+import com.cburch.logisim.analyze.model.AnalyzerModel;
+import com.cburch.logisim.analyze.model.Entry;
+import com.cburch.logisim.analyze.model.Expression;
+import com.cburch.logisim.analyze.model.Expression.Notation;
+import com.cburch.logisim.analyze.model.OutputExpressionsEvent;
+import com.cburch.logisim.analyze.model.OutputExpressionsListener;
+import com.cburch.logisim.analyze.model.TruthTable;
+import com.cburch.logisim.analyze.model.TruthTableEvent;
+import com.cburch.logisim.analyze.model.TruthTableListener;
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.data.Value;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.GraphicsUtil;
+import com.cburch.logisim.util.LineBuffer;
 
 public class KarnaughMapPanel extends JPanel implements BaseMouseMotionListenerContract, BaseMouseListenerContract, Entry.EntryChangedListener {
   private class MyListener implements OutputExpressionsListener, TruthTableListener {

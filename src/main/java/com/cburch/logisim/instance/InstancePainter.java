@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.instance;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.circuit.WireSet;
@@ -20,8 +23,6 @@ import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.proj.Project;
-import java.awt.Color;
-import java.awt.Graphics;
 
 public class InstancePainter implements InstanceState {
   private final ComponentDrawContext context;

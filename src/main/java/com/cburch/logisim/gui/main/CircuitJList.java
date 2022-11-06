@@ -9,15 +9,17 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.file.LogisimFile;
-import com.cburch.logisim.proj.Project;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
+
 import javax.swing.JList;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.file.LogisimFile;
+import com.cburch.logisim.proj.Project;
 
 @SuppressWarnings("rawtypes")
 class CircuitJList extends JList {

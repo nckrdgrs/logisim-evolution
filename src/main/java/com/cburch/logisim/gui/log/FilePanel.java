@@ -11,21 +11,23 @@ package com.cburch.logisim.gui.log;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.data.TestVector;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.util.JFileChoosers;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileWriter;
 import java.io.IOException;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import com.cburch.logisim.data.TestVector;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.util.JFileChoosers;
 
 class FilePanel extends LogPanel {
   private static final long serialVersionUID = 1L;

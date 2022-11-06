@@ -9,6 +9,11 @@
 
 package com.cburch.logisim.std.tcl;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.util.Arrays;
+import java.util.WeakHashMap;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Bounds;
@@ -23,10 +28,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringGetter;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Color;
-import java.awt.Font;
-import java.util.Arrays;
-import java.util.WeakHashMap;
 
 /**
  * This is the component one should extend to implement the different TCL components.

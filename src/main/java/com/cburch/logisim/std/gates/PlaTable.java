@@ -18,11 +18,6 @@ package com.cburch.logisim.std.gates;
 
 import static com.cburch.logisim.std.Strings.S;
 
-import com.cburch.logisim.file.Loader;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.JFileChoosers;
-import com.cburch.logisim.util.JInputDialog;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -42,6 +37,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoundedRangeModel;
 import javax.swing.Box;
@@ -55,10 +51,17 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.plaf.basic.BasicScrollBarUI;
+
+import com.cburch.logisim.file.Loader;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.JFileChoosers;
+import com.cburch.logisim.util.JInputDialog;
 
 public class PlaTable {
   private final ArrayList<Row> rows = new ArrayList<>();
@@ -346,8 +349,8 @@ public class PlaTable {
       final var header =
           new JScrollPane(
               hdrPanel,
-              JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-              JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+              ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
+              ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
       header
           .getVerticalScrollBar()
           .setUI(
@@ -383,8 +386,8 @@ public class PlaTable {
       final var table =
           new JScrollPane(
               ttScrollPanel,
-              JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-              JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+              ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
+              ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
       header.getHorizontalScrollBar().setModel(table.getHorizontalScrollBar().getModel());
       vScrollModel = table.getVerticalScrollBar().getModel();

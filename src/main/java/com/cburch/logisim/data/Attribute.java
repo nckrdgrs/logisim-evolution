@@ -9,9 +9,11 @@
 
 package com.cburch.logisim.data;
 
-import com.cburch.logisim.util.StringGetter;
 import java.awt.Window;
+
 import javax.swing.JTextField;
+
+import com.cburch.logisim.util.StringGetter;
 
 public abstract class Attribute<V> {
   private final String name;

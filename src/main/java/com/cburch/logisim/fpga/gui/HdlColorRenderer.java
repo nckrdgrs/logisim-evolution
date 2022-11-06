@@ -14,8 +14,10 @@ import static com.cburch.logisim.fpga.Strings.S;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.table.TableCellRenderer;
 
@@ -53,14 +55,14 @@ public class HdlColorRenderer extends JLabel implements TableCellRenderer {
         else if (value.equals(SUPPORT_STRING)) setText(S.get("FPGASupported"));
         else setText(S.get("FPGAUnknown"));
       }
-      setHorizontalAlignment(JLabel.CENTER);
+      setHorizontalAlignment(SwingConstants.CENTER);
     } else {
       String myInfo = (String) Info;
       if (myInfo != null && myInfo.equals(REQUIRED_FIELD_STRING)) {
         setBackground(Color.YELLOW);
         setForeground(Color.BLUE);
         setText("HDL Required");
-        setHorizontalAlignment(JLabel.CENTER);
+        setHorizontalAlignment(SwingConstants.CENTER);
         setBorder(null);
       } else if (myInfo != null
           && myInfo.contains("#")
@@ -79,7 +81,7 @@ public class HdlColorRenderer extends JLabel implements TableCellRenderer {
         setBackground(newColor);
         setForeground(Color.black);
         setText((String) Info);
-        setHorizontalAlignment(JLabel.LEFT);
+        setHorizontalAlignment(SwingConstants.LEFT);
         setBorder(null);
       }
     }

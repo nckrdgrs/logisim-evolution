@@ -11,10 +11,11 @@ package com.cburch.logisim.analyze.model;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.model.Expression.Notation;
-import com.cburch.logisim.util.StringGetter;
 import java.util.ArrayList;
 import java.util.function.Predicate;
+
+import com.cburch.logisim.analyze.model.Expression.Notation;
+import com.cburch.logisim.util.StringGetter;
 
 public class Parser {
   private Parser() {

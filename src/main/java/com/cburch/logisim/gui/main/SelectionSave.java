@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.gui.main;
 
-import com.cburch.logisim.comp.Component;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+
+import com.cburch.logisim.comp.Component;
 
 class SelectionSave {
   private Component[] floating;

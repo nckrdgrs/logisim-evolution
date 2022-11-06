@@ -9,8 +9,6 @@
 
 package com.cburch.logisim.std.tcl;
 
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.tools.MessageBox;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -20,8 +18,12 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.tools.MessageBox;
 
 /**
  * The TclWrapper create a TCL subprocess runnning the script specified in the TCL component

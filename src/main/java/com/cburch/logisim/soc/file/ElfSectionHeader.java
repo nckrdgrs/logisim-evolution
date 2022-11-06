@@ -185,11 +185,7 @@ public class ElfSectionHeader {
       status = SYMBOL_TABLE_READ_ERROR;
       return false;
     }
-    if (nrRead != (symTableOffset > strTableOffset ? symTableSize : strTableSize)) {
-      status = SYMBOL_TABLE_READ_ERROR;
-      return false;
-    }
-    if ((symTableSize % SymbolTable.SYMBOL_TABLE_SIZE) != 0) {
+    if ((nrRead != (symTableOffset > strTableOffset ? symTableSize : strTableSize)) || ((symTableSize % SymbolTable.SYMBOL_TABLE_SIZE) != 0)) {
       status = SYMBOL_TABLE_READ_ERROR;
       return false;
     }

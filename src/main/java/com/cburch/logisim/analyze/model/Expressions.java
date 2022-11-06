@@ -51,8 +51,7 @@ public class Expressions {
 
     @Override
     public boolean equals(Object other) {
-      if (other == null) return false;
-      if (this.getClass() != other.getClass()) return false;
+      if ((other == null) || (this.getClass() != other.getClass())) return false;
       final var o = (Binary) other;
       return this.exprA.equals(o.exprA) && this.exprB.equals(o.exprB);
     }

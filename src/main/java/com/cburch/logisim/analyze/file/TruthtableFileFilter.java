@@ -9,9 +9,11 @@
 
 package com.cburch.logisim.analyze.file;
 
-import com.cburch.logisim.util.StringGetter;
 import java.io.File;
+
 import javax.swing.filechooser.FileFilter;
+
+import com.cburch.logisim.util.StringGetter;
 
 public class TruthtableFileFilter extends FileFilter {
 

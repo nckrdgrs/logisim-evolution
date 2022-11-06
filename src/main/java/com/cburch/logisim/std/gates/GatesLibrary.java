@@ -11,11 +11,12 @@ package com.cburch.logisim.std.gates;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.cburch.logisim.tools.AddTool;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.tools.Tool;
-import java.util.Arrays;
-import java.util.List;
 
 public class GatesLibrary extends Library {
 

@@ -9,14 +9,16 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.logisim.data.Direction;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import com.cburch.logisim.data.Direction;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public final class IconsUtil {
 

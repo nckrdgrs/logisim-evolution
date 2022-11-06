@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.comp;
 
+import java.awt.Color;
+
+import javax.swing.Icon;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitState;
@@ -23,8 +27,6 @@ import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.IconsUtil;
 import com.cburch.logisim.util.StringGetter;
 import com.cburch.logisim.util.StringUtil;
-import java.awt.Color;
-import javax.swing.Icon;
 
 public abstract class AbstractComponentFactory implements ComponentFactory {
   private static final Icon toolIcon = IconsUtil.getIcon("subcirc.gif");

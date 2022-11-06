@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.fpga.settings;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class VendorSoftware {
   public static final char VENDOR_ALTERA = 0;

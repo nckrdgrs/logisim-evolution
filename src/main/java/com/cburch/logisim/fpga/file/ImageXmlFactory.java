@@ -22,7 +22,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
 import javax.imageio.ImageIO;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -158,9 +160,7 @@ public class ImageXmlFactory {
   }
 
   public BufferedImage getPicture(int width, int height) {
-    if (AsciiStream == null) return null;
-    if (CodeTable == null) return null;
-    if (CodeTable.length != 256) return null;
+    if ((AsciiStream == null) || (CodeTable == null) || (CodeTable.length != 256)) return null;
     BufferedImage result = null;
     Map<String, Integer> CodeLookupTable = new HashMap<>();
     for (int i = 0; i < CodeTable.length; i++) CodeLookupTable.put(CodeTable[i], i);

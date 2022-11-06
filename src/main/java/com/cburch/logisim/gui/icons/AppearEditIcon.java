@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.circuit.SubcircuitFactory;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
+
+import com.cburch.logisim.circuit.SubcircuitFactory;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class AppearEditIcon extends BaseIcon {
 

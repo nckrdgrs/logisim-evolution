@@ -11,14 +11,16 @@ package com.cburch.logisim.gui.prefs;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Component;
 import java.awt.Dimension;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 class IntlOptions extends OptionsPanel {
   private static final long serialVersionUID = 1L;

@@ -9,7 +9,6 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
@@ -17,7 +16,10 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
+
 import javax.swing.Icon;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class QuestionIcon implements Icon {
 
@@ -33,7 +35,7 @@ public class QuestionIcon implements Icon {
     g2.setStroke(new BasicStroke(AppPreferences.getScaled((float) 1)));
     g2.drawRect(0, 0, width - 1, width - 1);
     g2.setColor(Color.GREEN.darker().darker().darker().darker());
-    final var f = g2.getFont().deriveFont((float) width / (float) 1.3).deriveFont(Font.BOLD);
+    final var f = g2.getFont().deriveFont(width / (float) 1.3).deriveFont(Font.BOLD);
     final var t = new TextLayout("?", f, g2.getFontRenderContext());
     final var centerX = (float) width / (float) 2 - (float) t.getBounds().getCenterX();
     final var centerY = (float) width / (float) 2 - (float) t.getBounds().getCenterY();

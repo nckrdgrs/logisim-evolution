@@ -9,6 +9,16 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.util.Collection;
+import java.util.Collections;
+
+import javax.swing.JComponent;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.circuit.appear.AppearancePort;
 import com.cburch.logisim.circuit.appear.DynamicElement;
@@ -20,14 +30,6 @@ import com.cburch.logisim.std.io.RgbLed;
 import com.cburch.logisim.std.wiring.Pin;
 import com.cburch.logisim.util.CollectionUtil;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.util.Collection;
-import java.util.Collections;
-import javax.swing.JComponent;
 
 public class LayoutThumbnail extends JComponent {
   private static final long serialVersionUID = 1L;

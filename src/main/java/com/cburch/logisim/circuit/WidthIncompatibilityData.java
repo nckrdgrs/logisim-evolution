@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.circuit;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Location;
-import java.util.ArrayList;
 
 public class WidthIncompatibilityData {
   private final ArrayList<Location> points;

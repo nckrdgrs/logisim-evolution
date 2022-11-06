@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.tools.move;
 
-import com.cburch.logisim.circuit.ReplacementMap;
-import com.cburch.logisim.circuit.Wire;
-import com.cburch.logisim.data.Location;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import com.cburch.logisim.circuit.ReplacementMap;
+import com.cburch.logisim.circuit.Wire;
+import com.cburch.logisim.data.Location;
 
 public class MoveResult {
   private final ReplacementMap replacements;

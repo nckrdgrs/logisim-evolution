@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
+
 import com.cburch.draw.model.CanvasModel;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.util.ZOrder;
@@ -18,9 +22,6 @@ import com.cburch.logisim.data.Location;
 import com.cburch.logisim.proj.Action;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.util.StringGetter;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
 
 class SelectionAction extends Action {
   private final StringGetter displayName;

@@ -9,6 +9,10 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
 import com.cburch.logisim.fpga.designrulecheck.netlistComponent;
@@ -19,9 +23,6 @@ import com.cburch.logisim.fpga.hdlgenerator.HdlPorts;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.LineBuffer;
-import java.util.List;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 public class ShiftRegisterHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
@@ -64,7 +65,7 @@ public class ShiftRegisterHdlGeneratorFactory extends AbstractHdlGeneratorFactor
 
   @Override
   public SortedMap<String, String> getPortMap(Netlist nets, Object mapInfo) {
-    final var map = new TreeMap<String, String>(super.getPortMap(nets, mapInfo));
+    final var map = new TreeMap<>(super.getPortMap(nets, mapInfo));
     if (mapInfo instanceof final netlistComponent comp) {
       final var attrs = comp.getComponent().getAttributeSet();
       final var nrOfBits = attrs.getValue(StdAttr.WIDTH).getWidth();
@@ -235,7 +236,7 @@ public class ShiftRegisterHdlGeneratorFactory extends AbstractHdlGeneratorFactor
   public LineBuffer getComponentDeclarationSection(Netlist nets, AttributeSet attrs) {
     return getExtraComp(false);
   }
-  
+
   private LineBuffer getExtraComp(boolean isEntity) {
     return LineBuffer.getHdlBuffer().addVhdlKeywords()
         .pair("clock", HdlPorts.getClockName(1))

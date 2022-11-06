@@ -11,12 +11,13 @@ package com.cburch.logisim.soc.nios2;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.soc.data.SocSupport;
 import com.cburch.logisim.soc.util.AssemblerAsmInstruction;
 import com.cburch.logisim.soc.util.AssemblerExecutionInterface;
 import com.cburch.logisim.soc.util.AssemblerToken;
-import java.util.ArrayList;
 
 public class Nios2ShiftAndRotateInstructions implements AssemblerExecutionInterface {
 
@@ -53,7 +54,8 @@ public class Nios2ShiftAndRotateInstructions implements AssemblerExecutionInterf
     }
   }
 
-  @SuppressWarnings("fallthrough")
+  @Override
+@SuppressWarnings("fallthrough")
   public boolean execute(Object processorState, CircuitState circuitState) {
     if (!valid) return false;
     Nios2State.ProcessorState cpuState = (Nios2State.ProcessorState) processorState;
@@ -101,7 +103,8 @@ public class Nios2ShiftAndRotateInstructions implements AssemblerExecutionInterf
     return true;
   }
 
-  public String getAsmInstruction() {
+  @Override
+public String getAsmInstruction() {
     if (!valid) return null;
     StringBuilder s = new StringBuilder();
     s.append(Opcodes.get(operation));
@@ -116,11 +119,13 @@ public class Nios2ShiftAndRotateInstructions implements AssemblerExecutionInterf
     return s.toString();
   }
 
-  public int getBinInstruction() {
+  @Override
+public int getBinInstruction() {
     return instruction;
   }
 
-  public boolean setAsmInstruction(AssemblerAsmInstruction instr) {
+  @Override
+public boolean setAsmInstruction(AssemblerAsmInstruction instr) {
     valid = false;
     if (!Opcodes.contains(instr.getOpcode().toLowerCase())) return false;
     if (instr.getNrOfParameters() != 3) {
@@ -159,7 +164,8 @@ public class Nios2ShiftAndRotateInstructions implements AssemblerExecutionInterf
     return true;
   }
 
-  public boolean setBinInstruction(int instr) {
+  @Override
+public boolean setBinInstruction(int instr) {
     instruction = instr;
     valid = false;
     if (Nios2Support.getOpcode(instr) != 0x3A) return false;
@@ -179,23 +185,28 @@ public class Nios2ShiftAndRotateInstructions implements AssemblerExecutionInterf
     return valid;
   }
 
-  public boolean performedJump() {
+  @Override
+public boolean performedJump() {
     return false;
   }
 
-  public boolean isValid() {
+  @Override
+public boolean isValid() {
     return valid;
   }
 
-  public String getErrorMessage() {
+  @Override
+public String getErrorMessage() {
     return null;
   }
 
-  public ArrayList<String> getInstructions() {
+  @Override
+public ArrayList<String> getInstructions() {
     return Opcodes;
   }
 
-  public int getInstructionSizeInBytes(String instruction) {
+  @Override
+public int getInstructionSizeInBytes(String instruction) {
     if (Opcodes.contains(instruction.toLowerCase())) return 4;
     return -1;
   }

@@ -9,6 +9,8 @@
 
 package com.cburch.logisim.tools;
 
+import java.util.ArrayList;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitListener;
 import com.cburch.logisim.circuit.CircuitState;
@@ -16,7 +18,6 @@ import com.cburch.logisim.circuit.SubcircuitFactory;
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.comp.ComponentListener;
 import com.cburch.logisim.soc.data.SocSupport;
-import java.util.ArrayList;
 
 public interface CircuitStateHolder {
   class HierarchyInfo {

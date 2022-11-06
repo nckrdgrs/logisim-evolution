@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.std.tcl;
 
+import java.util.LinkedList;
+
 import com.cburch.logisim.circuit.Simulator;
 import com.cburch.logisim.util.SocketClient;
 import com.cburch.logisim.util.UniquelyNamedThread;
-import java.util.LinkedList;
 
 public class TclWrapperListenerThread extends UniquelyNamedThread {
 

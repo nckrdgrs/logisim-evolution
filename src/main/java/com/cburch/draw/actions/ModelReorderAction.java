@@ -11,14 +11,15 @@ package com.cburch.draw.actions;
 
 import static com.cburch.draw.Strings.S;
 
-import com.cburch.draw.model.CanvasModel;
-import com.cburch.draw.model.CanvasObject;
-import com.cburch.draw.model.ReorderRequest;
-import com.cburch.draw.util.ZOrder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+
+import com.cburch.draw.model.CanvasModel;
+import com.cburch.draw.model.CanvasObject;
+import com.cburch.draw.model.ReorderRequest;
+import com.cburch.draw.util.ZOrder;
 
 public class ModelReorderAction extends ModelAction {
   private final List<ReorderRequest> requests;

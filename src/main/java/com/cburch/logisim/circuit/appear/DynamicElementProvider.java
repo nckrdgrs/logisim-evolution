@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.circuit.appear;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.comp.Component;
 import com.cburch.logisim.instance.InstanceComponent;
-import java.util.HashSet;
-import java.util.LinkedList;
 
 public interface DynamicElementProvider {
 

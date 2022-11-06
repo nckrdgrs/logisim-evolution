@@ -9,12 +9,13 @@
 
 package com.cburch.draw.icons;
 
-import com.cburch.logisim.gui.icons.BaseIcon;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
+
+import com.cburch.logisim.gui.icons.BaseIcon;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class DrawPolylineIcon extends BaseIcon {
 

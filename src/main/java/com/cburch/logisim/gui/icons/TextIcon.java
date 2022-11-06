@@ -9,10 +9,11 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
+
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class TextIcon extends BaseIcon {
 

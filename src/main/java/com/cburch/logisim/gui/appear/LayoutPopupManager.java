@@ -9,6 +9,16 @@
 
 package com.cburch.logisim.gui.appear;
 
+import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.swing.Popup;
+import javax.swing.PopupFactory;
+
 import com.cburch.contracts.BaseMouseListenerContract;
 import com.cburch.contracts.BaseMouseMotionListenerContract;
 import com.cburch.draw.canvas.SelectionEvent;
@@ -19,14 +29,6 @@ import com.cburch.logisim.circuit.appear.DynamicElement;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.gui.generic.CanvasPane;
 import com.cburch.logisim.instance.Instance;
-import java.awt.Dimension;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-import javax.swing.Popup;
-import javax.swing.PopupFactory;
 
 class LayoutPopupManager implements SelectionListener, BaseMouseListenerContract, BaseMouseMotionListenerContract {
   private final CanvasPane canvasPane;

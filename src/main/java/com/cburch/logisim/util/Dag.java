@@ -107,8 +107,7 @@ public class Dag {
     // returns true if the edge could be removed
     final var src = findNode(srcData);
     final var dst = findNode(dstData);
-    if (src == null || dst == null) return false;
-    if (!src.succs.remove(dst)) return false;
+    if (src == null || dst == null || !src.succs.remove(dst)) return false;
 
     --dst.numPreds;
     if (dst.numPreds == 0 && dst.succs.isEmpty()) nodes.remove(dstData);

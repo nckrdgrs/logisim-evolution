@@ -11,18 +11,6 @@ package com.cburch.logisim.vhdl.gui;
 
 import static com.cburch.logisim.vhdl.Strings.S;
 
-import com.cburch.contracts.BaseDocumentListenerContract;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.util.FileUtil;
-import com.cburch.logisim.util.JFileChoosers;
-import com.cburch.logisim.util.JInputDialog;
-import com.cburch.logisim.util.LocaleListener;
-import com.cburch.logisim.util.LocaleManager;
-import com.cburch.logisim.vhdl.base.HdlContent;
-import com.cburch.logisim.vhdl.base.HdlModel;
-import com.cburch.logisim.vhdl.base.HdlModelListener;
-import com.cburch.logisim.vhdl.file.HdlFile;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dialog;
@@ -36,15 +24,30 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.WeakHashMap;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.event.DocumentEvent;
+
 import org.fife.ui.rsyntaxtextarea.AbstractTokenMakerFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.TokenMakerFactory;
 import org.fife.ui.rtextarea.RTextScrollPane;
+
+import com.cburch.contracts.BaseDocumentListenerContract;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.util.FileUtil;
+import com.cburch.logisim.util.JFileChoosers;
+import com.cburch.logisim.util.JInputDialog;
+import com.cburch.logisim.util.LocaleListener;
+import com.cburch.logisim.util.LocaleManager;
+import com.cburch.logisim.vhdl.base.HdlContent;
+import com.cburch.logisim.vhdl.base.HdlModel;
+import com.cburch.logisim.vhdl.base.HdlModelListener;
+import com.cburch.logisim.vhdl.file.HdlFile;
 
 public class HdlContentEditor extends JDialog implements JInputDialog {
 
@@ -168,12 +171,7 @@ public class HdlContentEditor extends JDialog implements JInputDialog {
   }
 
   private void close() {
-    if (editor.getText().equals(model.getContent())) {
-      dispose();
-      return;
-    }
-
-    if (model.setContent(editor.getText())) {
+    if (editor.getText().equals(model.getContent()) || model.setContent(editor.getText())) {
       dispose();
       return;
     }

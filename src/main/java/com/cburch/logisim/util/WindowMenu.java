@@ -16,12 +16,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
+import javax.swing.WindowConstants;
 
 public class WindowMenu extends JMenu {
   private class MyListener implements LocaleListener, ActionListener {
@@ -161,11 +163,11 @@ public class WindowMenu extends JMenu {
       windowClosable.requestClose();
     } else if (owner != null) {
       int action = owner.getDefaultCloseOperation();
-      if (action == JFrame.EXIT_ON_CLOSE) {
+      if (action == WindowConstants.EXIT_ON_CLOSE) {
         System.exit(0);
-      } else if (action == JFrame.HIDE_ON_CLOSE) {
+      } else if (action == WindowConstants.HIDE_ON_CLOSE) {
         owner.setVisible(false);
-      } else if (action == JFrame.DISPOSE_ON_CLOSE) {
+      } else if (action == WindowConstants.DISPOSE_ON_CLOSE) {
         owner.dispose();
       }
     }

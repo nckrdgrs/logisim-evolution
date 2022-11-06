@@ -9,8 +9,6 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.logisim.fpga.hdlgenerator.Hdl;
-import com.cburch.logisim.fpga.hdlgenerator.Vhdl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -21,7 +19,11 @@ import java.util.RandomAccess;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import org.apache.commons.text.WordUtils;
+
+import com.cburch.logisim.fpga.hdlgenerator.Hdl;
+import com.cburch.logisim.fpga.hdlgenerator.Vhdl;
 
 /**
  * This class is intended to simplify building any HDL content, which usually contains of fixed text
@@ -505,7 +507,7 @@ public class LineBuffer implements RandomAccess {
 
   /** Returns **copy** of internal pair buffer. */
   public Pairs getPairCopy() {
-    final var clone = (Pairs) pairs.clone();
+    final var clone = pairs.clone();
     return clone;
   }
 

@@ -11,14 +11,11 @@ package com.cburch.logisim.gui.log;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.data.Direction;
-import com.cburch.logisim.gui.icons.FatArrowIcon;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.JDialogOk;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -26,6 +23,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
+
+import com.cburch.logisim.data.Direction;
+import com.cburch.logisim.gui.icons.FatArrowIcon;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.JDialogOk;
 
 public class SelectionPanel extends LogPanel {
   private static final long serialVersionUID = 1L;

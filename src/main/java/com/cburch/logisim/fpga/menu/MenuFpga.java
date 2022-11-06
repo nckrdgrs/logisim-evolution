@@ -11,16 +11,18 @@ package com.cburch.logisim.fpga.menu;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
 import com.cburch.logisim.fpga.gui.BoardEditor;
 import com.cburch.logisim.fpga.gui.FpgaCommander;
 import com.cburch.logisim.gui.main.Frame;
 import com.cburch.logisim.gui.menu.LogisimMenuBar;
 import com.cburch.logisim.proj.Project;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 
 @SuppressWarnings("serial")
 public class MenuFpga extends JMenu implements ActionListener {

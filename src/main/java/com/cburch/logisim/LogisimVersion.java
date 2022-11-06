@@ -30,7 +30,7 @@ public class LogisimVersion {
   private String separator = "";
   private String suffix = "";
 
-  private LogisimVersion() {
+  public LogisimVersion() {
     // private
   }
 

@@ -11,6 +11,8 @@ package com.cburch.logisim.std.bfh;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.Attributes;
@@ -25,7 +27,6 @@ import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.tools.key.BitWidthConfigurator;
-import java.awt.Color;
 
 public class BinToBcd extends InstanceFactory {
   /**

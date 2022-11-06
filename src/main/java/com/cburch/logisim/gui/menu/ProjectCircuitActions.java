@@ -11,6 +11,19 @@ package com.cburch.logisim.gui.menu;
 
 import static com.cburch.logisim.gui.Strings.S;
 
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.Map;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import com.cburch.contracts.BaseWindowFocusListenerContract;
 import com.cburch.logisim.analyze.gui.Analyzer;
 import com.cburch.logisim.analyze.gui.AnalyzerManager;
@@ -31,17 +44,6 @@ import com.cburch.logisim.tools.AddTool;
 import com.cburch.logisim.tools.Library;
 import com.cburch.logisim.util.SyntaxChecker;
 import com.cburch.logisim.vhdl.base.VhdlContent;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.Map;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class ProjectCircuitActions {
   private ProjectCircuitActions() {
@@ -147,8 +149,7 @@ public class ProjectCircuitActions {
     if (vhdl == null) return;
 
     final var content = VhdlContent.parse(null, vhdl, proj.getLogisimFile());
-    if (content != null) return;
-    if (VhdlContent.labelVHDLInvalidNotify(content.getName(), proj.getLogisimFile())) return;
+    if ((content != null) || VhdlContent.labelVHDLInvalidNotify(content.getName(), proj.getLogisimFile())) return;
 
     proj.doAction(LogisimFileActions.addVhdl(content));
     proj.setCurrentHdlModel(content);
@@ -251,8 +252,7 @@ public class ProjectCircuitActions {
 
   private static String promptForVhdlName(JFrame frame, LogisimFile file, String initialValue) {
     final var name = promptForNewName(frame, file, initialValue, true);
-    if (name == null) return null;
-    if (VhdlContent.labelVHDLInvalidNotify(name, file)) return null;
+    if ((name == null) || VhdlContent.labelVHDLInvalidNotify(name, file)) return null;
     return name;
   }
 

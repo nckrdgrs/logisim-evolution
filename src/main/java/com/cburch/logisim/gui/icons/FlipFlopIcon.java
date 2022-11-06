@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
 import java.awt.geom.GeneralPath;
+
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class FlipFlopIcon extends BaseIcon {
 
@@ -52,7 +53,7 @@ public class FlipFlopIcon extends BaseIcon {
         // do nothing. Should not really happen.
       }
     }
-    final var f = g2.getFont().deriveFont((float) ((double) AppPreferences.getIconSize() / 2.1));
+    final var f = g2.getFont().deriveFont((float) (AppPreferences.getIconSize() / 2.1));
     final var l = new TextLayout(str, f, g2.getFontRenderContext());
     l.draw(g2, (float) (getIconWidth() / 2 - l.getBounds().getCenterX()), (float) (getIconHeight() / 2 - l.getBounds().getCenterY()));
   }

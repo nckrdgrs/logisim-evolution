@@ -11,17 +11,19 @@ package com.cburch.logisim.std.tcl;
 
 import static com.cburch.logisim.std.Strings.S;
 
-import com.cburch.logisim.data.AbstractAttributeSet;
-import com.cburch.logisim.data.Attribute;
-import com.cburch.logisim.file.Loader;
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.util.JInputComponent;
 import java.awt.Font;
 import java.awt.Window;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
+
 import javax.swing.JFileChooser;
+
+import com.cburch.logisim.data.AbstractAttributeSet;
+import com.cburch.logisim.data.Attribute;
+import com.cburch.logisim.file.Loader;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.util.JInputComponent;
 
 public class TclComponentAttributes extends AbstractAttributeSet {
 

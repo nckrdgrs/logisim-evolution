@@ -10,11 +10,14 @@
 package com.cburch.logisim.soc.data;
 
 import java.util.HashSet;
+
 import javax.swing.text.Segment;
+
 import org.fife.ui.rsyntaxtextarea.AbstractTokenMaker;
 import org.fife.ui.rsyntaxtextarea.RSyntaxUtilities;
 import org.fife.ui.rsyntaxtextarea.Token;
 import org.fife.ui.rsyntaxtextarea.TokenMap;
+import org.fife.ui.rsyntaxtextarea.TokenTypes;
 
 public class AssemblerHighlighter extends AbstractTokenMaker {
   public static final int REPEAT_LAST = -1;
@@ -65,14 +68,14 @@ public class AssemblerHighlighter extends AbstractTokenMaker {
   public TokenMap getWordsToHighlight() {
     TokenMap map = new TokenMap();
     for (String directive : directives)
-      map.put(directive, Token.FUNCTION);
+      map.put(directive, TokenTypes.FUNCTION);
     return map;
   }
 
   @Override
   public void addToken(Segment segment, int start, int end, int tokenType, int startOffset) {
     // This assumes all keywords, etc. were parsed as "identifiers."
-    if (tokenType == Token.IDENTIFIER) {
+    if (tokenType == TokenTypes.IDENTIFIER) {
       int value = wordsToHighlight.get(segment, start, end);
       if (value != -1) {
         tokenType = value;
@@ -82,34 +85,34 @@ public class AssemblerHighlighter extends AbstractTokenMaker {
   }
 
   private int check(Segment text, char kar, int currentToken, int start, int index, int newStart) {
-    int currentTokenType = currentToken >= 0 ? currentToken : Token.LITERAL_CHAR;
-    if (currentTokenType == Token.COMMENT_EOL) return Token.COMMENT_EOL;
-    if (currentTokenType == Token.LITERAL_STRING_DOUBLE_QUOTE && (kar != '"' || escape)) {
+    int currentTokenType = currentToken >= 0 ? currentToken : TokenTypes.LITERAL_CHAR;
+    if (currentTokenType == TokenTypes.COMMENT_EOL) return TokenTypes.COMMENT_EOL;
+    if (currentTokenType == TokenTypes.LITERAL_STRING_DOUBLE_QUOTE && (kar != '"' || escape)) {
       escape = kar == '\\';
-      return Token.LITERAL_STRING_DOUBLE_QUOTE;
+      return TokenTypes.LITERAL_STRING_DOUBLE_QUOTE;
     }
     switch (kar) {
       case ' ':
       case '\t':
-        if (currentTokenType != Token.NULL && currentTokenType != Token.WHITESPACE)
+        if (currentTokenType != TokenTypes.NULL && currentTokenType != TokenTypes.WHITESPACE)
           addToken(text, start, index - 1, currentTokenType, newStart);
-        return Token.WHITESPACE;
+        return TokenTypes.WHITESPACE;
       case '"':
-        if (currentTokenType == Token.LITERAL_STRING_DOUBLE_QUOTE) {
+        if (currentTokenType == TokenTypes.LITERAL_STRING_DOUBLE_QUOTE) {
           addToken(text, start, index, currentTokenType, newStart);
           return DOUBLE_QUOTE_END;
         }
-        if (currentTokenType != Token.NULL)
+        if (currentTokenType != TokenTypes.NULL)
           addToken(text, start, index - 1, currentTokenType, newStart);
         escape = false;
-        return Token.LITERAL_STRING_DOUBLE_QUOTE;
+        return TokenTypes.LITERAL_STRING_DOUBLE_QUOTE;
       case '#':
-        if (currentTokenType != Token.NULL)
+        if (currentTokenType != TokenTypes.NULL)
           addToken(text, start, index - 1, currentTokenType, newStart);
-        return Token.COMMENT_EOL;
+        return TokenTypes.COMMENT_EOL;
       case '<':
         if (currentToken != MAYBE_SHIFT_LEFT) {
-          if (currentTokenType != Token.NULL)
+          if (currentTokenType != TokenTypes.NULL)
             addToken(text, start, index - 1, currentTokenType, newStart);
           return MAYBE_SHIFT_LEFT;
         } else {
@@ -118,7 +121,7 @@ public class AssemblerHighlighter extends AbstractTokenMaker {
         }
       case '>':
         if (currentToken != MAYBE_SHIFT_RIGHT) {
-          if (currentTokenType != Token.NULL)
+          if (currentTokenType != TokenTypes.NULL)
             addToken(text, start, index - 1, currentTokenType, newStart);
           return MAYBE_SHIFT_RIGHT;
         } else {
@@ -126,9 +129,9 @@ public class AssemblerHighlighter extends AbstractTokenMaker {
           return SHIFT_END;
         }
       case '@':
-        if (currentTokenType != Token.NULL)
+        if (currentTokenType != TokenTypes.NULL)
           addToken(text, start, index - 1, currentTokenType, newStart);
-        return currentTokenType == Token.PREPROCESSOR ? REPEAT_LAST : Token.PREPROCESSOR;
+        return currentTokenType == TokenTypes.PREPROCESSOR ? REPEAT_LAST : TokenTypes.PREPROCESSOR;
       case '(':
       case ')':
       case '{':
@@ -142,31 +145,31 @@ public class AssemblerHighlighter extends AbstractTokenMaker {
       case '/':
       case '%':
       case ']':
-        if (currentTokenType != Token.NULL)
+        if (currentTokenType != TokenTypes.NULL)
           addToken(text, start, index - 1, currentTokenType, newStart);
-        return currentTokenType == Token.LITERAL_CHAR ? REPEAT_LAST : Token.LITERAL_CHAR;
+        return currentTokenType == TokenTypes.LITERAL_CHAR ? REPEAT_LAST : TokenTypes.LITERAL_CHAR;
       case 'x':
       case 'X':
-        if (currentTokenType == Token.LITERAL_NUMBER_DECIMAL_INT) {
-          return Token.LITERAL_NUMBER_HEXADECIMAL;
+        if (currentTokenType == TokenTypes.LITERAL_NUMBER_DECIMAL_INT) {
+          return TokenTypes.LITERAL_NUMBER_HEXADECIMAL;
         }
     }
-    if (currentTokenType == Token.IDENTIFIER) return Token.IDENTIFIER;
+    if (currentTokenType == TokenTypes.IDENTIFIER) return TokenTypes.IDENTIFIER;
     if (RSyntaxUtilities.isDigit(kar)) {
-      if (currentTokenType == Token.PREPROCESSOR) return Token.PREPROCESSOR;
-      if (currentTokenType != Token.NULL
-          && currentTokenType != Token.LITERAL_NUMBER_DECIMAL_INT
-          && currentTokenType != Token.LITERAL_NUMBER_HEXADECIMAL)
+      if (currentTokenType == TokenTypes.PREPROCESSOR) return TokenTypes.PREPROCESSOR;
+      if (currentTokenType != TokenTypes.NULL
+          && currentTokenType != TokenTypes.LITERAL_NUMBER_DECIMAL_INT
+          && currentTokenType != TokenTypes.LITERAL_NUMBER_HEXADECIMAL)
         addToken(text, start, index - 1, currentTokenType, newStart);
-      return currentTokenType != Token.LITERAL_NUMBER_HEXADECIMAL
-          ? Token.LITERAL_NUMBER_DECIMAL_INT
+      return currentTokenType != TokenTypes.LITERAL_NUMBER_HEXADECIMAL
+          ? TokenTypes.LITERAL_NUMBER_DECIMAL_INT
           : currentTokenType;
     }
     if (RSyntaxUtilities.isHexCharacter(kar)
-        && currentTokenType == Token.LITERAL_NUMBER_HEXADECIMAL) return currentTokenType;
-    if (currentTokenType != Token.NULL)
+        && currentTokenType == TokenTypes.LITERAL_NUMBER_HEXADECIMAL) return currentTokenType;
+    if (currentTokenType != TokenTypes.NULL)
       addToken(text, start, index - 1, currentTokenType, newStart);
-    return Token.IDENTIFIER;
+    return TokenTypes.IDENTIFIER;
   }
 
   @Override
@@ -189,18 +192,18 @@ public class AssemblerHighlighter extends AbstractTokenMaker {
           check(
               arg0, c, currentTokenType, currentTokenStart, i, newStartOffset + currentTokenStart);
       if (newTokenType != currentTokenType
-          && !(newTokenType == Token.LITERAL_NUMBER_HEXADECIMAL
-              && currentTokenType == Token.LITERAL_NUMBER_DECIMAL_INT)) currentTokenStart = i;
+          && !(newTokenType == TokenTypes.LITERAL_NUMBER_HEXADECIMAL
+              && currentTokenType == TokenTypes.LITERAL_NUMBER_DECIMAL_INT)) currentTokenStart = i;
       if (newTokenType == DOUBLE_QUOTE_END || newTokenType == SHIFT_END) {
         currentTokenStart = i + 1;
-        currentTokenType = Token.NULL;
+        currentTokenType = TokenTypes.NULL;
       } else if (newTokenType == REPEAT_LAST) currentTokenStart = i;
       else currentTokenType = newTokenType;
     }
     switch (currentTokenType) {
-      case Token.LITERAL_STRING_DOUBLE_QUOTE -> addToken(
+      case TokenTypes.LITERAL_STRING_DOUBLE_QUOTE -> addToken(
           arg0, currentTokenStart, end - 1, currentTokenType, newStartOffset + currentTokenStart);
-      case Token.NULL -> addNullToken();
+      case TokenTypes.NULL -> addNullToken();
       default -> {
         addToken(
             arg0, currentTokenStart, end - 1, currentTokenType, newStartOffset + currentTokenStart);

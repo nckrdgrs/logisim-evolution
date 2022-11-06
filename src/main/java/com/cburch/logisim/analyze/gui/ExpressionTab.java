@@ -11,23 +11,6 @@ package com.cburch.logisim.analyze.gui;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.gui.ExpressionView.NamedExpression;
-import com.cburch.logisim.analyze.gui.MinimizedTab.NotationModel;
-import com.cburch.logisim.analyze.model.AnalyzerModel;
-import com.cburch.logisim.analyze.model.Expression;
-import com.cburch.logisim.analyze.model.Expression.Notation;
-import com.cburch.logisim.analyze.model.Expressions;
-import com.cburch.logisim.analyze.model.OutputExpressionsEvent;
-import com.cburch.logisim.analyze.model.OutputExpressionsListener;
-import com.cburch.logisim.analyze.model.Parser;
-import com.cburch.logisim.analyze.model.ParserException;
-import com.cburch.logisim.analyze.model.VariableListEvent;
-import com.cburch.logisim.analyze.model.VariableListListener;
-import com.cburch.logisim.gui.menu.EditHandler;
-import com.cburch.logisim.gui.menu.LogisimMenuBar;
-import com.cburch.logisim.gui.menu.PrintHandler;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.StringGetter;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -49,6 +32,7 @@ import java.awt.image.BufferedImage;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.util.EventObject;
+
 import javax.swing.AbstractCellEditor;
 import javax.swing.BorderFactory;
 import javax.swing.DropMode;
@@ -66,7 +50,26 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellEditor;
+
 import org.jdesktop.swingx.prompt.BuddySupport;
+
+import com.cburch.logisim.analyze.gui.ExpressionView.NamedExpression;
+import com.cburch.logisim.analyze.gui.MinimizedTab.NotationModel;
+import com.cburch.logisim.analyze.model.AnalyzerModel;
+import com.cburch.logisim.analyze.model.Expression;
+import com.cburch.logisim.analyze.model.Expression.Notation;
+import com.cburch.logisim.analyze.model.Expressions;
+import com.cburch.logisim.analyze.model.OutputExpressionsEvent;
+import com.cburch.logisim.analyze.model.OutputExpressionsListener;
+import com.cburch.logisim.analyze.model.Parser;
+import com.cburch.logisim.analyze.model.ParserException;
+import com.cburch.logisim.analyze.model.VariableListEvent;
+import com.cburch.logisim.analyze.model.VariableListListener;
+import com.cburch.logisim.gui.menu.EditHandler;
+import com.cburch.logisim.gui.menu.LogisimMenuBar;
+import com.cburch.logisim.gui.menu.PrintHandler;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.StringGetter;
 
 class ExpressionTab extends AnalyzerTab {
   private static final long serialVersionUID = 1L;
@@ -101,8 +104,7 @@ class ExpressionTab extends AnalyzerTab {
     @Override
     public void setValueAt(Object obj, int row, int column) {
       final var ne = listCopy[row];
-      if (!(obj instanceof NamedExpression e)) return;
-      if (ne != e && !ne.name.equals(e.name)) return;
+      if (!(obj instanceof NamedExpression e) || (ne != e && !ne.name.equals(e.name))) return;
       listCopy[row] = e;
       if (e.expr != null) model.getOutputExpressions().setExpression(e.name, e.expr, e.exprString);
     }

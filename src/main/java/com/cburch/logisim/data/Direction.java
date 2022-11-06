@@ -64,7 +64,8 @@ public class Direction implements AttributeOptionInterface {
   }
 
   // for AttributeOptionInterface
-  public Object getValue() {
+  @Override
+public Object getValue() {
     return this;
   }
 
@@ -81,7 +82,8 @@ public class Direction implements AttributeOptionInterface {
     return id * 90;
   }
 
-  public String toDisplayString() {
+  @Override
+public String toDisplayString() {
     return disp.toString();
   }
 

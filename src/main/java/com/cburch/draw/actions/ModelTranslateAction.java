@@ -11,12 +11,13 @@ package com.cburch.draw.actions;
 
 import static com.cburch.draw.Strings.S;
 
-import com.cburch.draw.model.CanvasModel;
-import com.cburch.draw.model.CanvasObject;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.cburch.draw.model.CanvasModel;
+import com.cburch.draw.model.CanvasObject;
 
 public class ModelTranslateAction extends ModelAction {
   private final Set<CanvasObject> moved;

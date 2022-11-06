@@ -9,22 +9,25 @@
 
 package com.cburch.logisim.fpga.file;
 
-import com.cburch.logisim.fpga.data.BoardInformation;
-import com.cburch.logisim.fpga.data.FpgaClass;
-import com.cburch.logisim.fpga.data.FpgaIoInformationContainer;
-import com.cburch.logisim.fpga.gui.DialogNotification;
-import com.cburch.logisim.util.XmlUtil;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.InputStream;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import com.cburch.logisim.fpga.data.BoardInformation;
+import com.cburch.logisim.fpga.data.FpgaClass;
+import com.cburch.logisim.fpga.data.FpgaIoInformationContainer;
+import com.cburch.logisim.fpga.gui.DialogNotification;
+import com.cburch.logisim.util.XmlUtil;
 
 public class BoardReaderClass {
 

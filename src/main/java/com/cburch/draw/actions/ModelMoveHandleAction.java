@@ -11,12 +11,13 @@ package com.cburch.draw.actions;
 
 import static com.cburch.draw.Strings.S;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import com.cburch.draw.model.CanvasModel;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
 import com.cburch.draw.model.HandleGesture;
-import java.util.Collection;
-import java.util.Collections;
 
 public class ModelMoveHandleAction extends ModelAction {
   private final HandleGesture gesture;

@@ -9,13 +9,15 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.contracts.BaseLayoutManagerContract;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+
+import com.cburch.contracts.BaseLayoutManagerContract;
 
 public class VerticalSplitPane extends JPanel {
   private class MyDragbar extends HorizontalSplitPane.Dragbar {

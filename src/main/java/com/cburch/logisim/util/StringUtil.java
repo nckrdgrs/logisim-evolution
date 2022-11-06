@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.util;
 
-import com.cburch.logisim.data.Bounds;
 import java.awt.Font;
 import java.awt.FontMetrics;
+
+import com.cburch.logisim.data.Bounds;
 
 public final class StringUtil {
 
@@ -31,8 +32,7 @@ public final class StringUtil {
   public static String resizeString(String value, FontMetrics metrics, int maxWidth) {
     final var width = metrics.stringWidth(value);
 
-    if (width < maxWidth) return value;
-    if (value.length() < 4) return value;
+    if ((width < maxWidth) || (value.length() < 4)) return value;
     return resizeString(
         new StringBuilder(value.substring(0, value.length() - 3) + ".."), metrics, maxWidth);
   }
@@ -40,8 +40,7 @@ public final class StringUtil {
   private static String resizeString(StringBuilder value, FontMetrics metrics, int maxWidth) {
     final var width = metrics.stringWidth(value.toString());
 
-    if (width < maxWidth) return value.toString();
-    if (value.length() < 4) return value.toString();
+    if ((width < maxWidth) || (value.length() < 4)) return value.toString();
     return resizeString(value.delete(value.length() - 3, value.length() - 2), metrics, maxWidth);
   }
 

@@ -9,9 +9,10 @@
 
 package com.cburch.logisim.tools.key;
 
+import java.awt.event.KeyEvent;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Direction;
-import java.awt.event.KeyEvent;
 
 public class DirectionConfigurator implements KeyConfigurator, Cloneable {
   private final Attribute<?> attr;

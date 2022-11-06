@@ -9,9 +9,10 @@
 
 package com.cburch.draw.canvas;
 
-import com.cburch.draw.model.CanvasObject;
 import java.util.Collection;
 import java.util.EventObject;
+
+import com.cburch.draw.model.CanvasObject;
 
 public class SelectionEvent extends EventObject {
   public static final int ACTION_ADDED = 0;

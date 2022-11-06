@@ -11,6 +11,14 @@ package com.cburch.draw.shapes;
 
 import static com.cburch.draw.Strings.S;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.List;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.cburch.draw.model.AbstractCanvasObject;
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
@@ -21,12 +29,6 @@ import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.util.List;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 public class Text extends AbstractCanvasObject {
   private EditableLabel label;

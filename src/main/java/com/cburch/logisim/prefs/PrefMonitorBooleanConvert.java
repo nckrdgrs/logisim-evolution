@@ -11,11 +11,12 @@ package com.cburch.logisim.prefs;
 
 import static com.cburch.logisim.gui.Strings.S;
 
+import java.util.ArrayList;
+import java.util.prefs.PreferenceChangeEvent;
+
 import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.wiring.ProbeAttributes;
-import java.util.ArrayList;
-import java.util.prefs.PreferenceChangeEvent;
 
 public class PrefMonitorBooleanConvert extends PrefMonitorBoolean {
 

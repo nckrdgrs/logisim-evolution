@@ -11,6 +11,11 @@ package com.cburch.logisim.circuit;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
@@ -19,10 +24,6 @@ import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.gui.generic.ComboBox;
 import com.cburch.logisim.instance.StdAttr;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
 
 public class SplitterAttributes extends AbstractAttributeSet {
   public static class BitOutAttribute extends Attribute<Integer> {
@@ -370,10 +371,7 @@ public class SplitterAttributes extends AbstractAttributeSet {
 
   @Override
   public <V> List<Attribute<?>> attributesMayAlsoBeChanged(Attribute<V> attr, V value) {
-    if (attr != ATTR_FANOUT && attr != ATTR_WIDTH) {
-      return null;
-    }
-    if (Objects.equals(getValue(attr), value)) {
+    if ((attr != ATTR_FANOUT && attr != ATTR_WIDTH) || Objects.equals(getValue(attr), value)) {
       return null;
     }
 

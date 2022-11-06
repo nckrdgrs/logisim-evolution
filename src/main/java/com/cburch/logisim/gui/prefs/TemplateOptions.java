@@ -11,14 +11,6 @@ package com.cburch.logisim.gui.prefs;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.file.Loader;
-import com.cburch.logisim.file.LoaderException;
-import com.cburch.logisim.file.LogisimFile;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.prefs.PrefMonitorBoolean;
-import com.cburch.logisim.prefs.Template;
-import com.cburch.logisim.util.JFileChoosers;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -30,6 +22,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -37,6 +30,15 @@ import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+
+import com.cburch.logisim.file.Loader;
+import com.cburch.logisim.file.LoaderException;
+import com.cburch.logisim.file.LogisimFile;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.prefs.PrefMonitorBoolean;
+import com.cburch.logisim.prefs.Template;
+import com.cburch.logisim.util.JFileChoosers;
 
 class TemplateOptions extends OptionsPanel {
   private static final long serialVersionUID = 1L;

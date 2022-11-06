@@ -11,6 +11,14 @@ package com.cburch.draw.shapes;
 
 import static com.cburch.draw.Strings.S;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.QuadCurve2D;
+import java.util.List;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
 import com.cburch.draw.model.HandleGesture;
@@ -18,12 +26,6 @@ import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.QuadCurve2D;
-import java.util.List;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 public class Curve extends FillableCanvasObject {
   private Location p0;

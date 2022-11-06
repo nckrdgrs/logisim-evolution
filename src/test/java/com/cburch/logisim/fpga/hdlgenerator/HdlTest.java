@@ -10,20 +10,18 @@
 package com.cburch.logisim.fpga.hdlgenerator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.mockStatic;
 
-import com.cburch.logisim.TestBase;
-import com.cburch.logisim.fpga.hdlgenerator.Hdl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.cburch.logisim.TestBase;
 
 @ExtendWith(MockitoExtension.class)
 public class HdlTest extends TestBase {

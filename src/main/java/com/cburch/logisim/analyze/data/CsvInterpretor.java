@@ -11,13 +11,6 @@ package com.cburch.logisim.analyze.data;
 
 import static com.cburch.logisim.analyze.Strings.S;
 
-import com.cburch.logisim.analyze.gui.VariableTab;
-import com.cburch.logisim.analyze.model.AnalyzerModel;
-import com.cburch.logisim.analyze.model.Entry;
-import com.cburch.logisim.analyze.model.Var;
-import com.cburch.logisim.analyze.model.VariableList;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.util.SyntaxChecker;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,7 +18,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+
 import javax.swing.JFrame;
+
+import com.cburch.logisim.analyze.gui.VariableTab;
+import com.cburch.logisim.analyze.model.AnalyzerModel;
+import com.cburch.logisim.analyze.model.Entry;
+import com.cburch.logisim.analyze.model.Var;
+import com.cburch.logisim.analyze.model.VariableList;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.util.SyntaxChecker;
 
 public class CsvInterpretor {
   /*
@@ -297,8 +299,7 @@ public class CsvInterpretor {
         /* check indexes and empty field */
         final var pos = field.indexOf('[');
         final var name = field.substring(0, pos);
-        if (!isCorrectName(name)) return false;
-        if (isDuplicate(name)) return false;
+        if (!isCorrectName(name) || isDuplicate(name)) return false;
         final var nrOfBits = VariableTab.checkindex(field.substring(pos));
         if (nrOfBits <= 0) {
           OptionPane.showMessageDialog(

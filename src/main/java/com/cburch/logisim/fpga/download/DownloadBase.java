@@ -11,6 +11,12 @@ package com.cburch.logisim.fpga.download;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
 import com.cburch.logisim.fpga.data.BoardInformation;
 import com.cburch.logisim.fpga.data.IoComponentTypes;
 import com.cburch.logisim.fpga.data.LedArrayDriving;
@@ -28,12 +34,6 @@ import com.cburch.logisim.gui.generic.OptionPane;
 import com.cburch.logisim.prefs.AppPreferences;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.std.io.LedArrayGenericHdlGeneratorFactory;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 public abstract class DownloadBase {
 
@@ -181,10 +181,7 @@ public abstract class DownloadBase {
           projectDir + ticker.getRelativeDirectory(),
           ticker.getEntity(
               rootSheet.getNetList(), null, TickComponentHdlGeneratorFactory.HDL_IDENTIFIER),
-          TickComponentHdlGeneratorFactory.HDL_IDENTIFIER)) {
-        return false;
-      }
-      if (!Hdl.writeArchitecture(
+          TickComponentHdlGeneratorFactory.HDL_IDENTIFIER) || !Hdl.writeArchitecture(
           projectDir + ticker.getRelativeDirectory(),
           ticker.getArchitecture(
               rootSheet.getNetList(), null, TickComponentHdlGeneratorFactory.HDL_IDENTIFIER),
@@ -227,10 +224,7 @@ public abstract class DownloadBase {
             if (!Hdl.writeEntity(
                 projectDir + worker.getRelativeDirectory(),
                 worker.getEntity(rootSheet.getNetList(), null, name),
-                name)) {
-              return false;
-            }
-            if (!Hdl.writeArchitecture(
+                name) || !Hdl.writeArchitecture(
                 projectDir + worker.getRelativeDirectory(),
                 worker.getArchitecture(rootSheet.getNetList(), null, name),
                 name)) {
@@ -243,15 +237,15 @@ public abstract class DownloadBase {
     if (!Hdl.writeEntity(
         projectDir + top.getRelativeDirectory(),
         top.getEntity(
-            rootSheet.getNetList(), null, ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME),
-        ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME)) {
+            rootSheet.getNetList(), null, HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME),
+        HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME)) {
       return false;
     }
     return Hdl.writeArchitecture(
         projectDir + top.getRelativeDirectory(),
         top.getArchitecture(
-            rootSheet.getNetList(), null, ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME),
-        ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME);
+            rootSheet.getNetList(), null, HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME),
+        HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME);
   }
 
   protected boolean genDirectory(String dirPath) {

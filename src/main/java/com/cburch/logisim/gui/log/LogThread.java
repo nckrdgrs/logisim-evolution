@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.gui.log;
 
-import com.cburch.logisim.util.UniquelyNamedThread;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+
+import com.cburch.logisim.util.UniquelyNamedThread;
 
 class LogThread extends UniquelyNamedThread implements Model.Listener {
   // file will be flushed with at least this frequency (ms)

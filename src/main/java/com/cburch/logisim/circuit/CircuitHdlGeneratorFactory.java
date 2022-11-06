@@ -9,6 +9,15 @@
 
 package com.cburch.logisim.circuit;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.data.MapComponent;
 import com.cburch.logisim.fpga.data.MappableResourcesContainer;
@@ -23,21 +32,13 @@ import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.wiring.ClockHdlGeneratorFactory;
 import com.cburch.logisim.util.LineBuffer;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
 public class CircuitHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
   private enum bubbleType {
     INPUT, OUTPUT, INOUT
   }
-  
+
   private final Circuit myCircuit;
 
   public CircuitHdlGeneratorFactory(Circuit source) {
@@ -137,10 +138,7 @@ public class CircuitHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
                   myNetList,
                   thisComponent.getComponent().getAttributeSet(),
                   componentName),
-              componentName)) {
-            return false;
-          }
-          if (!Hdl.writeArchitecture(
+              componentName) || !Hdl.writeArchitecture(
               workPath + worker.getRelativeDirectory(),
               worker.getArchitecture(
                   myNetList,
@@ -184,11 +182,7 @@ public class CircuitHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
       if (!Hdl.writeEntity(
           workPath + getRelativeDirectory(),
           getEntity(myNetList, null, componentName),
-          componentName)) {
-        return false;
-      }
-
-      if (!Hdl.writeArchitecture(
+          componentName) || !Hdl.writeArchitecture(
           workPath + getRelativeDirectory(),
           getArchitecture(myNetList, null, componentName),
           componentName)) {
@@ -203,11 +197,11 @@ public class CircuitHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
   private String getBubbleIndex(netlistComponent comp, bubbleType type) {
     final var fmt = "{{<}}{{1}} {{2}} {{3}}{{>}}";
     return switch (type) {
-      case INPUT -> LineBuffer.format(fmt, comp.getLocalBubbleInputEndId(), 
+      case INPUT -> LineBuffer.format(fmt, comp.getLocalBubbleInputEndId(),
           Hdl.vectorLoopId(), comp.getLocalBubbleInputStartId());
-      case OUTPUT -> LineBuffer.format(fmt, comp.getLocalBubbleOutputEndId(), 
-          Hdl.vectorLoopId(), comp.getLocalBubbleOutputStartId()); 
-      case INOUT -> LineBuffer.format(fmt, comp.getLocalBubbleInOutEndId(), 
+      case OUTPUT -> LineBuffer.format(fmt, comp.getLocalBubbleOutputEndId(),
+          Hdl.vectorLoopId(), comp.getLocalBubbleOutputStartId());
+      case INOUT -> LineBuffer.format(fmt, comp.getLocalBubbleInOutEndId(),
           Hdl.vectorLoopId(), comp.getLocalBubbleInOutStartId());
       default -> "";
     };
@@ -224,7 +218,7 @@ public class CircuitHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
         final var worker = gate.getComponent().getFactory().getHDLGenerator(gate.getComponent().getAttributeSet());
         if (worker != null) {
           if (!worker.isOnlyInlined()) {
-            components.empty().add(worker.getComponentInstantiation(theNetlist, 
+            components.empty().add(worker.getComponentInstantiation(theNetlist,
                 gate.getComponent().getAttributeSet(), compName));
           }
         }
@@ -347,7 +341,7 @@ public class CircuitHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
             isFirstLine = false;
           }
           final var thisAttrs = comp.getComponent().getAttributeSet();
-          final var hasLabel = thisAttrs.containsAttribute(StdAttr.LABEL) 
+          final var hasLabel = thisAttrs.containsAttribute(StdAttr.LABEL)
               && !thisAttrs.getValue(StdAttr.LABEL).isEmpty();
           final var compName = hasLabel ? CorrectLabel.getCorrectLabel(thisAttrs.getValue(StdAttr.LABEL)) : "";
           final var remarkLine = LineBuffer.format("{{1}}{{2}}{{3}}", comp.getComponent().getFactory().getDisplayName(),

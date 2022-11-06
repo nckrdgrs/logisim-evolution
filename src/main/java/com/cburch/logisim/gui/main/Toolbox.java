@@ -9,14 +9,16 @@
 
 package com.cburch.logisim.gui.main;
 
+import java.awt.BorderLayout;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import com.cburch.draw.toolbar.Toolbar;
 import com.cburch.logisim.gui.generic.ProjectExplorer;
 import com.cburch.logisim.gui.menu.MenuListener;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.tools.Tool;
-import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 class Toolbox extends JPanel {
   private static final long serialVersionUID = 1L;

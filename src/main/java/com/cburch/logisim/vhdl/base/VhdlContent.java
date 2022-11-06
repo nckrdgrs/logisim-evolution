@@ -11,14 +11,6 @@ package com.cburch.logisim.vhdl.base;
 
 import static com.cburch.logisim.vhdl.Strings.S;
 
-import com.cburch.logisim.data.Attribute;
-import com.cburch.logisim.data.AttributeOption;
-import com.cburch.logisim.data.AttributeSet;
-import com.cburch.logisim.file.LogisimFile;
-import com.cburch.logisim.fpga.hdlgenerator.Vhdl;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.instance.StdAttr;
-import com.cburch.logisim.util.Softwares;
 import java.awt.Dimension;
 import java.awt.Insets;
 import java.io.BufferedReader;
@@ -29,8 +21,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+
+import com.cburch.logisim.data.Attribute;
+import com.cburch.logisim.data.AttributeOption;
+import com.cburch.logisim.data.AttributeSet;
+import com.cburch.logisim.file.LogisimFile;
+import com.cburch.logisim.fpga.hdlgenerator.Vhdl;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.util.Softwares;
 
 public class VhdlContent extends HdlContent {
 
@@ -227,8 +229,7 @@ public class VhdlContent extends HdlContent {
   }
 
   public boolean setName(String name) {
-    if (name == null) return false;
-    if (labelVHDLInvalidNotify(name, logiFile)) return false;
+    if ((name == null) || labelVHDLInvalidNotify(name, logiFile)) return false;
     String entPat = ENTITY_PATTERN.replaceAll("%entityname%", this.name);
     String archPat = ARCH_PATTERN.replaceAll("%entityname%", this.name);
     String endPat = END_PATTERN.replaceAll("%entityname%", this.name);

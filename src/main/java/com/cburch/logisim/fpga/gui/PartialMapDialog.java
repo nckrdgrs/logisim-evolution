@@ -11,12 +11,6 @@ package com.cburch.logisim.fpga.gui;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.logisim.fpga.data.FpgaIoInformationContainer;
-import com.cburch.logisim.fpga.data.MapComponent;
-import com.cburch.logisim.fpga.data.MapListModel;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.LocaleListener;
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -24,6 +18,7 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -31,6 +26,12 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import com.cburch.logisim.fpga.data.FpgaIoInformationContainer;
+import com.cburch.logisim.fpga.data.MapComponent;
+import com.cburch.logisim.fpga.data.MapListModel;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.LocaleListener;
 
 public class PartialMapDialog extends JDialog implements LocaleListener, ActionListener {
   private static final long serialVersionUID = 1L;
@@ -104,8 +105,7 @@ public class PartialMapDialog extends JDialog implements LocaleListener, ActionL
 
   private JPanel createInputPane() {
     final var map = mapInfo.getMap();
-    if (!map.hasInputs()) return null;
-    if (mapInfo.getPin() >= 0 && !map.isInput(mapInfo.getPin())) return null;
+    if (!map.hasInputs() || (mapInfo.getPin() >= 0 && !map.isInput(mapInfo.getPin()))) return null;
     if (InputMapSet == null)
       InputMapSet = new ArrayList<>();
     if (ioComp.hasInputs()) InputMapSet.addAll(ioComp.getInputs());
@@ -176,8 +176,7 @@ public class PartialMapDialog extends JDialog implements LocaleListener, ActionL
 
   private JPanel createOutputPane() {
     final var map = mapInfo.getMap();
-    if (!map.hasOutputs()) return null;
-    if (mapInfo.getPin() >= 0 && !map.isOutput(mapInfo.getPin())) return null;
+    if (!map.hasOutputs() || (mapInfo.getPin() >= 0 && !map.isOutput(mapInfo.getPin()))) return null;
     if (OutputMapSet == null)
       OutputMapSet = new ArrayList<>();
     if (ioComp.hasOutputs()) OutputMapSet.addAll(ioComp.getOutputs());
@@ -248,8 +247,7 @@ public class PartialMapDialog extends JDialog implements LocaleListener, ActionL
 
   private JPanel createIOPane() {
     final var map = mapInfo.getMap();
-    if (!map.hasIos()) return null;
-    if (mapInfo.getPin() >= 0 && !map.isIo(mapInfo.getPin())) return null;
+    if (!map.hasIos() || (mapInfo.getPin() >= 0 && !map.isIo(mapInfo.getPin()))) return null;
     if (IOMapSet == null)
       IOMapSet = new ArrayList<>();
     if (ioComp.hasIoPins()) IOMapSet.addAll(ioComp.getIos());

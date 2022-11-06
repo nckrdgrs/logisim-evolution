@@ -11,10 +11,6 @@ package com.cburch.logisim.std.hdl;
 
 import static com.cburch.logisim.vhdl.Strings.S;
 
-import com.cburch.hdl.HdlModel;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.instance.Port;
-import com.cburch.logisim.util.Softwares;
 import java.awt.Dimension;
 import java.awt.Insets;
 import java.io.BufferedReader;
@@ -23,8 +19,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+
+import com.cburch.hdl.HdlModel;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.instance.Port;
+import com.cburch.logisim.util.Softwares;
 
 public class VhdlContentComponent extends HdlContent {
 

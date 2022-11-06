@@ -11,13 +11,6 @@ package com.cburch.logisim.vhdl.gui;
 
 import static com.cburch.logisim.vhdl.Strings.S;
 
-import com.cburch.draw.toolbar.AbstractToolbarModel;
-import com.cburch.draw.toolbar.ToolbarItem;
-import com.cburch.logisim.gui.icons.HdlIcon;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.util.StringGetter;
-import com.cburch.logisim.vhdl.base.HdlModel;
-import com.cburch.logisim.vhdl.base.HdlModelListener;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Component;
@@ -27,7 +20,16 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import javax.swing.Icon;
+
+import com.cburch.draw.toolbar.AbstractToolbarModel;
+import com.cburch.draw.toolbar.ToolbarItem;
+import com.cburch.logisim.gui.icons.HdlIcon;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.util.StringGetter;
+import com.cburch.logisim.vhdl.base.HdlModel;
+import com.cburch.logisim.vhdl.base.HdlModelListener;
 
 public class HdlToolbarModel extends AbstractToolbarModel implements HdlModelListener {
   private final HdlContentView editor;

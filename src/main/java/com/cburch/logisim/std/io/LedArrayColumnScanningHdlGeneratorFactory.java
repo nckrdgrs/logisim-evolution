@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.std.io;
 
+import java.util.HashMap;
+import java.util.List;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
 import com.cburch.logisim.fpga.hdlgenerator.AbstractHdlGeneratorFactory;
@@ -16,9 +19,6 @@ import com.cburch.logisim.fpga.hdlgenerator.Hdl;
 import com.cburch.logisim.fpga.hdlgenerator.TickComponentHdlGeneratorFactory;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.util.LineBuffer;
-
-import java.util.HashMap;
-import java.util.List;
 
 public class LedArrayColumnScanningHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
@@ -82,7 +82,7 @@ public class LedArrayColumnScanningHdlGeneratorFactory extends AbstractHdlGenera
     generics.put(SCANNING_COUNTER_VALUE_STRING, Integer.toString(scanningReload - 1));
     return LedArrayGenericHdlGeneratorFactory.getGenericPortMapAlligned(generics, true);
   }
-  
+
   public static LineBuffer getPortMap(int id) {
     final var ports = new HashMap<String, String>();
     ports.put(LedArrayGenericHdlGeneratorFactory.LedArrayColumnAddress, String.format("%s%d", LedArrayGenericHdlGeneratorFactory.LedArrayColumnAddress, id));

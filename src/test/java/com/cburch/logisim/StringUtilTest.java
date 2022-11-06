@@ -12,8 +12,9 @@ package com.cburch.logisim;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.cburch.logisim.util.StringUtil;
 import org.junit.jupiter.api.Test;
+
+import com.cburch.logisim.util.StringUtil;
 
 public class StringUtilTest extends TestBase {
 

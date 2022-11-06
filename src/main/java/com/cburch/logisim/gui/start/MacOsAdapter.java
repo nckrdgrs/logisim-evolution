@@ -9,11 +9,12 @@
 
 package com.cburch.logisim.gui.start;
 
+import java.awt.Desktop;
+import java.io.File;
+
 import com.cburch.logisim.gui.prefs.PreferencesFrame;
 import com.cburch.logisim.proj.ProjectActions;
 import com.cburch.logisim.util.MacCompatibility;
-import java.awt.Desktop;
-import java.io.File;
 
 class MacOsAdapter {
 

@@ -11,6 +11,21 @@ package com.cburch.logisim.fpga.download;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.cburch.logisim.fpga.data.BoardInformation;
 import com.cburch.logisim.fpga.data.MappableResourcesContainer;
 import com.cburch.logisim.fpga.data.PullBehaviors;
@@ -19,23 +34,9 @@ import com.cburch.logisim.fpga.file.FileWriter;
 import com.cburch.logisim.fpga.gui.Reporter;
 import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
 import com.cburch.logisim.fpga.hdlgenerator.TickComponentHdlGeneratorFactory;
-import com.cburch.logisim.fpga.hdlgenerator.ToplevelHdlGeneratorFactory;
 import com.cburch.logisim.fpga.settings.VendorSoftware;
 import com.cburch.logisim.util.LineBuffer;
 import com.cburch.logisim.util.XmlUtil;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 public class AlteraDownload implements VendorDownload {
 
@@ -107,8 +108,8 @@ public class AlteraDownload implements VendorDownload {
 
   @Override
   public boolean readyForDownload() {
-    final var SofFile = new File(sandboxPath + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof").exists();
-    final var PofFile = new File(sandboxPath + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".pof").exists();
+    final var SofFile = new File(sandboxPath + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof").exists();
+    final var PofFile = new File(sandboxPath + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".pof").exists();
     return SofFile || PofFile;
   }
 
@@ -123,11 +124,11 @@ public class AlteraDownload implements VendorDownload {
     command.add("jtag");
     command.add("-o");
     // if there is no .sof generated, try with the .pof
-    if (new File(sandboxPath + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof").exists()) {
-      command.add("P;" + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof"
+    if (new File(sandboxPath + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof").exists()) {
+      command.add("P;" + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof"
                   + "@" + boardInfo.fpga.getFpgaJTAGChainPosition());
     } else {
-      command.add("P;" + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".pof"
+      command.add("P;" + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".pof"
                   + "@" + boardInfo.fpga.getFpgaJTAGChainPosition());
     }
     final var down = new ProcessBuilder(command);
@@ -148,7 +149,7 @@ public class AlteraDownload implements VendorDownload {
   private ProcessBuilder stage1Optimize() {
     final var command = new ArrayList<String>();
     command.add(alteraVendor.getBinaryPath(2));
-    command.add(ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME);
+    command.add(HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME);
     command.add("--optimize=area");
     final var stage1 = new ProcessBuilder(command);
     stage1.directory(new File(sandboxPath));
@@ -160,7 +161,7 @@ public class AlteraDownload implements VendorDownload {
     command.add(alteraVendor.getBinaryPath(0));
     command.add("--flow");
     command.add("compile");
-    command.add(ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME);
+    command.add(HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME);
     final var stage2 = new ProcessBuilder(command);
     stage2.directory(new File(sandboxPath));
     return stage2;
@@ -176,7 +177,7 @@ public class AlteraDownload implements VendorDownload {
     final var fileType = hdlType.equals(HdlGeneratorFactory.VHDL) ? "VHDL_FILE" : "VERILOG_FILE";
     final var contents = LineBuffer.getBuffer();
     contents
-        .pair("topLevelName", ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME)
+        .pair("topLevelName", HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME)
         .pair("fileType", fileType)
         .pair("clock", TickComponentHdlGeneratorFactory.FPGA_CLOCK);
 
@@ -326,19 +327,7 @@ public class AlteraDownload implements VendorDownload {
   }
 
   private boolean doFlashing() {
-    if (!createCofFile()) {
-      Reporter.report.addError(S.get("AlteraFlashError"));
-      return false;
-    }
-    if (!createJicFile()) {
-      Reporter.report.addError(S.get("AlteraFlashError"));
-      return false;
-    }
-    if (!loadProgrammerSoftware()) {
-      Reporter.report.addError(S.get("AlteraFlashError"));
-      return false;
-    }
-    if (!flashDevice()) {
+    if (!createCofFile() || !createJicFile() || !loadProgrammerSoftware() || !flashDevice()) {
       Reporter.report.addError(S.get("AlteraFlashError"));
       return false;
     }
@@ -346,7 +335,7 @@ public class AlteraDownload implements VendorDownload {
   }
 
   private boolean flashDevice() {
-    final var jicFile = ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".jic";
+    final var jicFile = HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".jic";
     Reporter.report.print("==>");
     Reporter.report.print("==> " + S.get("AlteraFlash"));
     Reporter.report.print("==>");
@@ -460,7 +449,7 @@ public class AlteraDownload implements VendorDownload {
   }
 
   private boolean createCofFile() {
-    if (!new File(sandboxPath + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof").exists()) {
+    if (!new File(sandboxPath + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof").exists()) {
       Reporter.report.addFatalError(S.get("AlteraNoSofFile"));
       return false;
     }
@@ -477,7 +466,7 @@ public class AlteraDownload implements VendorDownload {
       addElement("eprom_name", boardInfo.fpga.getFlashName(), rootElement, cofFile);
       addElement("flash_loader_device", stripPackageSpeedSuffix(), rootElement, cofFile);
       addElement("output_filename",
-          sandboxPath + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".jic",
+          sandboxPath + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".jic",
           rootElement,
           cofFile);
       addElement("n_pages", "1", rootElement, cofFile);
@@ -490,7 +479,7 @@ public class AlteraDownload implements VendorDownload {
       final var bitFile = cofFile.createElement("bit0");
       sofData.appendChild(bitFile);
       addElement("sof_filename",
-          sandboxPath + ToplevelHdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof",
+          sandboxPath + HdlGeneratorFactory.FPGA_TOP_LEVEL_NAME + ".sof",
           bitFile,
           cofFile);
       addElement("version", "10", rootElement, cofFile);

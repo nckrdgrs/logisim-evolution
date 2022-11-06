@@ -11,6 +11,8 @@ package com.cburch.logisim.circuit;
 
 import static com.cburch.logisim.circuit.Strings.S;
 
+import javax.swing.JPopupMenu;
+
 import com.cburch.logisim.comp.ComponentDrawContext;
 import com.cburch.logisim.comp.ComponentEvent;
 import com.cburch.logisim.comp.ComponentFactory;
@@ -31,7 +33,6 @@ import com.cburch.logisim.tools.ToolTipMaker;
 import com.cburch.logisim.tools.WireRepair;
 import com.cburch.logisim.tools.WireRepairData;
 import com.cburch.logisim.util.GraphicsUtil;
-import javax.swing.JPopupMenu;
 
 public class Splitter extends ManagedComponent
     implements WireRepair, ToolTipMaker, MenuExtender, AttributeListener {
@@ -188,8 +189,7 @@ public class Splitter extends ManagedComponent
 
   @Override
   public Object getFeature(Object key) {
-    if (key == WireRepair.class) return this;
-    if (key == ToolTipMaker.class) return this;
+    if ((key == WireRepair.class) || (key == ToolTipMaker.class)) return this;
     if (key == MenuExtender.class) return this;
     else return super.getFeature(key);
   }

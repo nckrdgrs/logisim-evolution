@@ -11,6 +11,10 @@ package com.cburch.logisim.soc.pio;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
@@ -20,9 +24,6 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.soc.data.SocBusInfo;
 import com.cburch.logisim.soc.data.SocSimulationManager;
 import com.cburch.logisim.soc.memory.SocMemoryAttributes;
-import java.awt.Font;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PioAttributes extends AbstractAttributeSet {
 

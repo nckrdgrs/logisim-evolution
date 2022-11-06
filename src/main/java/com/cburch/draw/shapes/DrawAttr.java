@@ -11,14 +11,15 @@ package com.cburch.draw.shapes;
 
 import static com.cburch.draw.Strings.S;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.util.List;
+
 import com.cburch.draw.util.EditableLabel;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.Attributes;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Color;
-import java.awt.Font;
-import java.util.List;
 
 public class DrawAttr {
   public static final Font DEFAULT_FONT = new Font("SansSerif", Font.PLAIN, 12);

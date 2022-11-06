@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.AttributeSet;
@@ -20,8 +23,6 @@ import com.cburch.logisim.fpga.hdlgenerator.HdlPorts;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.LineBuffer;
-import java.util.HashMap;
-import java.util.Map;
 
 public class AbstractFlipFlopHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 

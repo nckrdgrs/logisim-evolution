@@ -9,6 +9,11 @@
 
 package com.cburch.logisim.std.wiring;
 
+import java.awt.Font;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 import com.cburch.logisim.comp.TextField;
 import com.cburch.logisim.data.AbstractAttributeSet;
 import com.cburch.logisim.data.Attribute;
@@ -16,10 +21,6 @@ import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.instance.StdAttr;
-import java.awt.Font;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
 
 class TunnelAttributes extends AbstractAttributeSet {
   private static final List<Attribute<?>> ATTRIBUTES =

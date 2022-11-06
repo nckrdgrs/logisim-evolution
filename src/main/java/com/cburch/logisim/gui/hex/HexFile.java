@@ -11,18 +11,6 @@ package com.cburch.logisim.gui.hex;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.Main;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.instance.Instance;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.proj.Project;
-import com.cburch.logisim.std.memory.Mem;
-import com.cburch.logisim.std.memory.MemContents;
-import com.cburch.logisim.util.JDialogOk;
-import com.cburch.logisim.util.JFileChoosers;
-import com.cburch.logisim.util.OutputStreamBinarySanitizer;
-import com.cburch.logisim.util.OutputStreamEscaper;
-import com.cburch.logisim.util.TextLineNumber;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -46,6 +34,7 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashMap;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -59,8 +48,22 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileFilter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.cburch.logisim.Main;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.instance.Instance;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.proj.Project;
+import com.cburch.logisim.std.memory.Mem;
+import com.cburch.logisim.std.memory.MemContents;
+import com.cburch.logisim.util.JDialogOk;
+import com.cburch.logisim.util.JFileChoosers;
+import com.cburch.logisim.util.OutputStreamBinarySanitizer;
+import com.cburch.logisim.util.OutputStreamEscaper;
+import com.cburch.logisim.util.TextLineNumber;
 
 public class HexFile {
   // "v2.0 raw" -- A sequence of space-sparated hex numbers (without "0x"),

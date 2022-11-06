@@ -9,15 +9,17 @@
 
 package com.cburch.draw.tools;
 
-import com.cburch.draw.canvas.Canvas;
-import com.cburch.draw.canvas.CanvasTool;
-import com.cburch.logisim.data.Attribute;
 import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.List;
+
 import javax.swing.Icon;
+
+import com.cburch.draw.canvas.Canvas;
+import com.cburch.draw.canvas.CanvasTool;
+import com.cburch.logisim.data.Attribute;
 
 public abstract class AbstractTool extends CanvasTool {
   public static AbstractTool[] getTools(DrawingAttributeSet attrs) {

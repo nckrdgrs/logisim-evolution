@@ -9,9 +9,6 @@
 
 package com.cburch.hex;
 
-import com.cburch.contracts.BaseKeyListenerContract;
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.contracts.BaseMouseMotionListenerContract;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -26,10 +23,15 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import com.cburch.contracts.BaseKeyListenerContract;
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.contracts.BaseMouseMotionListenerContract;
 
 public class Caret {
   private static final Color SELECT_COLOR = new Color(192, 192, 255);

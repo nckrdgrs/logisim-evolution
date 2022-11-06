@@ -11,6 +11,27 @@ package com.cburch.logisim.soc.gui;
 
 import static com.cburch.logisim.soc.Strings.S;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Element;
+
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import org.fife.ui.rtextarea.GutterIconInfo;
+import org.fife.ui.rtextarea.RTextScrollPane;
+
 import com.cburch.contracts.BaseKeyListenerContract;
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.gui.icons.BreakpointIcon;
@@ -20,23 +41,6 @@ import com.cburch.logisim.soc.file.ElfSectionHeader;
 import com.cburch.logisim.soc.util.AssemblerInterface;
 import com.cburch.logisim.util.LocaleListener;
 import com.cburch.logisim.util.LocaleManager;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Element;
-import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
-import org.fife.ui.rtextarea.GutterIconInfo;
-import org.fife.ui.rtextarea.RTextScrollPane;
 
 public class BreakpointPanel extends JPanel
     implements CaretListener, LocaleListener, ActionListener, BaseKeyListenerContract {
@@ -67,7 +71,7 @@ public class BreakpointPanel extends JPanel
     JPanel info = new JPanel();
     info.setLayout(new BorderLayout());
     lineIndicator = new JLabel();
-    lineIndicator.setHorizontalAlignment(JLabel.CENTER);
+    lineIndicator.setHorizontalAlignment(SwingConstants.CENTER);
     addBreakPoint = new JButton();
     addBreakPoint.addActionListener(this);
     removeBreakPoint = new JButton();

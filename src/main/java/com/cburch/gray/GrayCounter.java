@@ -9,6 +9,8 @@
 
 package com.cburch.gray;
 
+import javax.swing.ImageIcon;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Bounds;
@@ -21,8 +23,6 @@ import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringUtil;
-import java.net.URL;
-import javax.swing.ImageIcon;
 
 /**
  * Manufactures a counter that iterates over Gray codes. This demonstrates several additional

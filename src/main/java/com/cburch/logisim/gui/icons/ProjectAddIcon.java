@@ -9,13 +9,14 @@
 
 package com.cburch.logisim.gui.icons;
 
-import com.cburch.logisim.prefs.AppPreferences;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.font.TextLayout;
 import java.awt.geom.GeneralPath;
+
+import com.cburch.logisim.prefs.AppPreferences;
 
 public class ProjectAddIcon extends BaseIcon {
 
@@ -47,7 +48,7 @@ public class ProjectAddIcon extends BaseIcon {
       g2.setColor(Color.GREEN.darker().darker());
       final var f =
           g2.getFont()
-              .deriveFont((float) AppPreferences.getIconSize() / (float) 1.6)
+              .deriveFont(AppPreferences.getIconSize() / (float) 1.6)
               .deriveFont(Font.BOLD);
       var l1 = new TextLayout("VH", f, g2.getFontRenderContext());
       var top = AppPreferences.getIconSize() / 4 - l1.getBounds().getCenterY();

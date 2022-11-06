@@ -11,9 +11,10 @@ package com.cburch.logisim.std.tcl;
 
 import static com.cburch.logisim.std.Strings.S;
 
-import com.cburch.logisim.instance.Port;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.cburch.logisim.instance.Port;
 
 /**
  * This is a static TCL component. It onlyy defines the interface as all other things are defined by

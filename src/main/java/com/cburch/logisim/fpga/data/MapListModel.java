@@ -11,6 +11,7 @@ package com.cburch.logisim.fpga.data;
 
 import java.util.ArrayList;
 import java.util.Map;
+
 import javax.swing.DefaultListModel;
 
 public class MapListModel extends DefaultListModel<MapListModel.MapInfo> {

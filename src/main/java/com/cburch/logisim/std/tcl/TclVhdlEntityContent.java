@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.std.tcl;
 
-import com.cburch.logisim.std.hdl.VhdlContentComponent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.cburch.logisim.std.hdl.VhdlContentComponent;
 
 /**
  * This is the same as the parent, just the template has to change. Code duplication is due to

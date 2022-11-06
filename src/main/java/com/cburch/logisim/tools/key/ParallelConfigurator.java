@@ -9,8 +9,9 @@
 
 package com.cburch.logisim.tools.key;
 
-import com.cburch.logisim.data.Attribute;
 import java.util.HashMap;
+
+import com.cburch.logisim.data.Attribute;
 
 public final class ParallelConfigurator implements KeyConfigurator, Cloneable {
   private KeyConfigurator[] handlers;

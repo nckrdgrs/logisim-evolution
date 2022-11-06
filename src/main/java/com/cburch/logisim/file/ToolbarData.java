@@ -9,13 +9,14 @@
 
 package com.cburch.logisim.file;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import com.cburch.logisim.data.AttributeListener;
 import com.cburch.logisim.data.AttributeSets;
 import com.cburch.logisim.tools.Tool;
 import com.cburch.logisim.util.EventSourceWeakSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class ToolbarData {
   public interface ToolbarListener {

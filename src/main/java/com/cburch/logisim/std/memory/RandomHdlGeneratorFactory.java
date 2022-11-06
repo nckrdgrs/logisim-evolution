@@ -9,6 +9,9 @@
 
 package com.cburch.logisim.std.memory;
 
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
 import com.cburch.logisim.fpga.designrulecheck.netlistComponent;
@@ -19,8 +22,6 @@ import com.cburch.logisim.fpga.hdlgenerator.HdlPorts;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.LineBuffer;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 public class RandomHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
@@ -67,7 +68,7 @@ public class RandomHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
   @Override
   public SortedMap<String, String> getPortMap(Netlist Nets, Object MapInfo) {
-    final var map = new TreeMap<String, String>(super.getPortMap(Nets, MapInfo));
+    final var map = new TreeMap<>(super.getPortMap(Nets, MapInfo));
     if (MapInfo instanceof final netlistComponent comp && Hdl.isVhdl()) {
       final var nrOfBits = comp.getComponent().getAttributeSet().getValue(StdAttr.WIDTH).getWidth();
       if (nrOfBits == 1) {

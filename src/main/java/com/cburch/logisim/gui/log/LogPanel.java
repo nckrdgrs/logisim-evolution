@@ -9,12 +9,14 @@
 
 package com.cburch.logisim.gui.log;
 
+import java.awt.LayoutManager;
+
+import javax.swing.JPanel;
+
 import com.cburch.logisim.gui.menu.EditHandler;
 import com.cburch.logisim.gui.menu.LogisimMenuBar;
 import com.cburch.logisim.gui.menu.PrintHandler;
 import com.cburch.logisim.proj.Project;
-import java.awt.LayoutManager;
-import javax.swing.JPanel;
 
 public abstract class LogPanel extends JPanel {
   private static final long serialVersionUID = 1L;

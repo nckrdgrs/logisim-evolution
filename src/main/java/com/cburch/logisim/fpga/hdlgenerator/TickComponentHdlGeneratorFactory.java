@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.fpga.hdlgenerator;
 
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.fpga.designrulecheck.Netlist;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.util.LineBuffer;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 public class TickComponentHdlGeneratorFactory extends AbstractHdlGeneratorFactory {
 
@@ -35,7 +36,7 @@ public class TickComponentHdlGeneratorFactory extends AbstractHdlGeneratorFactor
     super(HDL_DIRECTORY);
     fpgaClockFrequency = fpga_clock_frequency;
     tickFrequency = tick_frequency;
-    final var reloadValueAcc = ((double) fpgaClockFrequency) / tickFrequency;
+    final var reloadValueAcc = (fpgaClockFrequency) / tickFrequency;
     var reloadValue = (long) reloadValueAcc;
     var nrOfBits = 0;
     if ((reloadValue > 0x7FFFFFFFL) | (reloadValue < 0)) reloadValue = 0x7FFFFFFFL;

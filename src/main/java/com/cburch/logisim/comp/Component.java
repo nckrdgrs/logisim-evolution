@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.comp;
 
+import java.awt.Graphics;
+import java.util.List;
+
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.data.AttributeSet;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
-import java.awt.Graphics;
-import java.util.List;
 
 public interface Component extends Location.At {
   // listener methods

@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.comp;
 
-import com.cburch.logisim.data.Bounds;
-import com.cburch.logisim.util.GraphicsUtil;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import com.cburch.logisim.data.Bounds;
+import com.cburch.logisim.util.GraphicsUtil;
 
 public class TextField {
   public static final int H_LEFT = GraphicsUtil.H_LEFT;

@@ -9,12 +9,13 @@
 
 package com.cburch.logisim.circuit;
 
+import java.awt.Graphics2D;
+
 import com.cburch.logisim.comp.ComponentDrawContext;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.data.Value;
 import com.cburch.logisim.util.GraphicsUtil;
-import java.awt.Graphics2D;
 
 class SplitterPainter {
   static void drawLabels(ComponentDrawContext context, SplitterAttributes attrs, Location origin) {

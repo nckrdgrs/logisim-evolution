@@ -9,14 +9,15 @@
 
 package com.cburch.draw.shapes;
 
+import java.awt.Graphics;
+import java.util.List;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
 import com.cburch.draw.model.HandleGesture;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
 import com.cburch.logisim.util.UnmodifiableList;
-import java.awt.Graphics;
-import java.util.List;
 
 abstract class Rectangular extends FillableCanvasObject {
   private Bounds bounds; // excluding the stroke's width

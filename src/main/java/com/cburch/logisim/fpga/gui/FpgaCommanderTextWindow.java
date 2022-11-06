@@ -9,18 +9,22 @@
 
 package com.cburch.logisim.fpga.gui;
 
-import com.cburch.contracts.BaseKeyListenerContract;
-import com.cburch.contracts.BaseWindowListenerContract;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.WindowConstants;
 import javax.swing.text.DefaultCaret;
+
+import com.cburch.contracts.BaseKeyListenerContract;
+import com.cburch.contracts.BaseWindowListenerContract;
 
 @SuppressWarnings("serial")
 public class FpgaCommanderTextWindow extends JFrame
@@ -37,7 +41,7 @@ public class FpgaCommanderTextWindow extends JFrame
     this.Title = Title;
     setResizable(true);
     setAlwaysOnTop(false);
-    setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
     Color bg = Color.black;
     textArea = new JTextArea(25, 80);
     ((DefaultCaret) textArea.getCaret()).setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
@@ -49,8 +53,8 @@ public class FpgaCommanderTextWindow extends JFrame
     clear();
 
     JScrollPane textMessages = new JScrollPane(textArea);
-    textMessages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    textMessages.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    textMessages.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    textMessages.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     add(textMessages);
     setLocationRelativeTo(null);
     textArea.addKeyListener(this);

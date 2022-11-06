@@ -9,6 +9,8 @@
 
 package com.cburch.logisim.comp;
 
+import java.awt.Color;
+
 import com.cburch.logisim.LogisimVersion;
 import com.cburch.logisim.circuit.Circuit;
 import com.cburch.logisim.circuit.CircuitState;
@@ -20,7 +22,6 @@ import com.cburch.logisim.data.Location;
 import com.cburch.logisim.fpga.designrulecheck.netlistComponent;
 import com.cburch.logisim.fpga.hdlgenerator.HdlGeneratorFactory;
 import com.cburch.logisim.util.StringGetter;
-import java.awt.Color;
 
 /**
  * Represents a category of components that appear in a circuit. This class and <code>Component

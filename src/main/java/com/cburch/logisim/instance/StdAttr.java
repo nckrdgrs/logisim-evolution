@@ -11,14 +11,15 @@ package com.cburch.logisim.instance;
 
 import static com.cburch.logisim.std.Strings.S;
 
+import java.awt.Color;
+import java.awt.Font;
+
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.AttributeOption;
 import com.cburch.logisim.data.Attributes;
 import com.cburch.logisim.data.BitWidth;
 import com.cburch.logisim.data.Direction;
 import com.cburch.logisim.fpga.data.ComponentMapInformationContainer;
-import java.awt.Color;
-import java.awt.Font;
 
 public interface StdAttr {
   Attribute<Direction> FACING = Attributes.forDirection("facing", S.getter("stdFacingAttr"));

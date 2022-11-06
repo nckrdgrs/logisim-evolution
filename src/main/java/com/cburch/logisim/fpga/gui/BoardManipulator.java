@@ -11,23 +11,6 @@ package com.cburch.logisim.fpga.gui;
 
 import static com.cburch.logisim.fpga.Strings.S;
 
-import com.cburch.contracts.BaseMouseListenerContract;
-import com.cburch.contracts.BaseMouseMotionListenerContract;
-import com.cburch.contracts.BaseWindowListenerContract;
-import com.cburch.logisim.fpga.data.BoardInformation;
-import com.cburch.logisim.fpga.data.BoardManipulatorListener;
-import com.cburch.logisim.fpga.data.ConstantButton;
-import com.cburch.logisim.fpga.data.FpgaIoInformationContainer;
-import com.cburch.logisim.fpga.data.IoComponentTypes;
-import com.cburch.logisim.fpga.data.IoComponentsInformation;
-import com.cburch.logisim.fpga.data.IoComponentsListener;
-import com.cburch.logisim.fpga.data.MapListModel;
-import com.cburch.logisim.fpga.data.MappableResourcesContainer;
-import com.cburch.logisim.fpga.data.SimpleRectangle;
-import com.cburch.logisim.fpga.file.PngFileFilter;
-import com.cburch.logisim.gui.generic.OptionPane;
-import com.cburch.logisim.prefs.AppPreferences;
-import com.cburch.logisim.util.LocaleListener;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -45,6 +28,7 @@ import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -57,6 +41,24 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import com.cburch.contracts.BaseMouseListenerContract;
+import com.cburch.contracts.BaseMouseMotionListenerContract;
+import com.cburch.contracts.BaseWindowListenerContract;
+import com.cburch.logisim.fpga.data.BoardInformation;
+import com.cburch.logisim.fpga.data.BoardManipulatorListener;
+import com.cburch.logisim.fpga.data.ConstantButton;
+import com.cburch.logisim.fpga.data.FpgaIoInformationContainer;
+import com.cburch.logisim.fpga.data.IoComponentTypes;
+import com.cburch.logisim.fpga.data.IoComponentsInformation;
+import com.cburch.logisim.fpga.data.IoComponentsListener;
+import com.cburch.logisim.fpga.data.MapListModel;
+import com.cburch.logisim.fpga.data.MappableResourcesContainer;
+import com.cburch.logisim.fpga.data.SimpleRectangle;
+import com.cburch.logisim.fpga.file.PngFileFilter;
+import com.cburch.logisim.gui.generic.OptionPane;
+import com.cburch.logisim.prefs.AppPreferences;
+import com.cburch.logisim.util.LocaleListener;
 
 public class BoardManipulator extends JPanel implements BaseMouseListenerContract,
                                                         BaseMouseMotionListenerContract,
@@ -347,7 +349,7 @@ public class BoardManipulator extends JPanel implements BaseMouseListenerContrac
         source.setValue(maxZoom);
         value = maxZoom;
       }
-      scale = (float) value / (float) 100.0;
+      scale = value / (float) 100.0;
       final var mySize = new Dimension(getWidth(), getHeight());
       setPreferredSize(mySize);
       setSize(mySize);

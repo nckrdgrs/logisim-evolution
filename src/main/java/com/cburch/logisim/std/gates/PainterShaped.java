@@ -9,14 +9,15 @@
 
 package com.cburch.logisim.std.gates;
 
-import com.cburch.logisim.data.Direction;
-import com.cburch.logisim.instance.InstancePainter;
-import com.cburch.logisim.util.GraphicsUtil;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.util.HashMap;
+
+import com.cburch.logisim.data.Direction;
+import com.cburch.logisim.instance.InstancePainter;
+import com.cburch.logisim.util.GraphicsUtil;
 
 public class PainterShaped {
   private static GeneralPath computeShield(int width, int height) {

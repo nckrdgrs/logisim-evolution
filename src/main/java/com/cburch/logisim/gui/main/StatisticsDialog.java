@@ -11,17 +11,13 @@ package com.cburch.logisim.gui.main;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.circuit.Circuit;
-import com.cburch.logisim.file.FileStatistics;
-import com.cburch.logisim.file.LogisimFile;
-import com.cburch.logisim.tools.Library;
-import com.cburch.logisim.util.TableSorter;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Comparator;
 import java.util.List;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -30,6 +26,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
+
+import com.cburch.logisim.circuit.Circuit;
+import com.cburch.logisim.file.FileStatistics;
+import com.cburch.logisim.file.LogisimFile;
+import com.cburch.logisim.tools.Library;
+import com.cburch.logisim.util.TableSorter;
 
 public class StatisticsDialog extends JDialog implements ActionListener {
   private static final long serialVersionUID = 1L;
